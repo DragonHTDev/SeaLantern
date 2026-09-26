@@ -21,10 +21,10 @@ use serde::Deserialize;
 use tokio::sync::OwnedRwLockWriteGuard;
 
 use super::SettingsError;
-use super::types::{
+use crate::models::SettingsValidationError;
+use crate::models::{
     AppSettings, CURRENT_CONFIG_VERSION, JavaInfo, PartialAppSettings, UpdateResult,
 };
-use crate::models::SettingsValidationError;
 use crate::observability;
 
 /// 配置文件读取上限：最大 10 MiB。

@@ -1,13 +1,13 @@
-pub mod data_migration;
 pub mod sealantern;
 pub mod server;
 
-pub use sealantern::InstanceRegistry;
 #[allow(deprecated)]
-pub use sealantern::types::{
-    AppSettings, InstanceList, JavaInfo, NullablePatch, PartialAppSettings, ServerStatus,
-    SettingsGroup, StartupMode, UpdateResult,
+pub use crate::models::compatibility::{ServerStatus, StartupMode};
+pub use crate::models::{
+    AppSettings, InstanceList, JavaInfo, NullablePatch, PartialAppSettings, SettingsGroup,
+    UpdateResult,
 };
+pub use sealantern::InstanceRegistry;
 pub use sealantern::{SettingsError, SettingsManager};
 
 pub use server::{ConfigEntry, ServerProperties, ServerPropertiesError, ServerPropertiesManager};

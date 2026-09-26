@@ -15,7 +15,6 @@ pub use sealantern_contract::settings::{
 };
 pub use sealantern_contract::settings::{NullablePatch, PartialAppSettings, UpdateResult};
 pub use server::InstanceList;
-pub(crate) use server::LegacyServerInstance;
 pub use task::{TaskProgressResponse, TaskStatus};
 
 #[allow(deprecated)]
