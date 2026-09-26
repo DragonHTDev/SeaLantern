@@ -1,5 +1,5 @@
-pub mod sealantern;
 pub mod server;
+pub mod settings;
 
 #[allow(deprecated)]
 pub use crate::models::compatibility::{ServerStatus, StartupMode};
@@ -7,8 +7,8 @@ pub use crate::models::{
     AppSettings, InstanceList, JavaInfo, NullablePatch, PartialAppSettings, SettingsGroup,
     UpdateResult,
 };
-pub use sealantern::InstanceRegistry;
-pub use sealantern::{SettingsError, SettingsManager};
+pub use settings::InstanceRegistry;
+pub use settings::{SettingsError, SettingsManager};
 
 pub use server::{ConfigEntry, ServerProperties, ServerPropertiesError, ServerPropertiesManager};
 

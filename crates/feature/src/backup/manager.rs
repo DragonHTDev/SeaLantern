@@ -5,7 +5,7 @@ use std::path::{Path, PathBuf};
 
 use chrono::{DateTime, Utc};
 use sealantern_infra::fs::write_atomic_blocking;
-use sealantern_infra::platform::get_app_data_dir;
+use sealantern_infra::platform::AppLayout;
 use serde::{Deserialize, Serialize};
 use tempfile::Builder;
 use tracing::{debug, error, info, warn};
@@ -42,7 +42,7 @@ pub struct BackupManager {
 impl BackupManager {
     /// 创建新的备份管理器
     pub fn new() -> BackupResult<Self> {
-        Self::from_backups_dir(get_app_data_dir().join("backups"))
+        Self::from_backups_dir(AppLayout::native(None).backups_dir())
     }
 
     fn from_backups_dir(backups_dir: PathBuf) -> BackupResult<Self> {

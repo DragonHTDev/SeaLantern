@@ -16,7 +16,7 @@ use sealantern_infra::fs::{DataLimit, FileLock, FsError, read_string_limited, wr
 use sealantern_infra::persistence::config::ConfigFile;
 use sealantern_infra::persistence::config::UpdatePersistedError;
 use sealantern_infra::persistence::process_lock_registry;
-use sealantern_infra::platform::get_app_data_dir;
+use sealantern_infra::platform::AppLayout;
 use serde::Deserialize;
 use tokio::sync::OwnedRwLockWriteGuard;
 
@@ -35,7 +35,7 @@ const SETTINGS_FILE_NAME: &str = "sea_lantern_settings.json";
 
 /// 解析 SeaLantern 应用设置文件的默认路径。
 fn default_settings_path() -> PathBuf {
-    get_app_data_dir().join(SETTINGS_FILE_NAME)
+    AppLayout::native(None).config_file(SETTINGS_FILE_NAME)
 }
 
 /// 旧版嵌套配置格式（v1：`{ version, preferences: {...} }`）。
