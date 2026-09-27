@@ -148,11 +148,14 @@ pub fn get_default_run_path() -> Result<PathBuf, PlatformError> {
         .map_err(|source| PlatformError::ResolveDefaultRunPath { source })
 }
 
+/// 备份目录名（主资源目录下）。
+const BACKUPS_DIR_NAME: &str = "backups";
+
 /// 实例容器目录名（主资源目录下）。
 const INSTANCES_DIR_NAME: &str = "instances";
 
-/// 备份目录名（主资源目录下）。
-const BACKUPS_DIR_NAME: &str = "backups";
+/// 宿主插件目录名（主资源目录下）。
+const PLUGINS_DIR_NAME: &str = "plugins";
 
 /// 共享资源目录名（主资源目录下）。
 const RESOURCES_DIR_NAME: &str = "resources";
@@ -206,14 +209,19 @@ impl AppLayout {
         self.resource_dir.join(name)
     }
 
+    /// 备份目录。
+    pub fn backups_dir(&self) -> PathBuf {
+        self.resource_dir.join(BACKUPS_DIR_NAME)
+    }
+
     /// 服务器实例容器目录。
     pub fn instances_dir(&self) -> PathBuf {
         self.resource_dir.join(INSTANCES_DIR_NAME)
     }
 
-    /// 备份目录。
-    pub fn backups_dir(&self) -> PathBuf {
-        self.resource_dir.join(BACKUPS_DIR_NAME)
+    /// 宿主插件目录。
+    pub fn plugins_dir(&self) -> PathBuf {
+        self.resource_dir.join(PLUGINS_DIR_NAME)
     }
 
     /// 共享资源目录。
@@ -287,6 +295,7 @@ mod tests {
         assert_eq!(layout.resource_dir(), Path::new("data"));
         assert_eq!(layout.instances_dir(), Path::new("data").join("instances"));
         assert_eq!(layout.backups_dir(), Path::new("data").join("backups"));
+        assert_eq!(layout.plugins_dir(), Path::new("data").join("plugins"));
         assert_eq!(layout.resources_dir(), Path::new("data").join("resources"));
     }
 

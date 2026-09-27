@@ -6,7 +6,7 @@ use sealantern_core::app_plugin::{CapabilityDispatchError, CapabilityInvocation}
 use sealantern_feature::app_plugin::{
     AsyncPluginManager, PluginInfo, PluginLoader, PluginManagerConfig,
 };
-use sealantern_infra::platform::get_app_data_dir;
+use sealantern_infra::platform::AppLayout;
 
 use super::{
     CoreCapabilityDispatcher, DefaultMarketGateway, PluginPolicyError, PluginPolicyStore,
@@ -81,7 +81,7 @@ pub struct CorePluginService {
 impl CorePluginService {
     /// 使用应用数据目录中的插件目录、私有数据和策略数据库构造服务。
     pub async fn open_default() -> Result<Self, PluginServiceError> {
-        let root = get_app_data_dir().join("plugins");
+        let root = AppLayout::native(None).plugins_dir();
         Self::open(&root, root.join("data"), root.join("plugin-state.sqlite")).await
     }
 

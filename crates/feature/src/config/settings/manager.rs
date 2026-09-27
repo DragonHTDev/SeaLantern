@@ -23,7 +23,8 @@ use tokio::sync::OwnedRwLockWriteGuard;
 use super::SettingsError;
 use crate::models::SettingsValidationError;
 use crate::models::{
-    AppSettings, CURRENT_CONFIG_VERSION, JavaInfo, PartialAppSettings, UpdateResult,
+    AppSettings, CURRENT_CONFIG_VERSION, InstanceRegistrySection, JavaInfo, PartialAppSettings,
+    UpdateResult,
 };
 use crate::observability;
 
@@ -178,6 +179,29 @@ impl SettingsManager {
     /// 获取当前设置的只读引用
     pub fn get(&self) -> &AppSettings {
         self.inner.get()
+    }
+
+    /// 在单个文件锁内更新实例注册表分区并持久化。
+    ///
+    /// 与偏好字段共用同一份文件与锁，但只触碰 `registry`：调用方改偏好
+    /// （`update_partial`）与本方法改注册表因此不会互相覆盖。
+    ///
+    /// `update` 在磁盘最新值上执行，返回是否需要写回；即使无需写回也返回
+    /// 锁内加载的最新注册表，供调用方同步内存快照。
+    pub async fn update_registry(
+        &mut self,
+        update: impl FnOnce(&mut InstanceRegistrySection) -> bool,
+    ) -> Result<InstanceRegistrySection, SettingsError> {
+        let updated = ConfigFile::update_persisted_if_changed(
+            &self.path,
+            AppSettings::default(),
+            false,
+            |settings| update(&mut settings.registry),
+        )
+        .await?;
+        let registry = updated.registry.clone();
+        self.inner.set(updated);
+        Ok(registry)
     }
 
     /// 更新持久化的 Java 检测结果。
@@ -499,6 +523,8 @@ fn upgrade_settings(settings: &mut AppSettings, _from_version: u32) {
 
 #[cfg(test)]
 mod tests {
+    use std::path::PathBuf;
+
     use super::{SETTINGS_FILE_NAME, SettingsManager, default_settings_path, is_legacy_format};
     use crate::config::{AppSettings, JavaInfo, PartialAppSettings};
     use crate::models::CURRENT_CONFIG_VERSION;
@@ -872,5 +898,75 @@ mod tests {
         assert_eq!(manager.get().theme, "dark");
         assert!(manager.get().developer_mode);
         assert_eq!(manager.get().config_version, CURRENT_CONFIG_VERSION);
+    }
+
+    #[tokio::test]
+    async fn registry_update_keeps_preference_fields_intact() {
+        let root = tempfile::tempdir().expect("temporary config directory should be created");
+        let path = root.path().join("settings.json");
+        let mut manager = SettingsManager::load(&path)
+            .await
+            .expect("settings should load");
+
+        manager
+            .update_partial(PartialAppSettings {
+                theme: Some("dark".to_string()),
+                ..PartialAppSettings::default()
+            })
+            .await
+            .expect("partial update should succeed");
+
+        let registry = manager
+            .update_registry(|registry| {
+                registry.main_resource_dir = Some(PathBuf::from("D:\\SeaLanternData"));
+                registry.trusted_instances.push("instance-a".to_string());
+                true
+            })
+            .await
+            .expect("registry update should succeed");
+
+        assert_eq!(registry.trusted_instances, vec!["instance-a".to_string()]);
+        assert_eq!(manager.get().theme, "dark", "registry updates must not touch preferences");
+
+        let reloaded = SettingsManager::load(&path)
+            .await
+            .expect("settings should reload");
+        assert_eq!(reloaded.get().theme, "dark");
+        assert_eq!(
+            reloaded.get().registry.main_resource_dir,
+            Some(PathBuf::from("D:\\SeaLanternData"))
+        );
+    }
+
+    #[tokio::test]
+    async fn partial_update_keeps_the_registry_intact() {
+        let root = tempfile::tempdir().expect("temporary config directory should be created");
+        let path = root.path().join("settings.json");
+        let mut manager = SettingsManager::load(&path)
+            .await
+            .expect("settings should load");
+
+        manager
+            .update_registry(|registry| {
+                registry.trusted_instances.push("keep-me".to_string());
+                true
+            })
+            .await
+            .expect("registry update should succeed");
+
+        manager
+            .update_partial(PartialAppSettings {
+                theme: Some("light".to_string()),
+                ..PartialAppSettings::default()
+            })
+            .await
+            .expect("partial update should succeed");
+
+        assert_eq!(manager.get().registry.trusted_instances, vec!["keep-me".to_string()]);
+
+        let reloaded = SettingsManager::load(&path)
+            .await
+            .expect("settings should reload");
+        assert_eq!(reloaded.get().registry.trusted_instances, vec!["keep-me".to_string()]);
     }
 }

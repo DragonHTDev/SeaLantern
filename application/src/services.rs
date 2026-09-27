@@ -251,7 +251,7 @@ impl AppServices {
         self.inner
             .plugin
             .get_or_try_init(move || async move {
-                let root = sealantern_infra::platform::get_app_data_dir().join("plugins");
+                let root = sealantern_infra::platform::AppLayout::native(None).plugins_dir();
                 CorePluginService::open_with_read_host(
                     &root,
                     root.join("data"),
