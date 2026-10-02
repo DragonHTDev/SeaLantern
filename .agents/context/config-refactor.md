@@ -120,9 +120,17 @@
 - `9ca4a59b` 7c：删 `settings/store.rs`/`registry.rs`/`models/server.rs`（`InstanceList`），清 re-export；`INSTANCES_FILE` 已无引用
 - 落地时偏离存档的细节：`trust.rs` 增 `register_extra_dir`/`unregister_extra_dir`（锁内 `dir_key` 去重，application 无 `dir_key` 访问权）；`DiscoveryReport` 无 Clone（orphans 在 classify 前算）；`DocumentStore::update` 返回 `Result<InstanceDocument>` 非 bool（找任务用 found 标志位）；`InstanceScan{layout, classified, orphan_trusted_ids}`；`rename` 写回 `instance.name`（规范化后的值）；cron `owner_document` 用 `find`（仅 trusted），`locate` 遍历 trusted dirs 按条目 id 定位；`update` 的 `draft.server_id` 与归属实例不一致→`InvalidInput`（不支持迁移归属）；`run_due`/`list`/`locate` 对打不开文档的实例跳过+warn（软失败）
 
-**分支事项**：用户指示——当前 main 上的重构提交将移至新分支，本地 main 恢复为 upstream/main。
+**分支事项**：用户指示——当前 main 上的重构提交将移至新分支，本地 main 恢复为 upstream/main。已落地：分支 `refactor/config-sl-json`，merge-base `a60cb25b`，rebase 至 `upstream/main`（`b7129f86`）；本地 `main` 已 `reset --hard upstream/main`。
 
-## 10. 阶段 7 之后的遗留
+## 10. 阶段 7 之后的后端补齐（2026-10-03）
 
-- 前端契约：`config.ts`/`server.ts` 与 `discovery()` 视图对齐；tauri 命令面 `serverPath` 用法复核；axum 端点未接发现视图。
-- `application/src/service/online.rs:448` 的 `get_app_data_dir` 用途未查；`backups/` 归属待定；infra `persistence/instance_registry.rs` SQLite 死代码（用户暂不动）。
+- `80ca17a3` 修复 `get_backup_dir`：rebase 后 `BackupManager::new` 需 `&AppLayout`，补 `layout` 参数并改 `CoreBackupService::directory` 走 `self.layout().await?`；其他备份命令一致。
+- `319f14b7` `default_run_path` 语义对齐：`CoreSystemService` 新增 `settings: Arc<CoreSettingsService>` 依赖，`default_run_path_inner` 从「`get_default_run_path()` 的资源根」改为「`layout.instances_dir()` 实例容器」；测试断言从 `SeaLantern` 改为 `instances`；`services.rs` 装配同步补 `settings`。
+- `28f007a0` 发现视图出口接线：`InstanceDiscoveryView` 补 `Serialize`/`Deserialize` + `snake_case`；Tauri 新增 `discover_instances`；Axum 新增 `GET /api/instances/discovery`；路由在 `router.rs` 挂载。
+- 验证：`cargo fmt --all -- --check`、`cargo clippy --workspace --all-targets -- -D warnings` 全绿；`cargo test --workspace -- --skip market::fetcher` 中 `service::proxy_monitoring::tests::monitor_starts_once_and_stops_cleanly` 单次抖动失败，与改动无关。
+- 前端 `config.ts`/`server.ts` 未动：HTTP 与 Tauri 命令面已就绪，前端侧接入留给下一步。
+
+## 11. 阶段 7 之后的遗留
+
+- 前端契约：`config.ts`/`server.ts` 与 `discovery()` 视图对齐；tauri 命令面 `serverPath` 用法复核；axum 端点已接 `/instances/discovery`，前端调用侧待补。
+- `application/src/service/online_tunnel.rs` 内 `get_app_data_dir` 用途未查（`online.rs` 已不存在，旧行号引用过时）；`backups/` 归属待定；infra `persistence/instance_registry.rs` SQLite 死代码（用户暂不动）。
