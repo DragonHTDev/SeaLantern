@@ -89,7 +89,7 @@ impl AppServices {
                 )),
                 download: Arc::new(CoreDownloadService::new()),
                 console: Arc::new(CoreConsoleService::new(instance.clone())),
-                cron: Arc::new(CoreCronTaskService::new(server.clone())),
+                cron: Arc::new(CoreCronTaskService::new(server.clone(), instance.clone())),
                 system: Arc::new(CoreSystemService::new(instance.clone(), server.clone())),
                 server: server.clone(),
                 server_config: Arc::new(CoreServerConfigService),

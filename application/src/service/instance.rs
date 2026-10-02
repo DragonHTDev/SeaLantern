@@ -103,6 +103,20 @@ impl CoreInstanceService {
             .find(|item| item.instance.document.id.as_str() == id.as_str())
     }
 
+    /// 受信任实例的目录列表，供实例文档级访问者（cron/备份等）按
+    /// `DocumentStore` 打开 `sl.json`。未标记/已忽略的实例不在列——
+    /// 它们的任务不应被自动调度执行。
+    pub(crate) async fn trusted_instance_dirs(&self) -> Result<Vec<PathBuf>, InstanceError> {
+        let scan = self.scan().await?;
+        Ok(scan
+            .classified
+            .instances
+            .iter()
+            .filter(|item| item.state == TrustState::Trusted)
+            .map(|item| item.instance.dir.clone())
+            .collect())
+    }
+
     /// 更新实例的最后启动时间（服务器进程成功拉起后调用）。
     ///
     /// 目标须是已发现的实例（`sl.json` 权威）；找不到时按 `NotFound` 上报。
