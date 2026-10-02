@@ -102,10 +102,13 @@ impl BackupService for CoreBackupService {
         &self,
         server_id: Option<&str>,
     ) -> Result<BackupDirectory, BackupServiceError> {
-        sealantern_feature::backup::get_backup_dir(server_id.map(str::to_owned))
-            .await
-            .map_err(BackupError::from)
-            .map_err(Into::into)
+        sealantern_feature::backup::get_backup_dir(
+            server_id.map(str::to_owned),
+            self.layout().await?,
+        )
+        .await
+        .map_err(BackupError::from)
+        .map_err(Into::into)
     }
 
     async fn create(&self, request: CreateBackupRequest) -> Result<BackupItem, BackupServiceError> {

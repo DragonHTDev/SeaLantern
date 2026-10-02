@@ -20,9 +20,12 @@ pub async fn get_backup_list(
 }
 
 /// 获取备份存储目录（根目录，以及传入服务器 ID 时的服务器备份子目录）
-pub async fn get_backup_dir(server_id: Option<String>) -> BackupResult<BackupDirectory> {
+pub async fn get_backup_dir(
+    server_id: Option<String>,
+    layout: AppLayout,
+) -> BackupResult<BackupDirectory> {
     tokio::task::spawn_blocking(move || {
-        let manager = BackupManager::new()?;
+        let manager = BackupManager::new(&layout)?;
         manager.get_backup_directory(server_id.as_deref())
     })
     .await?
