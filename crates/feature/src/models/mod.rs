@@ -3,7 +3,6 @@
 //! 领域服务、错误和仅供实现使用的传输结构继续由各自模块维护。
 
 mod download_link;
-mod server;
 mod task;
 
 pub use download_link::{BaseDownloadLinks, DownloadLink, TypeDownloadLinks};
@@ -14,7 +13,6 @@ pub use sealantern_contract::settings::{
     TUNNEL_LINK_LIFETIMES,
 };
 pub use sealantern_contract::settings::{NullablePatch, PartialAppSettings, UpdateResult};
-pub use server::InstanceList;
 pub use task::{TaskProgressResponse, TaskStatus};
 
 #[deprecated(note = "请使用 crate::download_link::LinkManager")]
