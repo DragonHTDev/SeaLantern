@@ -3,9 +3,11 @@
 //! 记录主资源目录、附加服务器目录与信任状态。实例本身的权威配置位于各服务器
 //! 目录内的 `sl.json`；本分区只保存「哪些目录被本机管理」这类机器级信息。
 
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 use serde::{Deserialize, Serialize};
+
+use super::app::SettingsValidationError;
 
 /// 实例注册表：主资源目录、附加服务器目录与信任状态。
 #[derive(Debug, Clone, Default, PartialEq, Eq, Serialize, Deserialize)]
@@ -22,6 +24,57 @@ pub struct InstanceRegistrySection {
 
     /// 用户明确忽略、不再提示的目录。
     pub ignored_dirs: Vec<PathBuf>,
+}
+
+impl InstanceRegistrySection {
+    /// 校验注册表分区的业务约束。
+    ///
+    /// 空路径条目与空实例标识会静默破坏目录匹配与信任判定，重复条目则
+    /// 暗示名单维护逻辑出错——两者都在写入前拒绝，与 `AppSettings::validate`
+    /// 保持同一校验风格。
+    pub fn validate(&self) -> Result<(), SettingsValidationError> {
+        if let Some(dir) = &self.main_resource_dir {
+            reject_empty_path("main_resource_dir", dir)?;
+        }
+        for dir in &self.extra_server_dirs {
+            reject_empty_path("extra_server_dirs", dir)?;
+        }
+        reject_duplicates(&self.extra_server_dirs, "extra_server_dirs")?;
+        for id in &self.trusted_instances {
+            if id.trim().is_empty() {
+                return Err(SettingsValidationError::new(
+                    "trusted_instances",
+                    "must not contain empty entries",
+                ));
+            }
+        }
+        reject_duplicates(&self.trusted_instances, "trusted_instances")?;
+        for dir in &self.ignored_dirs {
+            reject_empty_path("ignored_dirs", dir)?;
+        }
+        reject_duplicates(&self.ignored_dirs, "ignored_dirs")?;
+        Ok(())
+    }
+}
+
+/// 路径条目为空时拒绝（`Some("")` 或列表中的空项）。
+fn reject_empty_path(field: &'static str, path: &Path) -> Result<(), SettingsValidationError> {
+    if path.as_os_str().is_empty() {
+        return Err(SettingsValidationError::new(field, "must not contain empty entries"));
+    }
+    Ok(())
+}
+
+/// 列表中出现重复条目时拒绝。
+fn reject_duplicates<T: Eq + std::hash::Hash>(
+    entries: &[T],
+    field: &'static str,
+) -> Result<(), SettingsValidationError> {
+    let mut seen = std::collections::HashSet::with_capacity(entries.len());
+    if entries.iter().any(|entry| !seen.insert(entry)) {
+        return Err(SettingsValidationError::new(field, "must not contain duplicates"));
+    }
+    Ok(())
 }
 
 #[cfg(test)]

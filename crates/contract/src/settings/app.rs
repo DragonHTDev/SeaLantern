@@ -32,7 +32,7 @@ pub struct SettingsValidationError {
 }
 
 impl SettingsValidationError {
-    fn new(field: &'static str, message: &'static str) -> Self {
+    pub(crate) fn new(field: &'static str, message: &'static str) -> Self {
         Self { field, message }
     }
 
