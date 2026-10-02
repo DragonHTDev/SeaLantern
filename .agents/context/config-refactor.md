@@ -6,7 +6,7 @@
 ## 0. 当前状态快照
 
 - 分支：`main`，直接提交（用户指令，不走 PR）。
-- HEAD：`b4873e48`（阶段 5）。其前 `5b753508`（阶段 4）、`1a28c578`（审查清理批）、`5aff44dd`（阶段 3）、`d962d490`（阶段 2）、`62bcdb26`（阶段 1）、`a60cb25b`（#1064 基线）。
+- HEAD：`5e434c2f`（阶段 6 信任层）。其前 `22957eaf`（P3-5 布局出口）、`b4873e48`（阶段 5 发现层）、`5b753508`（阶段 4 实例文档）、`1a28c578`（审查清理批）、`5aff44dd`（阶段 3）、`d962d490`（阶段 2）、`62bcdb26`（阶段 1）、`a60cb25b`（#1064 基线）。
 - 工作区：干净。`1.txt` 是未跟踪文件，**不属于本任务，勿动**。
 - 版本号 1.4.0。
 
@@ -49,6 +49,8 @@
 | `1a28c578` 审查清理 | 删 `models/compatibility.rs`（三 deprecated 类型零使用）与 `resolve_data_dir`；`InstanceRegistrySection::validate()`（空路径/空 id/重复条目拒绝）+ `update_registry` 换 `try_update_persisted_if_changed` 带错误通道；设置文件名 `sea_lantern_settings.json`→`settings.json` + `load_default` 一次性 rename 旧文件（新文件存在则不动）                                                                                    |
 | `5b753508` 阶段4    | `config/instance/`：`document.rs`（`InstanceDocument`/`CoreSpec`/`StartupSpec`/`MemorySpec`/`InstanceCronEntry`/`DocumentStore`/`read_document_bytes`）+ `error.rs`（`DocumentError{Storage,UnsupportedSchemaVersion,AlreadyExists,Invalid}`）。`LocalLaunch::normalize_and_validate` 放开 `pub`                                                                                                                          |
 | `b4873e48` 阶段5    | `config/instance/discovery.rs`：`discover(layout,registry)->DiscoveryReport`（永不整体失败）；`DiscoveryProblem` 六变体（UnreadableDir/MissingDocument/InvalidDocument/UnsupportedSchemaVersion/DuplicateId 按id分组/DuplicateDirAlias）；`normalize_dir`/`dir_key` 纯词法规范化（pub(crate)，零 IO，供阶段6名单匹配复用）；先读 schema_version 再解析                                                                    |
+| `22957eaf` P3-5     | `SettingsManager::layout()` + `CoreSettingsService::layout()`；`CoreBackupService` 增 `settings` 依赖按调用解析布局；`feature::backup` commands/managers 改收 `AppLayout` 参数；`services.rs plugin()` 走设置服务；删零调用且写死 native(None) 的 `CorePluginService::open_default`                                                                                                                                       |
+| `5e434c2f` 阶段6    | `config/instance/trust.rs`：`classify(report,registry)->TrustReport`（三态 Trusted/Unmarked/Ignored，忽略优先；问题带 ignored 标记=涉及目录全被忽略）；原语 `trust_instance`/`untrust_instance`/`ignore_dir`/`unignore_dir`（走 update_registry、幂等、ignore 按 normalize_dir 存取）；`orphan_trusted_ids` 孤儿报告（只报告不自动清理）                                                                                  |
 
 栈 `#1058` rebase 已完成（3 冲突已解：instance.rs 保留 derive\_\*+resolve_instance_directory 两者；service/server_config.rs 删已迁走函数；handlers/server_config.rs 保留 PathBuf 版+`map_err(HttpError::from)?`），7 层连续性 OK，随后 7 个 PR 全部 `gh pr ready --undo` 转 draft（用户计划颠覆其内容，属历史包袱已关闭）。
 
@@ -56,8 +58,8 @@
 
 - ~~阶段 4~~ 已完成（`5b753508`）：`config/instance/`。`InstanceDocument` 字段比 D2 多（对齐 `InstanceSpec` 全集：`aliases`/`mc_version`/`created_at`/`last_started_at`/`server_metadata`）。`StartupSpec`：serde 名 `mode/target/jvm_args/java_path/memory_mib{min,max}/port/custom_*`；`target` 存相对路径，`to_spec(dir)` 换算回完整路径、`try_from_instance` strip_prefix。`InstanceCronEntry`=`CronTask` 去掉 `server_id`，`to_cron_task/from_cron_task` 双向转换已备好（供阶段 7 cron 接线）。`DocumentStore::load`：NotFound/损坏→Storage 上抛（发现层分类）、超前→UnsupportedSchemaVersion、落后→锁内迁移+备份；`update` 强制 schema_version+写前 validate；`create` 锁内独占（AlreadyExists）。`read_document_bytes` 已预留给发现层探测。
 - ~~阶段 5~~ 已完成（`b4873e48`）：`discovery.rs`。规范化为**词法档**（已定案，否决 canonicalize）：`normalize_dir`/`dir_key` 为 `pub(crate)`，阶段 6 的 `ignored_dirs`/`extra_server_dirs` 匹配**必须复用同一函数**。目录别名（符号链接等）走 `DuplicateId` 如实报告。`DiscoveryReport{instances,problems}`；`DiscoveredInstance{dir,origin(Managed/Extra),document}`。
-- **阶段 6** `trust.rs`：三态分类+`trust_instance`+名单垃圾回收（D15 配套规则）；**前置阻塞=P3-5**（必须先有 layout 出口，否则 main_resource_dir 可设后各服务写错目录）。
-- **阶段 7** 接线 `application/src/service/instance.rs`：换掉 `InstanceRegistry`（JSON 中心化）→ 新 discover/trust/save；同步改注释措辞（P3-4）；application 层组装 `AppLayout` 注入各服务。
+- ~~阶段 6~~ 已完成（`5e434c2f`）。注意语义：`ignore` 按目录、`trust` 按 id、忽略优先；孤儿清理只报告。
+- **阶段 7** 接线 `application/src/service/instance.rs`：换掉 `InstanceRegistry`（JSON 中心化）→ 新 discover/trust/save；同步改注释措辞（P3-4）；application 层组装 `AppLayout` 注入各服务。cron 服务（`application/src/service/cron.rs` 的 `cron_tasks.json`）改用 `sl.json` 内 `InstanceCronEntry`（转换已备好）。
 
 ## 5. 外部审查结论与本龙裁决（全部已处置）
 
@@ -92,6 +94,10 @@
 
 ## 8. 下一步（按当前优先级）
 
-1. **阶段 6 阻塞**：P3-5 `SettingsManager::layout()`（`path.parent()`+`registry.main_resource_dir` 现构造）+ 各服务（`BackupManager`/`CorePluginService`/`services.rs` 等）改为注入 `AppLayout`，不再各自 `AppLayout::native(None)`。
-2. **阶段 6**：`trust.rs` 三态分类 + `trust_instance` + 孤儿清理（D15）；`ignored_dirs` 匹配复用 `dir_key`。
-3. **阶段 7**：application 接线 + cron 服务改造（`InstanceCronEntry`/`to_cron_task` 已备好）+ `instance.rs:34` 注释。
+**阶段 7（接线，最大的一步）**——`application/src/service/instance.rs` 全部改用新层：
+
+- `CoreInstanceService`：`list`/`find`/`create`/`import_modpack`/`remove` 等从 `InstanceRegistry`（instances.json）切到 `discover()`+`classify()`+`DocumentStore::create`/`update`；`create`/`import` 成功后自动 `trust_instance`（D5）；删除走 `untrust_instance`；`derive_instance_directory`（UUID 子目录派生）保留；`resolve_instance_directory` 语义改为「在 instances/ 容器下」；`:34` 注释改为「读取既有文件」（P3-4）
+- `CoreCronTaskService`（`application/src/service/cron.rs`）：`cron_tasks.json` → 每实例 `sl.json` 的 `cron`（`InstanceCronEntry`↔`CronTask` 已备好）；调度器更新走 `DocumentStore::update`（防覆盖）
+- `CoreSettingsService` 增补：`update_registry`/`trust`/`ignore`/`extra_server_dirs` 管理的对外端口（前端决策项的落地接口）
+- `port/instance.rs` / 前端契约：报告「待处理实例 + 问题清单」（TrustReport 序列化面）
+- 处理孤儿信任记录的 UI/端口动作
