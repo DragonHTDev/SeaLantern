@@ -112,3 +112,17 @@
 - **7c** 收尾：`InstanceRegistry`/`InstanceStore`/`InstanceList`/`INSTANCES_FILE` 删除 + 注释 P3-4 + 前端 config.ts/server.ts 对齐 + tauri 命令面（`serverPath` 用法复核）
 
 **7a 错误映射约定**：`DocumentError::Storage`→`InstanceError::OperationFailed{source:FsError}`；`UnsupportedSchemaVersion`→`Internal("instance document schema version N is newer...")`；`AlreadyExists`→`AlreadyExists`；`Invalid`→`InvalidInput`；`DiscoveryProblem`：`MissingDocument`→走 legacy build 路径；`UnreadableDir`→`SourceUnavailable`；`InvalidDocument`/`UnsupportedSchemaVersion`→`InvalidInput`（详情走 tracing）。`SettingsError`→`Internal`。
+
+## 9. 阶段 7 完成情况（2026-10-02 收尾，三件套全绿）
+
+- `e98cc061` 7a：`contract::instance` DTO（`PendingInstance`/`DiscoveryProblemKind`/`DiscoveryProblemEntry`/`ClassifiedProblemEntry`）；`InstanceService::discovery()`+`InstanceDiscoveryView`；`CoreSettingsService::registry()`/`lock_manager()`/`with_settings_file()`；`CoreInstanceService` 重写为 `{settings: Arc<CoreSettingsService>}`（`scan()`=布局+名单→discover→classify→orphans；create=写 sl.json+register_extra_dir+unignore+trust；delete=untrust+ignore 不删文件；rename/update_path/update_last_started 走 `DocumentStore`；import_existing_server 走 probe_dir 双路径；import_modpack 缺省 run_path=layout.instances_dir()）；`from_inner(settings)` 签名变更；测试全部迁移 `with_settings`/`with_settings_file`
+- `1ed3422b` 7b：feature `cron_task/engine.rs`（纯逻辑：validate_draft/normalize_cron_expression/next_run_after/build_task/apply_update/run_task）+ `service.rs` 瘦身为单文件外壳；`CoreCronTaskService::with_parts(server, instance)`，任务存 `sl.json` 的 `doc.cron`（`DocumentStore::update` 锁内），`run_due` 遍历 trusted 目录；`error/cron.rs` 加 `OperationFailed{source:Box<dyn Error>}`
+- `9ca4a59b` 7c：删 `settings/store.rs`/`registry.rs`/`models/server.rs`（`InstanceList`），清 re-export；`INSTANCES_FILE` 已无引用
+- 落地时偏离存档的细节：`trust.rs` 增 `register_extra_dir`/`unregister_extra_dir`（锁内 `dir_key` 去重，application 无 `dir_key` 访问权）；`DiscoveryReport` 无 Clone（orphans 在 classify 前算）；`DocumentStore::update` 返回 `Result<InstanceDocument>` 非 bool（找任务用 found 标志位）；`InstanceScan{layout, classified, orphan_trusted_ids}`；`rename` 写回 `instance.name`（规范化后的值）；cron `owner_document` 用 `find`（仅 trusted），`locate` 遍历 trusted dirs 按条目 id 定位；`update` 的 `draft.server_id` 与归属实例不一致→`InvalidInput`（不支持迁移归属）；`run_due`/`list`/`locate` 对打不开文档的实例跳过+warn（软失败）
+
+**分支事项**：用户指示——当前 main 上的重构提交将移至新分支，本地 main 恢复为 upstream/main。
+
+## 10. 阶段 7 之后的遗留
+
+- 前端契约：`config.ts`/`server.ts` 与 `discovery()` 视图对齐；tauri 命令面 `serverPath` 用法复核；axum 端点未接发现视图。
+- `application/src/service/online.rs:448` 的 `get_app_data_dir` 用途未查；`backups/` 归属待定；infra `persistence/instance_registry.rs` SQLite 死代码（用户暂不动）。
