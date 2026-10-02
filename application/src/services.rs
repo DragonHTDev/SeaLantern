@@ -72,12 +72,12 @@ pub struct AppServicesInner {
 }
 
 impl AppServices {
-    /// 从既有实例构造句柄（供宿主装配和测试注入）。
+    /// 从既有设置服务构造句柄（供宿主装配和测试注入）。
     ///
-    /// 服务器进程服务共享同一实例服务句柄；下载/定时任务/系统资源服务自动构造。
-    pub fn from_inner(instance: CoreInstanceService) -> Self {
-        let instance = Arc::new(instance);
-        let settings = Arc::new(CoreSettingsService::new());
+    /// 实例服务依赖设置服务提供目录布局与名单，必须由同一份 `settings`
+    /// 派生；服务器进程服务共享同一实例服务句柄。
+    pub fn from_inner(settings: Arc<CoreSettingsService>) -> Self {
+        let instance = Arc::new(CoreInstanceService::new(settings.clone()));
         let server = Arc::new(CoreServerService::new(instance.clone(), settings.clone()));
         Self {
             inner: Arc::new(AppServicesInner {
@@ -113,8 +113,10 @@ impl AppServices {
     /// 每个宿主的 composition root 只应调用一次；这是一个为当前宿主创建
     /// 独立服务图的构造器，不是进程级共享入口。构造后的句柄应通过宿主
     /// 状态显式传给 handler / command，而不是在业务代码中重复构造。
+    ///
+    /// 设置服务先行就绪（实例目录布局/名单的读取来源），实例服务由此派生。
     pub async fn build() -> Result<Self, InstanceError> {
-        let services = Self::from_inner(CoreInstanceService::new().await?);
+        let services = Self::from_inner(Arc::new(CoreSettingsService::new()));
         services.start_background_services().await;
         Ok(services)
     }

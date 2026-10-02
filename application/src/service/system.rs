@@ -462,15 +462,13 @@ mod tests {
     /// 构造测试用系统服务（临时实例目录 + 独立 server 服务）。
     async fn test_service() -> CoreSystemService {
         let dir = tempdir().expect("create temp dir");
-        let instance = Arc::new(
-            CoreInstanceService::with_path(dir.path().join("instances.json"))
+        let manager =
+            sealantern_feature::config::SettingsManager::load(dir.path().join("settings.json"))
                 .await
-                .expect("create instance service"),
-        );
-        let server = Arc::new(CoreServerService::new(
-            instance.clone(),
-            Arc::new(crate::service::CoreSettingsService::new()),
-        ));
+                .expect("create settings manager");
+        let settings = Arc::new(crate::service::CoreSettingsService::with_manager(manager));
+        let instance = Arc::new(CoreInstanceService::new(settings.clone()));
+        let server = Arc::new(CoreServerService::new(instance.clone(), settings));
         CoreSystemService::new(instance, server)
     }
 
@@ -510,11 +508,12 @@ mod tests {
         let payload = vec![0x5A; 4096];
         std::fs::write(instance_dir.join("level.dat"), &payload).expect("write payload");
 
-        let instance_service = Arc::new(
-            CoreInstanceService::with_path(dir.path().join("instances.json"))
+        let manager =
+            sealantern_feature::config::SettingsManager::load(dir.path().join("settings.json"))
                 .await
-                .expect("create instance service"),
-        );
+                .expect("create settings manager");
+        let settings = Arc::new(crate::service::CoreSettingsService::with_manager(manager));
+        let instance_service = Arc::new(CoreInstanceService::new(settings));
         let spec = sealantern_core::instance::InstanceSpec {
             id: InstanceId::new("disk-test").expect("valid id"),
             name: "磁盘测试".into(),

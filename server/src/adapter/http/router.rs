@@ -104,7 +104,6 @@ pub fn build_router(services: AppServices, assets: FrontendAssets<'static>) -> R
 mod tests {
     use axum::body::Body;
     use axum::http::{Request, StatusCode};
-    use sealantern_application::service::CoreInstanceService;
     use tempfile::{TempDir, tempdir};
     use tower::ServiceExt;
 
@@ -112,11 +111,15 @@ mod tests {
 
     async fn test_router() -> (Router, TempDir) {
         let directory = tempdir().expect("create temporary directory");
-        let instance = CoreInstanceService::with_path(directory.path().join("instances.json"))
+        let settings = std::sync::Arc::new(
+            sealantern_application::service::CoreSettingsService::with_settings_file(
+                directory.path().join("settings.json"),
+            )
             .await
-            .expect("create instance service");
+            .expect("create settings service"),
+        );
         (
-            build_router(AppServices::from_inner(instance), FrontendAssets::empty()),
+            build_router(AppServices::from_inner(settings), FrontendAssets::empty()),
             directory,
         )
     }

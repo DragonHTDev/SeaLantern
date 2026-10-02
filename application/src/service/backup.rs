@@ -192,12 +192,12 @@ mod tests {
     /// 构造测试用备份服务（临时实例目录 + 独立 server/settings 服务）。
     async fn test_service() -> CoreBackupService {
         let dir = tempdir().expect("create temp dir");
-        let instance = Arc::new(
-            CoreInstanceService::with_path(dir.path().join("instances.json"))
+        let manager =
+            sealantern_feature::config::SettingsManager::load(dir.path().join("settings.json"))
                 .await
-                .expect("create instance service"),
-        );
-        let settings = Arc::new(crate::service::CoreSettingsService::new());
+                .expect("create settings manager");
+        let settings = Arc::new(crate::service::CoreSettingsService::with_manager(manager));
+        let instance = Arc::new(CoreInstanceService::new(settings.clone()));
         let server = Arc::new(CoreServerService::new(instance.clone(), settings.clone()));
         CoreBackupService::new(instance, server, settings)
     }

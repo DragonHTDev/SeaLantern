@@ -224,6 +224,53 @@ pub async fn unignore_dir(
         .await
 }
 
+/// 把目录登记为附加服务器目录（词法规范化后存储）。幂等。
+///
+/// 当实例位于主资源目录 `instances/` 之外时，由 `create`/`import` 的
+/// 调用方在信任登记前调用，使该目录在后续发现中被扫描。已在名单内
+/// （含不同写法）时不写回；不做文件系统 IO，纯名单维护。
+pub async fn register_extra_dir(
+    settings: &mut SettingsManager,
+    dir: &Path,
+) -> Result<InstanceRegistrySection, SettingsError> {
+    let normalized = normalize_dir(dir);
+    let key = dir_key(&normalized);
+    settings
+        .update_registry(|registry| {
+            if registry
+                .extra_server_dirs
+                .iter()
+                .any(|existing| dir_key(existing) == key)
+            {
+                return false;
+            }
+            registry.extra_server_dirs.push(normalized.clone());
+            true
+        })
+        .await
+}
+
+/// 把目录移出附加服务器名单（按规范化路径匹配）。幂等。
+///
+/// 供 `update_path` 在实例目录迁移后收回旧位置的登记；主资源目录
+/// `instances/` 下的实例从不登记，调用方无须为它们调用本原语。
+pub async fn unregister_extra_dir(
+    settings: &mut SettingsManager,
+    dir: &Path,
+) -> Result<InstanceRegistrySection, SettingsError> {
+    let normalized = normalize_dir(dir);
+    let key = dir_key(&normalized);
+    settings
+        .update_registry(|registry| {
+            let len = registry.extra_server_dirs.len();
+            registry
+                .extra_server_dirs
+                .retain(|existing| dir_key(existing) != key);
+            registry.extra_server_dirs.len() != len
+        })
+        .await
+}
+
 #[cfg(test)]
 mod tests {
     use std::path::PathBuf;
