@@ -20,12 +20,12 @@ use sealantern_contract::system::{
 use sealantern_infra::platform::{
     collect_cpu_info, collect_disks, collect_networks, collect_process_usage,
     collect_resource_snapshot, collect_system_info, cpu_brand_name, directory_size,
-    get_default_run_path, path_disk_capacity, process_count,
+    path_disk_capacity, process_count,
 };
 
 use crate::error::SystemError;
 use crate::port::{InstanceService, ServerService, SystemService};
-use crate::service::{CoreInstanceService, CoreServerService};
+use crate::service::{CoreInstanceService, CoreServerService, CoreSettingsService};
 
 /// CPU 采样间隔：`sysinfo` 的 CPU 使用率是增量值，需间隔两次采样取后一次。
 const CPU_SAMPLE_INTERVAL: Duration = Duration::from_millis(200);
@@ -34,6 +34,7 @@ const CPU_SAMPLE_INTERVAL: Duration = Duration::from_millis(200);
 pub struct CoreSystemService {
     instance_service: Arc<CoreInstanceService>,
     server_service: Arc<CoreServerService>,
+    settings: Arc<CoreSettingsService>,
 }
 
 impl CoreSystemService {
@@ -41,8 +42,13 @@ impl CoreSystemService {
     pub fn new(
         instance_service: Arc<CoreInstanceService>,
         server_service: Arc<CoreServerService>,
+        settings: Arc<CoreSettingsService>,
     ) -> Self {
-        Self { instance_service, server_service }
+        Self {
+            instance_service,
+            server_service,
+            settings,
+        }
     }
     /// 采集整机资源快照，返回应用层主错误。
     ///
@@ -176,16 +182,17 @@ impl CoreSystemService {
         })
     }
 
-    /// 解析默认运行路径，返回应用层主错误。
-    async fn default_run_path_inner() -> Result<String, SystemError> {
-        get_default_run_path()
-            .map(|path| path.to_string_lossy().to_string())
-            .map_err(|error| match error {
-                sealantern_infra::platform::PlatformError::ResolveDefaultRunPath { source } => {
-                    SystemError::DefaultRunPathUnresolved { source }
-                }
-                _ => SystemError::Unsupported,
-            })
+    /// 解析默认运行路径（主资源目录下的 `instances/` 容器），返回应用层主错误。
+    ///
+    /// 新实例缺省落进该容器：与服务层 `import_modpack` 的缺省 `run_path`
+    /// 语义保持一致（发现层按 `instances/` 子目录扫描受管实例）。
+    async fn default_run_path_inner(&self) -> Result<String, SystemError> {
+        let layout = self
+            .settings
+            .layout()
+            .await
+            .map_err(|error| SystemError::Internal { source: Box::new(error) })?;
+        Ok(layout.instances_dir().to_string_lossy().to_string())
     }
 
     /// 测试 IPv6 连通性，返回应用层主错误。
@@ -346,7 +353,7 @@ impl SystemService for CoreSystemService {
     }
 
     async fn default_run_path(&self) -> Result<String, SystemServiceError> {
-        Self::default_run_path_inner().await.map_err(Into::into)
+        self.default_run_path_inner().await.map_err(Into::into)
     }
 
     async fn test_ipv6_connectivity(&self) -> Result<Ipv6TestResult, SystemServiceError> {
@@ -468,8 +475,8 @@ mod tests {
                 .expect("create settings manager");
         let settings = Arc::new(crate::service::CoreSettingsService::with_manager(manager));
         let instance = Arc::new(CoreInstanceService::new(settings.clone()));
-        let server = Arc::new(CoreServerService::new(instance.clone(), settings));
-        CoreSystemService::new(instance, server)
+        let server = Arc::new(CoreServerService::new(instance.clone(), settings.clone()));
+        CoreSystemService::new(instance, server, settings)
     }
 
     #[tokio::test]
@@ -485,15 +492,16 @@ mod tests {
     }
 
     #[tokio::test]
-    async fn default_run_path_resolves_to_sea_lantern_dir() {
+    async fn default_run_path_resolves_to_instances_dir() {
         let service = test_service().await;
         let path = service.default_run_path().await.expect("default run path");
 
+        // 默认运行路径 = 主资源目录下的 `instances/` 容器（受管实例目录）。
         let name = std::path::Path::new(&path)
             .file_name()
             .expect("path should have a file name")
             .to_string_lossy();
-        assert_eq!(name, "SeaLantern", "unexpected default run dir: {name}");
+        assert_eq!(name, "instances", "unexpected default run dir: {name}");
     }
 
     /// 服务器页面的磁盘指标应为实例目录占用，而非整机磁盘汇总。
@@ -542,11 +550,9 @@ mod tests {
             .create(spec)
             .await
             .expect("create instance");
-        let server = Arc::new(CoreServerService::new(
-            instance_service.clone(),
-            Arc::new(crate::service::CoreSettingsService::new()),
-        ));
-        let service = CoreSystemService::new(instance_service, server);
+        let settings = Arc::new(crate::service::CoreSettingsService::new());
+        let server = Arc::new(CoreServerService::new(instance_service.clone(), settings.clone()));
+        let service = CoreSystemService::new(instance_service, server, settings);
 
         let usage = service
             .server_resource_usage(instance.id.as_str())
