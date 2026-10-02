@@ -16,7 +16,7 @@ use sealantern_contract::settings::{
     SettingsGroupInfo, SettingsOption, SettingsOverview, UpdateResult,
 };
 use sealantern_feature::config::SettingsManager;
-use sealantern_infra::platform::collect_system_fonts;
+use sealantern_infra::platform::{AppLayout, collect_system_fonts};
 
 use crate::error::SettingsError;
 use crate::port::SettingsService;
@@ -90,6 +90,15 @@ impl CoreSettingsService {
             })
             .await?;
         Ok(manager)
+    }
+
+    /// 当前生效的应用目录布局。
+    ///
+    /// 首次调用完成设置加载（含旧文件名迁移）；主资源目录取自
+    /// `registry.main_resource_dir`，未设置时与主配置目录同址。
+    /// 每次访问都从最新设置现构造，目录覆盖值的运行时改动立即生效。
+    pub async fn layout(&self) -> Result<AppLayout, SettingsError> {
+        Ok(self.manager().await?.lock().await.layout())
     }
 
     /// 加载持久化设置并同步代理运行时，供网络消费者建立启动屏障。

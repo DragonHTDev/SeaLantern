@@ -217,6 +217,21 @@ impl SettingsManager {
         self.inner.get()
     }
 
+    /// 由当前设置文件推导应用目录布局。
+    ///
+    /// 主配置目录取设置文件所在目录；主资源目录取
+    /// `registry.main_resource_dir`（`None` 时与配置目录同址）。
+    /// `AppLayout` 是纯数据、每次现构造，因此 `update_registry` 改动
+    /// 资源目录后调用方立即看到最新值，无需缓存失效处理。
+    pub fn layout(&self) -> AppLayout {
+        let config_dir = self
+            .path
+            .parent()
+            .map(Path::to_path_buf)
+            .unwrap_or_default();
+        AppLayout::new(config_dir, self.inner.get().registry.main_resource_dir.clone())
+    }
+
     /// 在单个文件锁内更新实例注册表分区并持久化。
     ///
     /// 与偏好字段共用同一份文件与锁，但只触碰 `registry`：调用方改偏好

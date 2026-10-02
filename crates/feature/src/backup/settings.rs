@@ -17,9 +17,12 @@ pub struct BackupSettingsManager {
 }
 
 impl BackupSettingsManager {
-    /// 创建新的备份设置管理器
-    pub fn new() -> BackupResult<Self> {
-        let settings_dir = AppLayout::native(None).config_file("backup_settings");
+    /// 按应用目录布局创建备份设置管理器。
+    ///
+    /// 备份设置属于主配置目录域（`config_file`），不随主资源目录
+    /// 覆盖值移动。
+    pub fn new(layout: &AppLayout) -> BackupResult<Self> {
+        let settings_dir = layout.config_file("backup_settings");
 
         Self::from_settings_dir(settings_dir)
     }

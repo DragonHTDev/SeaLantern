@@ -82,7 +82,11 @@ impl AppServices {
         Self {
             inner: Arc::new(AppServicesInner {
                 background_started: AtomicBool::new(false),
-                backup: Arc::new(CoreBackupService::new(instance.clone(), server.clone())),
+                backup: Arc::new(CoreBackupService::new(
+                    instance.clone(),
+                    server.clone(),
+                    settings.clone(),
+                )),
                 download: Arc::new(CoreDownloadService::new()),
                 console: Arc::new(CoreConsoleService::new(instance.clone())),
                 cron: Arc::new(CoreCronTaskService::new(server.clone())),
@@ -244,14 +248,22 @@ impl AppServices {
     }
 
     /// 获取应用插件服务；首次调用才打开策略数据库，避免阻塞常规启动路径。
+    ///
+    /// 插件根目录由设置服务按当前布局解析（主资源目录可经
+    /// `registry.main_resource_dir` 覆盖），不再写死默认数据目录。
     pub async fn plugin(&self) -> Result<&Arc<CorePluginService>, PluginServiceError> {
         let system = self.inner.system.clone();
         let instance = self.inner.instance.clone();
         let server = self.inner.server.clone();
+        let settings = self.inner.settings.clone();
         self.inner
             .plugin
             .get_or_try_init(move || async move {
-                let root = sealantern_infra::platform::AppLayout::native(None).plugins_dir();
+                let root = settings
+                    .layout()
+                    .await
+                    .map_err(|error| PluginServiceError::Initialization(error.to_string()))?
+                    .plugins_dir();
                 CorePluginService::open_with_read_host(
                     &root,
                     root.join("data"),

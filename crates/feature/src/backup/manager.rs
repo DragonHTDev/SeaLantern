@@ -40,9 +40,12 @@ pub struct BackupManager {
 }
 
 impl BackupManager {
-    /// 创建新的备份管理器
-    pub fn new() -> BackupResult<Self> {
-        Self::from_backups_dir(AppLayout::native(None).backups_dir())
+    /// 按应用目录布局创建备份管理器。
+    ///
+    /// 备份根目录取 `layout.backups_dir()`（主资源目录下），由调用方
+    /// 从当前设置解析后传入——资源目录覆盖值改动后立即生效。
+    pub fn new(layout: &AppLayout) -> BackupResult<Self> {
+        Self::from_backups_dir(layout.backups_dir())
     }
 
     fn from_backups_dir(backups_dir: PathBuf) -> BackupResult<Self> {
