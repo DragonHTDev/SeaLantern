@@ -6,7 +6,7 @@
 ## 0. 当前状态快照
 
 - 分支：`main`，直接提交（用户指令，不走 PR）。
-- HEAD：`5e434c2f`（阶段 6 信任层）。其前 `22957eaf`（P3-5 布局出口）、`b4873e48`（阶段 5 发现层）、`5b753508`（阶段 4 实例文档）、`1a28c578`（审查清理批）、`5aff44dd`（阶段 3）、`d962d490`（阶段 2）、`62bcdb26`（阶段 1）、`a60cb25b`（#1064 基线）。
+- HEAD：`1a6863c1`（probe_dir 抽取，阶段 7 第一步）。其前 `5e434c2f`（阶段 6）、`22957eaf`（P3-5）、`b4873e48`（阶段 5）、`5b753508`（阶段 4）、`1a28c578`（审查清理批）、`5aff44dd`（阶段 3）、`d962d490`（阶段 2）、`62bcdb26`（阶段 1）、`a60cb25b`（#1064 基线）。
 - 工作区：干净。`1.txt` 是未跟踪文件，**不属于本任务，勿动**。
 - 版本号 1.4.0。
 
@@ -94,10 +94,21 @@
 
 ## 8. 下一步（按当前优先级）
 
-**阶段 7（接线，最大的一步）**——`application/src/service/instance.rs` 全部改用新层：
+**阶段 7 已由用户拍板的决策（2026-10-02）**：
 
-- `CoreInstanceService`：`list`/`find`/`create`/`import_modpack`/`remove` 等从 `InstanceRegistry`（instances.json）切到 `discover()`+`classify()`+`DocumentStore::create`/`update`；`create`/`import` 成功后自动 `trust_instance`（D5）；删除走 `untrust_instance`；`derive_instance_directory`（UUID 子目录派生）保留；`resolve_instance_directory` 语义改为「在 instances/ 容器下」；`:34` 注释改为「读取既有文件」（P3-4）
-- `CoreCronTaskService`（`application/src/service/cron.rs`）：`cron_tasks.json` → 每实例 `sl.json` 的 `cron`（`InstanceCronEntry`↔`CronTask` 已备好）；调度器更新走 `DocumentStore::update`（防覆盖）
-- `CoreSettingsService` 增补：`update_registry`/`trust`/`ignore`/`extra_server_dirs` 管理的对外端口（前端决策项的落地接口）
-- `port/instance.rs` / 前端契约：报告「待处理实例 + 问题清单」（TrustReport 序列化面）
-- 处理孤儿信任记录的 UI/端口动作
+- `create`/`import_modpack`：`run_path` 显式给则用，**缺省进 `layout.instances_dir()/{uuid30}`**（`derive_instance_directory` 保留，默认 run_path=instances_dir）
+- `instances.json` 体系**直接删**：`settings/store.rs`+`settings/registry.rs`+`InstanceList`（models/server.rs 整个文件）+ `config/mod.rs` 与 `models/mod.rs`/`settings/mod.rs` 的 re-export；`INSTANCES_FILE` 常量删
+- `import_existing_server`：走 `probe_dir`（已落地 `1a6863c1`，`discovery.rs`）；有 sl.json→校验+冲突检测+trust；MissingDocument→旧路径 build_import_spec/plan 建文档+trust；其他 problem→错
+- 孤儿信任记录**随响应带出**：新增端口方法 `discovery()`（additive，`list` 签名不动）返回视图
+- `delete` 语义保持「移除」（不删文件）：`untrust_instance` + `ignore_dir(dir)`（原地 instances 目录变「未提示」；外来目录变「忽略」——与 D5 一致）
+- `update_path` 在新模型下目录即实例：验证目标目录存在且（probe 成功或本实例 dir 一致），否则 InvalidInput/NotFound；原样则 Ok
+- `update_last_started`：`DocumentStore::update` 改 `last_started_at_unix_secs`
+- `rename`：先 `Instance::new(doc.to_spec(dir)+新名)` 走领域校验再写回
+
+**阶段 7 执行顺序（子提交）**：
+
+- **7a**（进行中）：`port/instance.rs` 加 `discovery()` + 视图类型（`InstanceDiscoveryView{trusted:Vec<Instance>,pending:Vec<PendingEntry{dir,name,id>},problems:Vec<ProblemEntry{problem,ignored}>,orphan_trusted_ids}`，`#[serde(rename_all="snake_case")]`）；contract 加 `instance` DTO 模块（`PendingInstance`/`DiscoveryProblemKind` 纯 DTO，不含 core 类型）；`CoreSettingsService` 加 `registry()` 快照访问器 + `pub(crate) async fn lock_manager()`；`CoreInstanceService` 重写为 `{settings: Arc<CoreSettingsService>}`，`new(settings)` 同步、`with_settings` 测试注入；`services.rs` `from_inner` 中 instance 移到 settings 之后构造；测试点 `with_path`→`with_settings`（`CoreSettingsService::with_manager(SettingsManager::load(tmp.join("settings.json")))`，→ backup:184/console:131,171,188,207/system:466,513/server.rs:791,809,831）
+- **7b** cron：`CoreCronTaskService` 存储后端从 `FeatureCronTaskService`（`ConfigFile<CronTaskList>` 单文件）换为「按实例 `DocumentStore::update` 改 `doc.cron`」；调度循环保留；`list` 聚合所有 trusted 实例的 `cron`（`InstanceCronEntry::to_cron_task(server_id)`）；`feature/server/cron_task` 的任务状态机（next_run/record_attempt）保留但存储接缝重构——或在 application 内建薄层替代（视工作量定）
+- **7c** 收尾：`InstanceRegistry`/`InstanceStore`/`InstanceList`/`INSTANCES_FILE` 删除 + 注释 P3-4 + 前端 config.ts/server.ts 对齐 + tauri 命令面（`serverPath` 用法复核）
+
+**7a 错误映射约定**：`DocumentError::Storage`→`InstanceError::OperationFailed{source:FsError}`；`UnsupportedSchemaVersion`→`Internal("instance document schema version N is newer...")`；`AlreadyExists`→`AlreadyExists`；`Invalid`→`InvalidInput`；`DiscoveryProblem`：`MissingDocument`→走 legacy build 路径；`UnreadableDir`→`SourceUnavailable`；`InvalidDocument`/`UnsupportedSchemaVersion`→`InvalidInput`（详情走 tracing）。`SettingsError`→`Internal`。
