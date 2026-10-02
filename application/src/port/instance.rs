@@ -7,8 +7,10 @@ use sealantern_core::provisioning::{ImportExistingServerRequest, ImportModpackRe
 /// 实例发现视图：已信任实例 + 待处理实例 + 问题清单 + 孤儿信任记录。
 ///
 /// 由 `InstanceService::discovery` 返回，供宿主展示「哪些实例已纳入管理、
-/// 哪些目录等待用户处置、哪些信任记录已失去对应实例」。
-#[derive(Debug, Clone, Default)]
+/// 哪些目录等待用户处置、哪些信任记录已失去对应实例」。字段名对外序列化为
+/// `snake_case`，与契约 DTO 风格保持一致。
+#[derive(Debug, Clone, Default, serde::Serialize, serde::Deserialize)]
+#[serde(rename_all = "snake_case")]
 pub struct InstanceDiscoveryView {
     /// 已登记信任的实例（`list` 的同名集合）。
     pub trusted: Vec<Instance>,

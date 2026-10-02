@@ -24,8 +24,8 @@ use adapter::tauri::commands::cron::{
 };
 use adapter::tauri::commands::download::{download_cancel, download_create, download_query};
 use adapter::tauri::commands::instance::{
-    create_instance, delete_instance, get_instance, import_existing_server, import_modpack,
-    list_instances, rename_instance, update_instance_path,
+    create_instance, delete_instance, discover_instances, get_instance, import_existing_server,
+    import_modpack, list_instances, rename_instance, update_instance_path,
 };
 use adapter::tauri::commands::java::{java_detect, java_validate};
 use adapter::tauri::commands::logging::share_logs;
@@ -258,6 +258,7 @@ fn main() {
             //实例与服务器进程服务
             create_instance,
             delete_instance,
+            discover_instances,
             get_instance,
             import_existing_server,
             import_modpack,

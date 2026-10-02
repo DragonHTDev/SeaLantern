@@ -37,6 +37,7 @@ pub fn build_router(services: AppServices, assets: FrontendAssets<'static>) -> R
 
     let instance_routes = Router::new()
         .route("/instances", get(handlers::list_instances))
+        .route("/instances/discovery", get(handlers::discover_instances))
         .route("/instances", post(handlers::create_instance))
         .route("/instances/import-existing", post(handlers::import_existing_instance))
         .route("/instances/{id}", get(handlers::get_instance))
