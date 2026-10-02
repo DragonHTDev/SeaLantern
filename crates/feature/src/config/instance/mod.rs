@@ -9,7 +9,7 @@ mod error;
 mod trust;
 
 pub use discovery::{
-    DiscoveredInstance, DiscoveryOrigin, DiscoveryProblem, DiscoveryReport, discover,
+    DiscoveredInstance, DiscoveryOrigin, DiscoveryProblem, DiscoveryReport, discover, probe_dir,
 };
 pub use document::{
     CURRENT_SCHEMA_VERSION, CoreSpec, DOCUMENT_FILE_NAME, DocumentStore, InstanceCronEntry,

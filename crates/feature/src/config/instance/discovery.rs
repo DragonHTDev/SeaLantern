@@ -213,7 +213,7 @@ pub async fn discover(layout: &AppLayout, registry: &InstanceRegistrySection) ->
     report
 }
 
-/// 处理单个候选目录：去重 → 读 `sl.json` → 版本门禁 → 解析校验。
+/// 处理单个候选目录：去重 → 探查 → 归入实例列表或问题清单。
 async fn collect_candidate(
     dir: PathBuf,
     origin: DiscoveryOrigin,
@@ -229,72 +229,69 @@ async fn collect_candidate(
     }
     seen_dirs.insert(key, dir.clone());
 
+    match probe_dir(dir, origin).await {
+        Ok(instance) => report.instances.push(instance),
+        Err(problem) => report.problems.push(problem),
+    }
+}
+
+/// 探查单个目录是否为身份有效的实例。
+///
+/// 与发现层共用同一条管线：读 `sl.json` → 版本门禁 → 反序列化 → 结构校验。
+/// 不做目录去重、不看名单——调用方（`import_existing_server`、发现层）自行
+/// 决定 origin 与去重语义。每一步失败映射为对应的 [`DiscoveryProblem`]。
+pub async fn probe_dir(
+    dir: PathBuf,
+    origin: DiscoveryOrigin,
+) -> Result<DiscoveredInstance, DiscoveryProblem> {
+    let dir = normalize_dir(&dir);
     let document_path = DocumentStore::path_for(&dir);
-    let bytes = match read_document_bytes(&document_path).await {
-        Ok(bytes) => bytes,
-        Err(error) if is_not_found(&error) => {
-            report
-                .problems
-                .push(DiscoveryProblem::MissingDocument { dir });
-            return;
+    let bytes = read_document_bytes(&document_path).await.map_err(|error| {
+        if is_not_found(&error) {
+            DiscoveryProblem::MissingDocument { dir: dir.clone() }
+        } else {
+            DiscoveryProblem::InvalidDocument {
+                dir: dir.clone(),
+                message: error.to_string(),
+            }
         }
-        Err(error) => {
-            report
-                .problems
-                .push(DiscoveryProblem::InvalidDocument { dir, message: error.to_string() });
-            return;
-        }
-    };
+    })?;
 
     // 先读 schema_version：超前版本即使字段兼容也一律拒绝（D3）。
-    let raw: Value = match serde_json::from_slice(&bytes) {
-        Ok(value) => value,
-        Err(error) => {
-            report
-                .problems
-                .push(DiscoveryProblem::InvalidDocument { dir, message: error.to_string() });
-            return;
-        }
-    };
+    let raw: Value =
+        serde_json::from_slice(&bytes).map_err(|error| DiscoveryProblem::InvalidDocument {
+            dir: dir.clone(),
+            message: error.to_string(),
+        })?;
     match raw.get("schema_version").and_then(Value::as_u64) {
         None => {
-            report.problems.push(DiscoveryProblem::InvalidDocument {
+            return Err(DiscoveryProblem::InvalidDocument {
                 dir,
                 message: "missing or invalid schema_version".to_string(),
             });
-            return;
         }
         Some(found) if found > u64::from(CURRENT_SCHEMA_VERSION) => {
-            report
-                .problems
-                .push(DiscoveryProblem::UnsupportedSchemaVersion {
-                    dir,
-                    found: found.min(u64::from(u32::MAX)) as u32,
-                });
-            return;
+            return Err(DiscoveryProblem::UnsupportedSchemaVersion {
+                dir,
+                found: found.min(u64::from(u32::MAX)) as u32,
+            });
         }
         Some(_) => {}
     }
 
-    let document: InstanceDocument = match serde_json::from_slice(&bytes) {
-        Ok(document) => document,
-        Err(error) => {
-            report
-                .problems
-                .push(DiscoveryProblem::InvalidDocument { dir, message: error.to_string() });
-            return;
-        }
-    };
-    if let Err(error) = document.validate() {
-        report
-            .problems
-            .push(DiscoveryProblem::InvalidDocument { dir, message: error.to_string() });
-        return;
-    }
+    let document: InstanceDocument =
+        serde_json::from_slice(&bytes).map_err(|error| DiscoveryProblem::InvalidDocument {
+            dir: dir.clone(),
+            message: error.to_string(),
+        })?;
+    document
+        .validate()
+        .map_err(|error| DiscoveryProblem::InvalidDocument {
+            dir: dir.clone(),
+            message: error.to_string(),
+        })?;
 
-    report
-        .instances
-        .push(DiscoveredInstance { dir, origin, document });
+    Ok(DiscoveredInstance { dir, origin, document })
 }
 
 /// 判断底层错误是否为「文件不存在」。
