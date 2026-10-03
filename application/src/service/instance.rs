@@ -336,13 +336,19 @@ impl CoreInstanceService {
         match probe_dir(request.source_directory.clone(), origin).await {
             Ok(discovered) => {
                 // 目录已有合法 sl.json：核实归属后直接登记信任/忽略/附加名单。
+                // 去重只拦 Trusted——Unmarked/Ignored 目录经此转正（unignore+trust），
+                // 否则被忽略或待处理的实例将没有任何恢复入口。
                 if scan.classified.instances.iter().any(|item| {
-                    source_directories_equal(&item.instance.dir, &request.source_directory)
+                    item.state == TrustState::Trusted
+                        && source_directories_equal(&item.instance.dir, &request.source_directory)
                 }) {
                     return Err(InstanceError::SourceAlreadyImported);
                 }
+                // 同一 id 已在其它目录受信任：不同目录的同名实例才算冲突。
                 if scan.classified.instances.iter().any(|item| {
-                    item.instance.document.id.as_str() == discovered.document.id.as_str()
+                    item.state == TrustState::Trusted
+                        && item.instance.document.id.as_str() == discovered.document.id.as_str()
+                        && !source_directories_equal(&item.instance.dir, &request.source_directory)
                 }) {
                     return Err(InstanceError::AlreadyExists);
                 }
@@ -946,6 +952,54 @@ mod tests {
             .await;
 
         assert!(matches!(result, Err(InstanceServiceError::SourceUnavailable)));
+    }
+
+    #[tokio::test]
+    async fn import_existing_server_restores_ignored_instance() {
+        // 「移除但保留目录」的实例（untrust + ignore）必须能经 import 恢复：
+        // 去重只拦 Trusted，Ignored/Unmarked 目录走 unignore + trust 转正。
+        let root = tempfile::tempdir().expect("temp dir");
+        let service = test_service(root.path()).await;
+
+        let created = service
+            .create(sample_spec(root.path(), "revive"))
+            .await
+            .expect("create");
+        let dir = created.directory.clone();
+        service.delete(&created.id).await.expect("delete");
+        assert!(service.list().await.expect("list").is_empty());
+
+        let restored = service
+            .import_existing_server(import_request(dir, None))
+            .await
+            .expect("import should restore ignored instance");
+
+        // 身份沿用原 sl.json 的 id，名单状态回到 trusted。
+        assert_eq!(restored.id, created.id);
+        let listed = service.list().await.expect("list");
+        assert_eq!(listed.len(), 1);
+        assert_eq!(listed[0].id, created.id);
+        let discovery = service.discovery().await.expect("discovery");
+        assert_eq!(discovery.trusted.len(), 1);
+        assert!(discovery.pending.is_empty());
+        assert!(discovery.orphan_trusted_ids.is_empty());
+    }
+
+    #[tokio::test]
+    async fn import_existing_server_rejects_trusted_source_directory() {
+        // 已受信任的实例目录重复导入仍然被拒绝。
+        let root = tempfile::tempdir().expect("temp dir");
+        let service = test_service(root.path()).await;
+
+        let created = service
+            .create(sample_spec(root.path(), "registered"))
+            .await
+            .expect("create");
+
+        let result = service
+            .import_existing_server(import_request(created.directory.clone(), None))
+            .await;
+        assert_eq!(result, Err(InstanceServiceError::SourceAlreadyImported));
     }
 
     #[tokio::test]
