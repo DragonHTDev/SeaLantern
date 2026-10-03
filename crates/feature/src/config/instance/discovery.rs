@@ -22,7 +22,8 @@ use serde_json::Value;
 
 use crate::models::InstanceRegistrySection;
 
-use super::{CURRENT_SCHEMA_VERSION, DocumentStore, InstanceDocument, read_document_bytes};
+use super::document::read_document_bytes;
+use super::{CURRENT_SCHEMA_VERSION, DocumentStore, InstanceDocument};
 
 /// 实例来源。
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -578,9 +579,20 @@ mod tests {
 
     #[test]
     fn dir_key_matches_different_spellings_of_the_same_dir() {
-        assert_eq!(dir_key(Path::new("D:\\srv\\a")), dir_key(Path::new("D:/srv/a/")));
+        // `/` 写法跨平台等价：分隔符统一 + `..` 消解 + 尾部分隔符去除。
+        assert_eq!(dir_key(Path::new("srv/a")), dir_key(Path::new("srv//a/")));
+        assert_eq!(dir_key(Path::new("srv/x/../a")), dir_key(Path::new("srv/a")));
+
+        // 盘符前缀与大小写折叠是 Windows 专属语义。
         #[cfg(windows)]
-        assert_eq!(dir_key(Path::new("D:\\Srv\\A")), dir_key(Path::new("d:\\srv\\a")));
+        {
+            assert_eq!(dir_key(Path::new("D:\\srv\\a")), dir_key(Path::new("D:/srv/a/")));
+            assert_eq!(dir_key(Path::new("D:\\Srv\\A")), dir_key(Path::new("d:\\srv\\a")));
+        }
+
+        // 非 Windows 文件系统大小写敏感：不同大小写必须得到不同键。
+        #[cfg(not(windows))]
+        assert_ne!(dir_key(Path::new("srv/A")), dir_key(Path::new("srv/a")));
     }
 
     #[test]

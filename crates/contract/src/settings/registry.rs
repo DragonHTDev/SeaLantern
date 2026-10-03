@@ -20,9 +20,16 @@ pub struct InstanceRegistrySection {
     pub extra_server_dirs: Vec<PathBuf>,
 
     /// 已信任的实例标识。
+    ///
+    /// 信任绑定的是 `sl.json` 里的实例 id 而非目录：实例目录移动后信任关系
+    /// 跟随文档走，新目录凭同一 id 继承管理状态（信任的是"这个服务器"，
+    /// 不是"这个位置"）。
     pub trusted_instances: Vec<String>,
 
     /// 用户明确忽略、不再提示的目录。
+    ///
+    /// 忽略绑定的是目录路径而非实例 id：同一份目录拷贝到别处会被当作新的
+    /// 待处理实例重新提示（忽略的是"这个位置的目录"）。
     pub ignored_dirs: Vec<PathBuf>,
 }
 

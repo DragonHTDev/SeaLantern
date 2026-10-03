@@ -470,10 +470,16 @@ impl InstanceService for CoreInstanceService {
         &self,
         request: ImportExistingServerRequest,
     ) -> Result<Instance, InstanceServiceError> {
+        // 目录从 request 摘出后再移交 inner——失败日志需要带上源目录便于定位。
+        let source_directory = request.source_directory.clone();
         self.import_existing_server_inner(request)
             .await
             .map_err(|e| {
-                tracing::warn!(error = ?e, "import existing server failed");
+                tracing::warn!(
+                    directory = %source_directory.display(),
+                    error = ?e,
+                    "import existing server failed"
+                );
                 e.into()
             })
     }
@@ -1000,6 +1006,102 @@ mod tests {
             .import_existing_server(import_request(created.directory.clone(), None))
             .await;
         assert_eq!(result, Err(InstanceServiceError::SourceAlreadyImported));
+    }
+
+    /// 在指定目录写入一份合法的 `sl.json`（实例 id 固定为 `id`，目录/启动
+    /// 目标按 `dir` 重写），供「目录已有建档」的导入/发现场景使用。
+    async fn write_sl_json(dir: &Path, id: &str) {
+        let mut spec = sample_spec(dir.parent().expect("parent"), id);
+        spec.directory = dir.to_path_buf();
+        spec.launch.startup_target = Some(dir.join("server.jar"));
+        let instance = Instance::new(spec).expect("valid instance");
+        let document = InstanceDocument::try_from_instance(&instance).expect("document");
+        DocumentStore::create(DocumentStore::path_for(dir), document)
+            .await
+            .expect("write sl.json");
+    }
+
+    #[tokio::test]
+    async fn import_existing_server_rejects_duplicate_id_after_first_import() {
+        // 两个未登记目录携带同一实例 id：前者导入转正后，后者按 id 冲突拒绝。
+        // 去重只拦 Trusted——第二个目录的探查结果与首个实例同 id、不同目录，
+        // 命中 AlreadyExists（而不是被静默并入受管实例）。
+        let root = tempfile::tempdir().expect("temp dir");
+        let dir_a = root.path().join("external-a");
+        let dir_b = root.path().join("external-b");
+        write_sl_json(&dir_a, "dup-ext").await;
+        write_sl_json(&dir_b, "dup-ext").await;
+
+        let service = test_service(root.path()).await;
+
+        service
+            .import_existing_server(import_request(dir_a, None))
+            .await
+            .expect("first import should succeed");
+
+        let result = service
+            .import_existing_server(import_request(dir_b, None))
+            .await;
+        assert_eq!(result, Err(InstanceServiceError::AlreadyExists));
+    }
+
+    #[tokio::test]
+    async fn discovery_reports_duplicate_id_for_untrusted_dirs() {
+        // 同一实例 id 出现在 managed 容器下的两个目录（均未登记信任）：发现层
+        // 将整组目录移出 instances 并归入 problems——trusted/pending 都不含
+        // 冲突成员，orphan 名单也不应有（无人登记过该 id）。
+        let root = tempfile::tempdir().expect("temp dir");
+        let dir_a = root.path().join("instances").join("dup-a");
+        let dir_b = root.path().join("instances").join("dup-b");
+        write_sl_json(&dir_a, "dup-managed").await;
+        write_sl_json(&dir_b, "dup-managed").await;
+
+        let service = test_service(root.path()).await;
+
+        let discovery = service.discovery().await.expect("discovery");
+        assert!(discovery.trusted.is_empty());
+        assert!(discovery.pending.is_empty());
+        assert!(discovery.orphan_trusted_ids.is_empty());
+        let problem = discovery
+            .problems
+            .iter()
+            .find(|entry| entry.problem.kind == DiscoveryProblemKind::DuplicateId)
+            .expect("duplicate id problem should be reported");
+        assert_eq!(problem.problem.id.as_deref(), Some("dup-managed"));
+        assert_eq!(problem.problem.dirs.len(), 2);
+        assert!(problem.problem.dirs.contains(&dir_a));
+        assert!(problem.problem.dirs.contains(&dir_b));
+    }
+
+    #[tokio::test]
+    async fn discovery_reports_and_clears_orphan_trusted_ids() {
+        // 孤儿信任记录链路：登记了信任但磁盘上没有对应实例的 id 出现在
+        // discovery 视图的 orphan_trusted_ids；撤销登记后不再报告（孤儿
+        // 只报告不自动清理，清除动作由调用方决定——这里模拟用户处置）。
+        let root = tempfile::tempdir().expect("temp dir");
+        let service = test_service(root.path()).await;
+
+        // 直接登记一个不存在的实例 id（等价于实例目录被外部删除后残留）。
+        {
+            let mut manager = service.settings.lock_manager().await.expect("lock manager");
+            trust_instance(&mut manager, "gone-instance")
+                .await
+                .expect("trust should succeed");
+        }
+
+        let discovery = service.discovery().await.expect("discovery");
+        assert_eq!(discovery.orphan_trusted_ids, vec!["gone-instance".to_string()]);
+
+        // 处置：撤销信任后孤儿报告清空。
+        {
+            let mut manager = service.settings.lock_manager().await.expect("lock manager");
+            untrust_instance(&mut manager, "gone-instance")
+                .await
+                .expect("untrust should succeed");
+        }
+
+        let discovery = service.discovery().await.expect("discovery");
+        assert!(discovery.orphan_trusted_ids.is_empty());
     }
 
     #[tokio::test]

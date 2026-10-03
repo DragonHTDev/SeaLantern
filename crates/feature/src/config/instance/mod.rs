@@ -13,7 +13,7 @@ pub use discovery::{
 };
 pub use document::{
     CURRENT_SCHEMA_VERSION, CoreSpec, DOCUMENT_FILE_NAME, DocumentStore, InstanceCronEntry,
-    InstanceDocument, MemorySpec, StartupSpec, read_document_bytes,
+    InstanceDocument, MemorySpec, StartupSpec,
 };
 pub use error::DocumentError;
 pub use trust::{

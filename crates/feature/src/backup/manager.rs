@@ -82,6 +82,8 @@ impl BackupManager {
             _ => None,
         };
 
+        // 契约层字段是 String：路径经 to_string_lossy 有损转换。仅作展示/
+        // 定位用途，不可回填为 PathBuf（非 UTF-8 路径已被替换为 U+FFFD）。
         Ok(BackupDirectory {
             root_dir: self.backups_dir.to_string_lossy().into_owned(),
             server_dir: server_dir.map(|dir| dir.to_string_lossy().into_owned()),

@@ -531,8 +531,9 @@ fn migrate_document(
     Ok(())
 }
 
-/// 仅用于无锁读取探测（发现层先读字节判断是否为有效文档）。
-pub async fn read_document_bytes(path: &Path) -> Result<Vec<u8>, FsError> {
+/// 仅用于无锁读取探测（发现层先读字节判断是否为有效文档）；模块内部
+/// 细节，不外泄到 `config::instance` 的公共 API。
+pub(crate) async fn read_document_bytes(path: &Path) -> Result<Vec<u8>, FsError> {
     read_limited(path, DOCUMENT_READ_LIMIT).await
 }
 
@@ -644,6 +645,60 @@ mod tests {
         let result = DocumentStore::load(&path).await;
 
         assert!(matches!(result, Err(DocumentError::Storage { .. })));
+    }
+
+    #[tokio::test]
+    async fn load_migrates_an_older_schema_version_with_backup() {
+        // 版本落后的文档：load 锁内迁移到当前版本并先备份原文件。当前 v1
+        // 没有实际迁移步骤（仅置版本号），但迁移链路的「备份 + 原子写回 +
+        // 版本归位」行为必须可验证——否则新增真实迁移时没有回归锚点。
+        let root = tempfile::tempdir().expect("temporary directory should be created");
+        let path = DocumentStore::path_for(root.path());
+        let mut legacy = serde_json::to_value(base_document()).expect("document should serialize");
+        legacy["schema_version"] = 0.into();
+        tokio::fs::write(
+            &path,
+            serde_json::to_string_pretty(&legacy).expect("fixture should encode"),
+        )
+        .await
+        .expect("legacy document fixture should be written");
+
+        let store = DocumentStore::load(&path)
+            .await
+            .expect("load should migrate");
+
+        // 内存中的版本归位且文档仍有效。
+        assert_eq!(store.get().schema_version, CURRENT_SCHEMA_VERSION);
+        assert_eq!(store.get().id.as_str(), "instance-a");
+
+        // 磁盘已写回当前版本。
+        let persisted: serde_json::Value = serde_json::from_slice(
+            &tokio::fs::read(&path)
+                .await
+                .expect("document should be readable"),
+        )
+        .expect("document should be JSON");
+        assert_eq!(persisted["schema_version"], CURRENT_SCHEMA_VERSION);
+
+        // 迁移前留下了 `.bak-*` 备份，内容为原始 v0 文件。
+        let mut entries = tokio::fs::read_dir(root.path())
+            .await
+            .expect("directory should be readable");
+        let mut backups = Vec::new();
+        while let Some(entry) = entries.next_entry().await.expect("entry") {
+            let name = entry.file_name().to_string_lossy().into_owned();
+            if name.starts_with("sl.json.bak-") {
+                backups.push(entry.path());
+            }
+        }
+        assert_eq!(backups.len(), 1, "exactly one backup should be produced");
+        let backup: serde_json::Value = serde_json::from_slice(
+            &tokio::fs::read(&backups[0])
+                .await
+                .expect("backup should be readable"),
+        )
+        .expect("backup should be JSON");
+        assert_eq!(backup["schema_version"], 0);
     }
 
     #[tokio::test]
