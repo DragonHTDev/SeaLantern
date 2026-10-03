@@ -696,8 +696,15 @@ mod tests {
 
     #[tokio::test]
     async fn startup_target_must_be_relative() {
+        // is_absolute 的语义是平台相关的：Windows 需盘符前缀 + 根，Unix 只需
+        // 根——不存在单一字面对两平台都"绝对"，按编译期平台选字面量。
+        let absolute = if cfg!(windows) {
+            "C:\\server.jar"
+        } else {
+            "/server.jar"
+        };
         let mut document = base_document();
-        document.startup.target = Some(PathBuf::from("C:\\server.jar"));
+        document.startup.target = Some(PathBuf::from(absolute));
 
         let result = document.validate();
 

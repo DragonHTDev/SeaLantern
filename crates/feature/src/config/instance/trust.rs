@@ -330,7 +330,7 @@ mod tests {
             ],
             problems: Vec::new(),
         };
-        let registry = registry(&["a"], &["srv\\c\\"]);
+        let registry = registry(&["a"], &["srv/c/"]);
 
         let report = classify(report, &registry);
 
@@ -361,7 +361,7 @@ mod tests {
                 DiscoveryProblem::MissingDocument { dir: PathBuf::from("srv/show") },
             ],
         };
-        let registry = registry(&[], &["srv\\skip\\..\\skip"]);
+        let registry = registry(&[], &["srv/skip/../skip"]);
 
         let report = classify(report, &registry);
 
@@ -411,14 +411,14 @@ mod tests {
             .await
             .expect("settings should load");
 
-        ignore_dir(&mut settings, Path::new("srv\\a\\nested\\.."))
+        ignore_dir(&mut settings, Path::new("srv/a/nested/.."))
             .await
             .expect("ignore should succeed");
-        ignore_dir(&mut settings, Path::new("srv\\a"))
+        ignore_dir(&mut settings, Path::new("srv/a"))
             .await
             .expect("ignore should be idempotent");
 
-        assert_eq!(settings.get().registry.ignored_dirs, vec![PathBuf::from("srv\\a")]);
+        assert_eq!(settings.get().registry.ignored_dirs, vec![PathBuf::from("srv/a")]);
 
         unignore_dir(&mut settings, Path::new("srv/a"))
             .await

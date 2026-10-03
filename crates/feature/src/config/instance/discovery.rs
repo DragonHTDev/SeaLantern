@@ -557,14 +557,23 @@ mod tests {
 
     #[test]
     fn normalize_dir_collapses_redundant_segments() {
-        assert_eq!(
-            normalize_dir(Path::new("D:\\servers\\.\\a\\nested\\..\\")),
-            PathBuf::from("D:\\servers\\a")
-        );
+        // `/` 在两个平台上都是合法分隔符，作为跨平台断言基准。
+        assert_eq!(normalize_dir(Path::new("srv/./a/nested/../")), PathBuf::from("srv/a"));
         // 越过根目录的 .. 被丢弃
-        assert_eq!(normalize_dir(Path::new("D:\\..\\a")), PathBuf::from("D:\\a"));
+        assert_eq!(normalize_dir(Path::new("/../a")), PathBuf::from("/a"));
         // 相对路径开头的 .. 保留
-        assert_eq!(normalize_dir(Path::new("..\\a")), PathBuf::from("..\\a"));
+        assert_eq!(normalize_dir(Path::new("../a")), PathBuf::from("../a"));
+
+        // Windows 驱动器前缀 + 反斜杠写法的等价断言。
+        #[cfg(windows)]
+        {
+            assert_eq!(
+                normalize_dir(Path::new("D:\\servers\\.\\a\\nested\\..\\")),
+                PathBuf::from("D:\\servers\\a")
+            );
+            assert_eq!(normalize_dir(Path::new("D:\\..\\a")), PathBuf::from("D:\\a"));
+            assert_eq!(normalize_dir(Path::new("..\\a")), PathBuf::from("..\\a"));
+        }
     }
 
     #[test]
