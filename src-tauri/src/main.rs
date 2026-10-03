@@ -61,7 +61,8 @@ use adapter::tauri::commands::settings::{
     settings_overview, update_settings, update_settings_partial,
 };
 use adapter::tauri::commands::system::{
-    get_default_run_path, get_server_resource_usage, get_system_snapshot, test_ipv6_connectivity,
+    get_default_run_path, get_server_resource_usage, get_system_snapshot, get_temp_download_dir,
+    test_ipv6_connectivity,
 };
 use adapter::tauri::commands::update::check_update;
 use adapter::tauri::commands::update_install::{
@@ -252,6 +253,7 @@ fn main() {
             get_default_run_path,
             get_server_resource_usage,
             get_system_snapshot,
+            get_temp_download_dir,
             test_ipv6_connectivity,
             //日志分享能力（上传到 mclo.gs）
             share_logs,

@@ -154,6 +154,10 @@ const BACKUPS_DIR_NAME: &str = "backups";
 /// 实例容器目录名（主资源目录下）。
 const INSTANCES_DIR_NAME: &str = "instances";
 
+/// 临时下载目录名（主资源目录下）；与实例容器分离，避免下载暂存被实例
+/// 发现层误识别为实例目录。
+const TEMP_DIR_NAME: &str = "temp";
+
 /// 宿主插件目录名（主资源目录下）。
 const PLUGINS_DIR_NAME: &str = "plugins";
 
@@ -217,6 +221,14 @@ impl AppLayout {
     /// 服务器实例容器目录。
     pub fn instances_dir(&self) -> PathBuf {
         self.resource_dir.join(INSTANCES_DIR_NAME)
+    }
+
+    /// 临时下载目录（下载暂存等非实例数据）。
+    ///
+    /// 与 `instances_dir()` 同级但独立于实例容器：下载暂存目录若放进
+    /// `instances/`，会被实例发现层当成缺失 `sl.json` 的问题目录上报。
+    pub fn temp_dir(&self) -> PathBuf {
+        self.resource_dir.join(TEMP_DIR_NAME)
     }
 
     /// 宿主插件目录。

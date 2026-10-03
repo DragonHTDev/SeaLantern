@@ -68,6 +68,7 @@ pub fn build_router(services: AppServices, assets: FrontendAssets<'static>) -> R
     let system_routes = Router::new()
         .route("/system", get(handlers::system_snapshot))
         .route("/system/default-run-path", get(handlers::default_run_path))
+        .route("/system/temp-download-dir", get(handlers::temp_download_dir))
         .route("/system/servers/{instance_id}/usage", get(handlers::server_resource_usage));
 
     let cron_routes = Router::new()

@@ -195,6 +195,19 @@ impl CoreSystemService {
         Ok(layout.instances_dir().to_string_lossy().to_string())
     }
 
+    /// 解析临时下载目录（主资源目录下的 `temp/`），返回应用层主错误。
+    ///
+    /// 与 `default_run_path` 分离：临时文件不应进入 `instances/` 容器，
+    /// 否则会被实例发现层标记为缺失 `sl.json` 的问题目录。
+    async fn temp_download_dir_inner(&self) -> Result<String, SystemError> {
+        let layout = self
+            .settings
+            .layout()
+            .await
+            .map_err(|error| SystemError::Internal { source: Box::new(error) })?;
+        Ok(layout.temp_dir().to_string_lossy().to_string())
+    }
+
     /// 测试 IPv6 连通性，返回应用层主错误。
     ///
     /// 并发向若干公网 IPv6 字面地址发起短超时 TCP 连接，任一成功即视为支持；
@@ -354,6 +367,10 @@ impl SystemService for CoreSystemService {
 
     async fn default_run_path(&self) -> Result<String, SystemServiceError> {
         self.default_run_path_inner().await.map_err(Into::into)
+    }
+
+    async fn temp_download_dir(&self) -> Result<String, SystemServiceError> {
+        self.temp_download_dir_inner().await.map_err(Into::into)
     }
 
     async fn test_ipv6_connectivity(&self) -> Result<Ipv6TestResult, SystemServiceError> {
