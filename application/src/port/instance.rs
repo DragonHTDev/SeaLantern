@@ -51,6 +51,38 @@ pub trait InstanceService: Send + Sync {
     /// 更新实例目录路径。
     async fn update_path(&self, id: &InstanceId, path: &str) -> Result<(), InstanceServiceError>;
 
+    /// 把实例登记为受信任（`trusted_instances`）。幂等。
+    ///
+    /// 目标实例须是本次扫描中身份有效（`sl.json` 可解析且通过校验）的条目；
+    /// 实例不存在或文档无效时返回 [`InstanceServiceError::InstanceNotFound`] /
+    /// [`InstanceServiceError::InvalidInput`]。
+    async fn trust(&self, id: &InstanceId) -> Result<(), InstanceServiceError>;
+
+    /// 撤销实例的信任登记。幂等：未登记时视为成功。
+    async fn untrust(&self, id: &InstanceId) -> Result<(), InstanceServiceError>;
+
+    /// 把目录加入忽略名单（`ignored_dirs`），此后该目录不再作为待处理项提示。
+    ///
+    /// 目录不必是有效实例：被忽略的目录本就可能没有 `sl.json`。
+    /// 路径为空或不是目录时返回 [`InstanceServiceError::InvalidInput`]。
+    async fn ignore_dir(&self, path: &str) -> Result<(), InstanceServiceError>;
+
+    /// 把目录移出忽略名单。幂等：不在名单内时视为成功。
+    async fn unignore_dir(&self, path: &str) -> Result<(), InstanceServiceError>;
+
+    /// 为指定目录的实例重新分配 id（修复「同 id 出现在多个目录」的冲突）。
+    ///
+    /// **按目录定位**而非按 id：重复组里 id 是歧义的，发现层已把整组移出
+    /// 实例列表，`find`/`trust`/`delete` 等按 id 的命令都够不着它们。
+    ///
+    /// `new_id` 为 `None` 时自动生成 v4 UUID；只改 `sl.json` 的 id，不动信任
+    /// 名单——原 id 的信任自动归属「保留原 id 的那个目录」，本目录落回未标记态。
+    async fn reassign_id(
+        &self,
+        dir: &str,
+        new_id: Option<&str>,
+    ) -> Result<(), InstanceServiceError>;
+
     /// 导入已有服务器目录：校验源目录 → 去重 → 构建导入规格 → 供给计划 → 持久化登记。
     ///
     /// 返回薄契约错误（无主机路径载荷）；底层失败详情由实现层写入受控日志。
@@ -152,6 +184,35 @@ mod tests {
             _path: &str,
         ) -> Result<(), InstanceServiceError> {
             self.calls.lock().expect("lock").push("update_path");
+            Ok(())
+        }
+
+        async fn trust(&self, _id: &InstanceId) -> Result<(), InstanceServiceError> {
+            self.calls.lock().expect("lock").push("trust");
+            Ok(())
+        }
+
+        async fn untrust(&self, _id: &InstanceId) -> Result<(), InstanceServiceError> {
+            self.calls.lock().expect("lock").push("untrust");
+            Ok(())
+        }
+
+        async fn ignore_dir(&self, _path: &str) -> Result<(), InstanceServiceError> {
+            self.calls.lock().expect("lock").push("ignore_dir");
+            Ok(())
+        }
+
+        async fn unignore_dir(&self, _path: &str) -> Result<(), InstanceServiceError> {
+            self.calls.lock().expect("lock").push("unignore_dir");
+            Ok(())
+        }
+
+        async fn reassign_id(
+            &self,
+            _dir: &str,
+            _new_id: Option<&str>,
+        ) -> Result<(), InstanceServiceError> {
+            self.calls.lock().expect("lock").push("reassign_id");
             Ok(())
         }
 
