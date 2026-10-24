@@ -1344,185 +1344,186 @@ Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/aho-corasick
 License: MIT OR Unlicense
 
-7. alloc-no-stdlib@3.0.0
+7. alloc-no-stdlib@2.0.4
 
 Authors: Daniel Reiter Horn <danielrh@dropbox.com>
 Repository: https://github.com/dropbox/rust-alloc-no-stdlib
 License: BSD-3-Clause
 
-8. alloc-stdlib@0.3.0
+8. alloc-stdlib@0.2.4
 
 Authors: Daniel Reiter Horn <danielrh@dropbox.com>
 Repository: https://github.com/dropbox/rust-alloc-no-stdlib
 License: BSD-3-Clause
 
-9. ambient-authority@0.0.2
+9. allocator-api2@0.2.21
+
+Authors: Zakarum <zaq.dev@icloud.com>
+Repository: https://github.com/zakarumych/allocator-api2
+License: Apache-2.0 OR MIT
+
+10. ambient-authority@0.0.2
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/ambient-authority
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-10. android_system_properties@0.1.6
+11. android_system_properties@0.1.6
 
 Authors: Nicolas Silva <nical@fastmail.com>
 Repository: https://github.com/nical/android_system_properties
 License: Apache-2.0 OR MIT
 
-11. anyhow@1.0.104
+12. anyhow@1.0.104
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/anyhow
 License: Apache-2.0 OR MIT
 
-12. arbitrary@1.5.0
+13. arbitrary@1.4.2
 
 Authors: The Rust-Fuzz Project Developers|Nick Fitzgerald <fitzgen@gmail.com>|Manish Goregaokar <manishsmail@gmail.com>|Simonas Kazlauskas <arbitrary@kazlauskas.me>|Brian L. Troutwine <brian@troutwine.us>|Corey Farwell <coreyf@rwell.org>
 Repository: https://github.com/rust-fuzz/arbitrary/
 License: Apache-2.0 OR MIT
 
-13. arboard@3.7.0
-
-Repository: https://github.com/1Password/arboard
-License: Apache-2.0 OR MIT
-
-14. arc-swap@1.9.3
+14. arc-swap@1.9.2
 
 Authors: Michal 'vorner' Vaner <vorner@vorner.cz>
 Repository: https://github.com/vorner/arc-swap
 License: Apache-2.0 OR MIT
 
-15. arrayvec@0.7.8
+15. arrayref@0.3.9
+
+Authors: David Roundy <roundyd@physics.oregonstate.edu>
+Repository: https://github.com/droundy/arrayref
+License: BSD-2-Clause
+
+16. arrayvec@0.7.8
 
 Authors: bluss
 Repository: https://github.com/bluss/arrayvec
 License: Apache-2.0 OR MIT
 
-16. async_io_stream@0.3.3
+17. async_io_stream@0.3.3
 
 Authors: Naja Melan <najamelan@autistici.org>
 Repository: https://github.com/najamelan/async_io_stream
 License: Unlicense
 
-17. async-broadcast@0.7.2
+18. async-broadcast@0.7.2
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|Yoshua Wuyts <yoshuawuyts@gmail.com>|Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/smol-rs/async-broadcast
 License: Apache-2.0 OR MIT
 
-18. async-channel@2.5.0
+19. async-channel@2.5.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/async-channel
 License: Apache-2.0 OR MIT
 
-19. async-executor@1.14.0
+20. async-executor@1.14.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/async-executor
 License: Apache-2.0 OR MIT
 
-20. async-io@2.6.0
+21. async-io@2.6.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/async-io
 License: Apache-2.0 OR MIT
 
-21. async-lock@3.4.2
+22. async-lock@3.4.2
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/async-lock
 License: Apache-2.0 OR MIT
 
-22. async-process@2.5.0
+23. async-process@2.5.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/async-process
 License: Apache-2.0 OR MIT
 
-23. async-recursion@1.2.0
+24. async-recursion@1.1.1
 
 Authors: Robert Usher <266585+dcchut@users.noreply.github.com>
 Repository: https://github.com/dcchut/async-recursion
 License: Apache-2.0 OR MIT
 
-24. async-signal@0.2.14
+25. async-signal@0.2.14
 
 Authors: John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/async-signal
 License: Apache-2.0 OR MIT
 
-25. async-task@4.7.1
+26. async-task@4.7.1
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/async-task
 License: Apache-2.0 OR MIT
 
-26. async-trait@0.1.92
+27. async-trait@0.1.92
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/async-trait
 License: Apache-2.0 OR MIT
 
-27. atk-sys@0.18.2
+28. atk-sys@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-28. atk@0.18.2
+29. atk@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-29. atomic-waker@1.1.2
+30. atomic-waker@1.1.2
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|Contributors to futures-rs
 Repository: https://github.com/smol-rs/atomic-waker
 License: Apache-2.0 OR MIT
 
-30. atomicwrites@0.4.4
+31. atomicwrites@0.4.4
 
 Authors: Markus Unterwaditzer <markus-honeypot@unterwaditzer.net>
 Repository: https://github.com/untitaker/rust-atomicwrites
 License: MIT
 
-31. attohttpc@0.30.1
+32. attohttpc@0.30.1
 
 Authors: Simon Bernier St-Pierre <git.sbstp.ca@gmail.com>
 Repository: https://github.com/sbstp/attohttpc
 License: MPL-2.0
 
-32. autocfg@1.5.1
+33. autocfg@1.5.1
 
 Authors: Josh Stone <cuviper@gmail.com>
 Repository: https://github.com/cuviper/autocfg
 License: Apache-2.0 OR MIT
 
-33. backon@1.6.0
+34. backon@1.6.0
 
 Repository: https://github.com/Xuanwo/backon
 License: Apache-2.0
 
-34. base16ct@1.0.0
+35. base16ct@1.0.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-35. base64@0.21.7
+36. base64@0.21.7
 
 Authors: Alice Maz <alice@alicemaz.com>|Marshall Pierce <marshall@mpierce.org>
 Repository: https://github.com/marshallpierce/rust-base64
 License: Apache-2.0 OR MIT
 
-36. base64@0.22.1
-
-Authors: Marshall Pierce <marshall@mpierce.org>
-Repository: https://github.com/marshallpierce/rust-base64
-License: Apache-2.0 OR MIT
-
-37. base64@0.23.1
+37. base64@0.22.1
 
 Authors: Marshall Pierce <marshall@mpierce.org>
 Repository: https://github.com/marshallpierce/rust-base64
@@ -1552,13 +1553,13 @@ Authors: The Rust Project Developers
 Repository: https://github.com/bitflags/bitflags
 License: Apache-2.0 OR MIT
 
-42. bitflags@2.13.2
+42. bitflags@2.13.1
 
 Authors: The Rust Project Developers
 Repository: https://github.com/bitflags/bitflags
 License: Apache-2.0 OR MIT
 
-43. blake3@1.8.7
+43. blake3@1.8.6
 
 Authors: Jack O'Connor <oconnor663@gmail.com>|Samuel Neves
 Repository: https://github.com/BLAKE3-team/BLAKE3
@@ -1582,18 +1583,19 @@ Authors: Mads Marquart <mads@marquart.dk>
 Repository: https://github.com/madsmtm/objc2
 License: MIT
 
-47. blocking@1.7.0
+47. blocking@1.6.2
 
+Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/blocking
 License: Apache-2.0 OR MIT
 
-48. brotli-decompressor@6.0.1
+48. brotli-decompressor@5.0.3
 
 Authors: Daniel Reiter Horn <danielrh@dropbox.com>|The Brotli Authors
 Repository: https://github.com/dropbox/rust-brotli-decompressor
 License: BSD-3-Clause OR MIT
 
-49. brotli@9.0.0
+49. brotli@8.0.4
 
 Authors: Daniel Reiter Horn <danielrh@dropbox.com>|The Brotli Authors
 Repository: https://github.com/dropbox/rust-brotli
@@ -1622,4282 +1624,4158 @@ Authors: Lokathor <zefria@gmail.com>
 Repository: https://github.com/Lokathor/bytemuck
 License: Apache-2.0 OR MIT OR Zlib
 
-54. byteorder-lite@0.1.0
-
-Repository: https://github.com/image-rs/byteorder-lite
-License: MIT OR Unlicense
-
-55. byteorder@1.5.0
+54. byteorder@1.5.0
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/byteorder
 License: MIT OR Unlicense
 
-56. bytes@1.12.1
+55. bytes@1.12.1
 
 Authors: Carl Lerche <me@carllerche.com>|Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/tokio-rs/bytes
 License: MIT
 
-57. cairo-rs@0.18.5
+56. cairo-rs@0.18.5
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-58. cairo-sys-rs@0.18.2
+57. cairo-sys-rs@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-59. camino@1.2.6
+58. camino@1.2.5
 
 Authors: Without Boats <saoirse@without.boats>|Ashley Williams <ashley666ashley@gmail.com>|Steve Klabnik <steve@steveklabnik.com>|Rain <rain@sunshowers.io>
 Repository: https://github.com/camino-rs/camino
 License: Apache-2.0 OR MIT
 
-60. cap-primitives@4.0.3
+59. cap-primitives@4.0.2
 
 Authors: Dan Gohman <dev@sunfishcode.online>|Jakub Konka <kubkon@jakubkonka.com>
 Repository: https://github.com/bytecodealliance/cap-std
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-61. cap-std@4.0.3
+60. cap-std@4.0.2
 
 Authors: Dan Gohman <dev@sunfishcode.online>|Jakub Konka <kubkon@jakubkonka.com>
 Repository: https://github.com/bytecodealliance/cap-std
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-62. cargo_metadata@0.19.2
+61. cargo_metadata@0.19.2
 
 Authors: Oliver Schneider <git-spam-no-reply9815368754983@oli-obk.de>
 Repository: https://github.com/oli-obk/cargo_metadata
 License: MIT
 
-63. cargo_toml@1.0.1
+62. cargo_toml@0.22.3
 
 Authors: Kornel <kornel@geekhood.net>
 Repository: https://gitlab.com/lib.rs/cargo_toml
 License: Apache-2.0 OR MIT
 
-64. cargo-platform@0.1.9
+63. cargo-platform@0.1.9
 
 Repository: https://github.com/rust-lang/cargo
 License: Apache-2.0 OR MIT
 
-65. cc@1.10.0
+64. cc@1.4.3
 
 Repository: https://github.com/rust-lang/cc-rs
 License: Apache-2.0 OR MIT
 
-66. cesu8@1.1.0
+65. cesu8@1.1.0
 
 Authors: Eric Kidd <git@randomhacks.net>
 Repository: https://github.com/emk/cesu8-rs
 License: Apache-2.0 OR MIT
 
-67. cfb@0.14.0
+66. cfb@0.7.3
 
 Authors: Matthew D. Steele <mdsteele@alum.mit.edu>
 Repository: https://github.com/mdsteele/rust-cfb
 License: MIT
 
-68. cfg_aliases@0.2.2
+67. cfg_aliases@0.2.2
 
 Authors: Zicklag <zicklag@katharostech.com>
 Repository: https://github.com/katharostech/cfg_aliases
 License: MIT
 
-69. cfg-expr@0.15.8
+68. cfg-expr@0.15.8
 
 Authors: Embark <opensource@embark-studios.com>|Jake Shadle <jake.shadle@embark-studios.com>
 Repository: https://github.com/EmbarkStudios/cfg-expr
 License: Apache-2.0 OR MIT
 
-70. cfg-if@1.0.5
+69. cfg-if@1.0.4
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/rust-lang/cfg-if
 License: Apache-2.0 OR MIT
 
-71. chacha20@0.10.2
+70. chacha20@0.10.1
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/stream-ciphers
 License: Apache-2.0 OR MIT
 
-72. chrono@0.4.45
+71. chrono@0.4.45
 
 Repository: https://github.com/chronotope/chrono
 License: Apache-2.0 OR MIT
 
-73. cipher@0.4.4
+72. cipher@0.4.4
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-74. clipboard-win@5.4.3
-
-Authors: Douman <douman@gmx.se>
-Repository: https://github.com/DoumanAsh/clipboard-win
-License: BSL-1.0
-
-75. cmov@0.5.4
+73. cmov@0.5.4
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-76. cobs@0.3.0
+74. cobs@0.3.0
 
 Authors: Allen Welkie <>|James Munns <james@onevariable.com>
 Repository: https://github.com/jamesmunns/cobs.rs
 License: Apache-2.0 OR MIT
 
-77. combine@4.6.9
+75. combine@4.6.7
 
 Authors: Markus Westerlind <marwes91@gmail.com>
 Repository: https://github.com/Marwes/combine
 License: MIT
 
-78. concurrent-queue@2.5.0
+76. concurrent-queue@2.5.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|Taiki Endo <te316e89@gmail.com>|John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/concurrent-queue
 License: Apache-2.0 OR MIT
 
-79. const-oid@0.10.2
+77. const-oid@0.10.2
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-80. constant_time_eq@0.4.2
+78. constant_time_eq@0.4.2
 
 Authors: Cesar Eduardo Barros <cesarb@cesarb.eti.br>
 Repository: https://github.com/cesarb/constant_time_eq
 License: Apache-2.0 OR CC0-1.0 OR MIT-0
 
-81. convert_case@0.10.0
+79. convert_case@0.10.0
 
 Authors: rutrum <dave@rutrum.net>
 Repository: https://github.com/rutrum/convert-case
 License: MIT
 
-82. cookie_store@0.22.1
+80. cookie_store@0.22.1
 
 Authors: Patrick Fernie <patrick.fernie@gmail.com>
 Repository: https://github.com/pfernie/cookie_store
 License: Apache-2.0 OR MIT
 
-83. cookie@0.18.2
+81. cookie@0.18.2
 
 Authors: Sergio Benitez <sb@sergio.bz>|Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/SergioBenitez/cookie-rs
 License: Apache-2.0 OR MIT
 
-84. cordyceps@0.3.5
+82. cordyceps@0.3.5
 
 Authors: Eliza Weisman <eliza@elizas.website>
 Repository: https://github.com/hawkw/mycelium
 License: MIT
 
-85. core_detect@1.0.0
-
-Authors: Thom Chiovoloni <chiovolonit@gmail.com>
-Repository: https://github.com/thomcc/core_detect
-License: Apache-2.0 OR MIT
-
-86. core-foundation-sys@0.8.7
+83. core-foundation-sys@0.8.7
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/core-foundation-rs
 License: Apache-2.0 OR MIT
 
-87. core-foundation@0.10.1
+84. core-foundation@0.10.1
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/core-foundation-rs
 License: Apache-2.0 OR MIT
 
-88. core-foundation@0.9.4
+85. core-foundation@0.9.4
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/core-foundation-rs
 License: Apache-2.0 OR MIT
 
-89. core-graphics-types@0.1.3
+86. core-graphics-types@0.2.0
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/core-foundation-rs
 License: Apache-2.0 OR MIT
 
-90. core-graphics-types@0.2.0
+87. core-graphics@0.25.0
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/core-foundation-rs
 License: Apache-2.0 OR MIT
 
-91. core-graphics@0.23.2
-
-Authors: The Servo Project Developers
-Repository: https://github.com/servo/core-foundation-rs
-License: Apache-2.0 OR MIT
-
-92. core-graphics@0.25.0
-
-Authors: The Servo Project Developers
-Repository: https://github.com/servo/core-foundation-rs
-License: Apache-2.0 OR MIT
-
-93. core-text@20.1.0
-
-Authors: The Servo Project Developers
-Repository: https://github.com/servo/core-foundation-rs
-License: Apache-2.0 OR MIT
-
-94. cpufeatures@0.2.17
+88. cpufeatures@0.2.17
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-95. cpufeatures@0.3.1
+89. cpufeatures@0.3.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-96. crc32fast@1.5.3
+90. crc32fast@1.5.0
 
 Authors: Sam Rijs <srijs@airpost.net>|Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/srijs/rust-crc32fast
 License: Apache-2.0 OR MIT
 
-97. cron@0.12.1
+91. critical-section@1.2.0
+
+Repository: https://github.com/rust-embedded/critical-section
+License: Apache-2.0 OR MIT
+
+92. cron@0.12.1
 
 Authors: Zack Slayton <zack.slayton@gmail.com>
 Repository: https://github.com/zslayton/cron
 License: Apache-2.0 OR MIT
 
-98. crossbeam-channel@0.5.17
+93. crossbeam-channel@0.5.16
 
 Repository: https://github.com/crossbeam-rs/crossbeam
 License: Apache-2.0 OR MIT
 
-99. crossbeam-deque@0.8.8
+94. crossbeam-deque@0.8.7
 
 Repository: https://github.com/crossbeam-rs/crossbeam
 License: Apache-2.0 OR MIT
 
-100. crossbeam-epoch@0.9.21
+95. crossbeam-epoch@0.9.20
 
 Repository: https://github.com/crossbeam-rs/crossbeam
 License: Apache-2.0 OR MIT
 
-101. crossbeam-utils@0.8.23
+96. crossbeam-utils@0.8.22
 
 Repository: https://github.com/crossbeam-rs/crossbeam
 License: Apache-2.0 OR MIT
 
-102. crunchy@0.2.4
-
-Authors: Eira Fransham <jackefransham@gmail.com>
-Repository: https://github.com/eira-fransham/crunchy
-License: MIT
-
-103. crypto-common@0.1.7
+97. crypto-common@0.1.7
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-104. crypto-common@0.2.2
+98. crypto-common@0.2.2
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-105. cssparser-macros@0.6.1
+99. cssparser-macros@0.6.1
 
 Authors: Simon Sapin <simon.sapin@exyr.org>
 Repository: https://github.com/servo/rust-cssparser
 License: MPL-2.0
 
-106. cssparser-macros@0.7.1
+100. cssparser@0.36.0
 
 Authors: Simon Sapin <simon.sapin@exyr.org>
 Repository: https://github.com/servo/rust-cssparser
 License: MPL-2.0
 
-107. cssparser@0.36.0
-
-Authors: Simon Sapin <simon.sapin@exyr.org>
-Repository: https://github.com/servo/rust-cssparser
-License: MPL-2.0
-
-108. cssparser@0.37.0
-
-Authors: Simon Sapin <simon.sapin@exyr.org>
-Repository: https://github.com/servo/rust-cssparser
-License: MPL-2.0
-
-109. ctor@1.0.13
+101. ctor-proc-macro@0.0.7
 
 Authors: Matt Mastracci <matthew@mastracci.com>
-Repository: https://github.com/mmastrac/linktime
+Repository: https://github.com/mmastrac/rust-ctor
 License: Apache-2.0 OR MIT
 
-110. ctr@0.9.2
+102. ctor@0.8.0
+
+Authors: Matt Mastracci <matthew@mastracci.com>
+Repository: https://github.com/mmastrac/rust-ctor
+License: Apache-2.0 OR MIT
+
+103. ctr@0.9.2
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/block-modes
 License: Apache-2.0 OR MIT
 
-111. ctutils@0.4.5
+104. ctutils@0.4.2
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-112. curve25519-dalek-derive@0.1.1
+105. curve25519-dalek-derive@0.1.1
 
 Repository: https://github.com/dalek-cryptography/curve25519-dalek
 License: Apache-2.0 OR MIT
 
-113. curve25519-dalek@5.0.0
+106. curve25519-dalek@5.0.0
 
 Authors: Isis Lovecruft <isis@patternsinthevoid.net>|Henry de Valence <hdevalence@hdevalence.ca>
 Repository: https://github.com/dalek-cryptography/curve25519-dalek/tree/main/curve25519-dalek
 License: BSD-3-Clause
 
-114. darling_core@0.24.1
+107. darling_core@0.23.0
 
 Authors: Ted Driggs <ted.driggs@outlook.com>
 Repository: https://github.com/TedDriggs/darling
 License: MIT
 
-115. darling_macro@0.24.1
+108. darling_macro@0.23.0
 
 Authors: Ted Driggs <ted.driggs@outlook.com>
 Repository: https://github.com/TedDriggs/darling
 License: MIT
 
-116. darling@0.24.1
+109. darling@0.23.0
 
 Authors: Ted Driggs <ted.driggs@outlook.com>
 Repository: https://github.com/TedDriggs/darling
 License: MIT
 
-117. data-encoding-macro-internal@0.1.19
+110. data-encoding-macro-internal@0.1.19
 
 Repository: https://github.com/ia0/data-encoding
 License: MIT
 
-118. data-encoding-macro@0.1.21
+111. data-encoding-macro@0.1.21
 
 Repository: https://github.com/ia0/data-encoding
 License: MIT
 
-119. data-encoding@2.11.1
+112. data-encoding@2.11.1
 
 Repository: https://github.com/ia0/data-encoding
 License: MIT
 
-120. data-url@0.3.2
+113. data-url@0.3.2
 
 Authors: Simon Sapin <simon.sapin@exyr.org>
 Repository: https://github.com/servo/rust-url
 License: Apache-2.0 OR MIT
 
-121. dbus@0.9.12
+114. dbus@0.9.12
 
 Authors: David Henningsson <diwic@ubuntu.com>
 Repository: https://github.com/diwic/dbus-rs
 License: Apache-2.0 OR MIT
 
-122. defmt-macros@1.2.0
+115. defmt-macros@1.1.1
 
 Authors: The Knurling-rs developers
 Repository: https://github.com/knurling-rs/defmt
 License: Apache-2.0 OR MIT
 
-123. defmt-parser@1.1.0
+116. defmt-parser@1.0.0
 
 Authors: The Knurling-rs developers
 Repository: https://github.com/knurling-rs/defmt
 License: Apache-2.0 OR MIT
 
-124. defmt@1.2.0
+117. defmt@1.1.1
 
 Authors: The Knurling-rs developers
 Repository: https://github.com/knurling-rs/defmt
 License: Apache-2.0 OR MIT
 
-125. der@0.8.2
+118. der@0.8.1
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-126. deranged@0.5.9
+119. deranged@0.5.8
 
 Authors: Jacob Pratt <jacob@jhpratt.dev>
 Repository: https://github.com/jhpratt/deranged
 License: Apache-2.0 OR MIT
 
-127. derive_arbitrary@1.5.0
+120. derive_arbitrary@1.4.2
 
 Authors: The Rust-Fuzz Project Developers|Nick Fitzgerald <fitzgen@gmail.com>|Manish Goregaokar <manishsmail@gmail.com>|Andre Bogus <bogusandre@gmail.com>|Corey Farwell <coreyf@rwell.org>
 Repository: https://github.com/rust-fuzz/arbitrary
 License: Apache-2.0 OR MIT
 
-128. derive_more-impl@2.1.1
+121. derive_more-impl@2.1.1
 
 Authors: Jelte Fennema <github-tech@jeltef.nl>
 Repository: https://github.com/JelteF/derive_more
 License: MIT
 
-129. derive_more@2.1.1
+122. derive_more@2.1.1
 
 Authors: Jelte Fennema <github-tech@jeltef.nl>
 Repository: https://github.com/JelteF/derive_more
 License: MIT
 
-130. diatomic-waker@0.2.3
+123. diatomic-waker@0.2.3
 
 Authors: Asynchronics and contributors
 Repository: https://github.com/asynchronics/diatomic-waker
 License: Apache-2.0 OR MIT
 
-131. digest@0.10.7
+124. digest@0.10.7
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-132. digest@0.11.3
+125. digest@0.11.3
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-133. dirs-next@2.0.0
+126. dirs-next@2.0.0
 
 Authors: The @xdg-rs members
 Repository: https://github.com/xdg-rs/dirs
 License: Apache-2.0 OR MIT
 
-134. dirs-sys-next@0.1.2
+127. dirs-sys-next@0.1.2
 
 Authors: The @xdg-rs members
 Repository: https://github.com/xdg-rs/dirs/tree/master/dirs-sys
 License: Apache-2.0 OR MIT
 
-135. dirs-sys@0.4.1
+128. dirs-sys@0.4.1
 
 Authors: Simon Ochsenreither <simon@ochsenreither.de>
 Repository: https://github.com/dirs-dev/dirs-sys-rs
 License: Apache-2.0 OR MIT
 
-136. dirs-sys@0.5.0
+129. dirs-sys@0.5.0
 
 Authors: Simon Ochsenreither <simon@ochsenreither.de>
 Repository: https://github.com/dirs-dev/dirs-sys-rs
 License: Apache-2.0 OR MIT
 
-137. dirs@5.0.1
+130. dirs@5.0.1
 
 Authors: Simon Ochsenreither <simon@ochsenreither.de>
 Repository: https://github.com/soc/dirs-rs
 License: Apache-2.0 OR MIT
 
-138. dirs@6.0.0
+131. dirs@6.0.0
 
 Authors: Simon Ochsenreither <simon@ochsenreither.de>
 Repository: https://github.com/soc/dirs-rs
 License: Apache-2.0 OR MIT
 
-139. dirs@7.0.0
-
-Authors: Simon Ochsenreither <simon@ochsenreither.de>
-Repository: https://codeberg.org/dirs/dirs-rs
-License: Apache-2.0 OR MIT
-
-140. dispatch2@0.3.1
+132. dispatch2@0.3.1
 
 Authors: Mads Marquart <mads@marquart.dk>|Mary <mary@mary.zone>
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-141. displaydoc@0.2.7
+133. displaydoc@0.2.7
 
 Authors: Jane Lusby <jlusby@yaah.dev>
 Repository: https://github.com/yaahc/displaydoc
 License: Apache-2.0 OR MIT
 
-142. dlib@0.5.3
-
-Authors: Elinor Berger <elinor@safaradeg.net>
-Repository: https://github.com/elinorbgr/dlib
-License: MIT
-
-143. dlopen2_derive@0.4.3
+134. dlopen2_derive@0.4.3
 
 Authors: Szymon Wieloch <szymon.wieloch@gmail.com>|OpenByte <development.openbyte@gmail.com>
 Repository: https://github.com/OpenByteDev/dlopen2
 License: MIT
 
-144. dlopen2@0.8.2
+135. dlopen2@0.8.2
 
 Authors: Szymon Wieloch <szymon.wieloch@gmail.com>|Ahmed Masud <ahmed.masud@saf.ai>|OpenByte <development.openbyte@gmail.com>
 Repository: https://github.com/OpenByteDev/dlopen2
 License: MIT
 
-145. document-features@0.2.12
+136. document-features@0.2.12
 
 Authors: Slint Developers <info@slint.dev>
 Repository: https://github.com/slint-ui/document-features
 License: Apache-2.0 OR MIT
 
-146. dom_query@0.27.0
+137. dom_query@0.27.0
 
 Authors: niklak <morgenpurple@gmail.com>|importcjj <importcjj@gmail.com>
 Repository: https://github.com/niklak/dom_query
 License: MIT
 
-147. dom_query@0.28.0
-
-Authors: niklak <morgenpurple@gmail.com>|importcjj <importcjj@gmail.com>
-Repository: https://github.com/niklak/dom_query
-License: MIT
-
-148. dpi@0.1.2
+138. dpi@0.1.2
 
 Repository: https://github.com/rust-windowing/winit
 License: Apache-2.0 AND MIT
 
-149. dtoa-short@0.3.5
+139. dtoa-short@0.3.5
 
 Authors: Xidorn Quan <me@upsuper.org>
 Repository: https://github.com/upsuper/dtoa-short
 License: MPL-2.0
 
-150. dtoa@1.0.11
+140. dtoa@1.0.11
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/dtoa
 License: Apache-2.0 OR MIT
 
-151. dunce@1.0.5
+141. dtor-proc-macro@0.0.6
+
+Authors: Matt Mastracci <matthew@mastracci.com>
+Repository: https://github.com/mmastrac/rust-ctor
+License: Apache-2.0 OR MIT
+
+142. dtor@0.3.0
+
+Authors: Matt Mastracci <matthew@mastracci.com>
+Repository: https://github.com/mmastrac/rust-ctor
+License: Apache-2.0 OR MIT
+
+143. dunce@1.0.5
 
 Authors: Kornel <kornel@geekhood.net>
 Repository: https://gitlab.com/kornelski/dunce
 License: Apache-2.0 OR CC0-1.0 OR MIT-0
 
-152. dwrote@0.11.5
-
-Authors: The Servo Project Developers|Vladimir Vukicevic <vladimir@pobox.com>
-Repository: https://github.com/servo/dwrote-rs
-License: MPL-2.0
-
-153. dyn-clone@1.0.20
+144. dyn-clone@1.0.20
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/dyn-clone
 License: Apache-2.0 OR MIT
 
-154. ed25519-dalek@3.0.0
+145. ed25519-dalek@3.0.0
 
 Authors: isis lovecruft <isis@patternsinthevoid.net>|Tony Arcieri <bascule@gmail.com>|Michael Rosenberg <michael@mrosenberg.pub>
 Repository: https://github.com/dalek-cryptography/curve25519-dalek/tree/main/ed25519-dalek
 License: BSD-3-Clause
 
-155. ed25519@3.0.0
+146. ed25519@3.0.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/signatures
 License: Apache-2.0 OR MIT
 
-156. either@1.19.0
+147. either@1.17.0
 
 Repository: https://github.com/rayon-rs/either
 License: Apache-2.0 OR MIT
 
-157. embed_plist@1.2.2
+148. embed_plist@1.2.2
 
 Authors: Nikolai Vazquez <hello@nikolaivazquez.com>
 Repository: https://github.com/nvzqz/embed-plist-rs
 License: Apache-2.0 OR MIT
 
-158. embed-resource@3.0.12
+149. embed-resource@3.0.11
 
-Authors: наб <nabijaczleweli@nabijaczleweli.xyz>|Cat Plus Plus <piotrlegnica@piotrl.pl>|Liigo <liigo@qq.com>|azyobuzin <azyobuzin@users.sourceforge.jp>|Peter Atashian <retep998@gmail.com>|pravic <ehysta@gmail.com>|Gabriel Majeri <gabriel.majeri6@gmail.com>|SonnyX|Johan Andersson <repi@repi.se>|Jordan Poles <jpdev.noreply@gmail.com>|MSxDOS <melcodos@gmail.com>|Jim McGrath <jimmc2@gmail.com>|roblabla <unfiltered@roblab.la>|Jasper Bekkers <jasper@traverseresearch.nl>|Richard Markiewicz <rmarkiewicz@devolutions.net>|Emerson de Freitas Barcelos <emersonfxbx@gmail.com>|Li Keqing <me@kaze.ai>|Alexis Bourget <alexis.bourget@gmail.com>|Michael Farrell <micolous+git@gmail.com>|Jacob Okamoto <oko@oko.io>|Marijn Suijten <marijn@traverseresearch.nl>|Lucas Nogueira <lucas@tauri.app>|CharlesChen0823 <yongchen0823@gmail.com>|Daniel Schaefer <dhs@frame.work>|Rene Leonhardt|ssrlive|Kan-Ru Chen <kanru@kanru.info>|Tony <legendmastertony@gmail.com>|Berrysoft <Strawberry_Str@hotmail.com>|Marcus Ahlberg <marcus.ahlberg@kvaser.com>|Thomas Eizinger <thomas@eizinger.io>
+Authors: наб <nabijaczleweli@nabijaczleweli.xyz>|Cat Plus Plus <piotrlegnica@piotrl.pl>|Liigo <liigo@qq.com>|azyobuzin <azyobuzin@users.sourceforge.jp>|Peter Atashian <retep998@gmail.com>|pravic <ehysta@gmail.com>|Gabriel Majeri <gabriel.majeri6@gmail.com>|SonnyX|Johan Andersson <repi@repi.se>|Jordan Poles <jpdev.noreply@gmail.com>|MSxDOS <melcodos@gmail.com>|Jim McGrath <jimmc2@gmail.com>|roblabla <unfiltered@roblab.la>|Jasper Bekkers <jasper@traverseresearch.nl>|Richard Markiewicz <rmarkiewicz@devolutions.net>|Emerson de Freitas Barcelos <emersonfxbx@gmail.com>|Li Keqing <me@kaze.ai>|Alexis Bourget <alexis.bourget@gmail.com>|Michael Farrell <micolous+git@gmail.com>|Jacob Okamoto <oko@oko.io>|Marijn Suijten <marijn@traverseresearch.nl>|Lucas Nogueira <lucas@tauri.app>|CharlesChen0823 <yongchen0823@gmail.com>|Daniel Schaefer <dhs@frame.work>|Rene Leonhardt|ssrlive|Kan-Ru Chen <kanru@kanru.info>|Tony <legendmastertony@gmail.com>|Berrysoft <Strawberry_Str@hotmail.com>|Marcus Ahlberg <marcus.ahlberg@kvaser.com>
 Repository: https://github.com/nabijaczleweli/rust-embed-resource
 License: MIT
 
-159. embedded-io@0.4.0
+150. embedded-io@0.4.0
 
 Repository: https://github.com/embassy-rs/embedded-io
 License: Apache-2.0 OR MIT
 
-160. embedded-io@0.6.1
+151. embedded-io@0.6.1
 
 Repository: https://github.com/rust-embedded/embedded-hal
 License: Apache-2.0 OR MIT
 
-161. encoding_rs@0.8.42
+152. encoding_rs@0.8.35
 
 Authors: Henri Sivonen <hsivonen@hsivonen.fi>
 Repository: https://github.com/hsivonen/encoding_rs
 License: (Apache-2.0 OR MIT) AND BSD-3-Clause
 
-162. endi@1.1.1
+153. endi@1.1.1
 
 Authors: Zeeshan Ali Khan <zeenix@gmail.com>
 Repository: https://github.com/zeenix/endi
 License: MIT
 
-163. enum-assoc@1.4.1
+154. enum-assoc@1.4.0
 
 Authors: Griffin O'Neill <gsoneill1003@gmail.com>
 Repository: https://github.com/Eolu/enum-assoc
 License: Apache-2.0 OR MIT
 
-164. enum-primitive-derive@0.2.2
+155. enum-primitive-derive@0.2.2
 
 Authors: Doug Goldstein <cardoe@cardoe.com>
 Repository: https://gitlab.com/cardoe/enum-primitive-derive.git
 License: MIT
 
-165. enumflags2_derive@0.7.12
+156. enumflags2_derive@0.7.12
 
 Authors: maik klein <maikklein@googlemail.com>|Maja Kądziołka <maya@compilercrim.es>
 Repository: https://github.com/meithecatte/enumflags2
 License: Apache-2.0 OR MIT
 
-166. enumflags2@0.7.12
+157. enumflags2@0.7.12
 
 Authors: maik klein <maikklein@googlemail.com>|Maja Kądziołka <maya@compilercrim.es>
 Repository: https://github.com/meithecatte/enumflags2
 License: Apache-2.0 OR MIT
 
-167. env_home@0.1.0
+158. env_home@0.1.0
 
 Authors: Peter Tripp <peter.tripp@gmail.com>
 Repository: https://github.com/notpeter/env-home
 License: Apache-2.0 OR MIT
 
-168. equivalent@1.0.3
+159. equivalent@1.0.2
 
 Repository: https://github.com/indexmap-rs/equivalent
 License: Apache-2.0 OR MIT
 
-169. erased-serde@0.4.10
+160. erased-serde@0.4.10
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/erased-serde
 License: Apache-2.0 OR MIT
 
-170. errno@0.3.14
+161. errno@0.3.14
 
 Authors: Chris Wong <lambda.fairy@gmail.com>|Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/lambda-fairy/rust-errno
 License: Apache-2.0 OR MIT
 
-171. error-code@3.4.0
-
-Authors: Douman <douman@gmx.se>
-Repository: https://github.com/DoumanAsh/error-code
-License: BSL-1.0
-
-172. event-listener-strategy@0.5.4
+162. event-listener-strategy@0.5.4
 
 Authors: John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/event-listener-strategy
 License: Apache-2.0 OR MIT
 
-173. event-listener@5.4.2
+163. event-listener@5.4.2
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/event-listener
 License: Apache-2.0 OR MIT
 
-174. everything-sdk-sys@0.0.3+2
+164. everything-sdk-sys@0.0.3+2
 
 Authors: owtotwo <owtotwo@163.com>
 Repository: https://github.com/owtotwo/everything-sdk-rs
 License: GPL-3.0-or-later
 
-175. everything-sdk@0.0.6
+165. everything-sdk@0.0.6
 
 Repository: https://github.com/owtotwo/everything-sdk-rs
 License: GPL-3.0-or-later
 
-176. fallible-iterator@0.3.0
+166. fallible-iterator@0.3.0
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/rust-fallible-iterator
 License: Apache-2.0 OR MIT
 
-177. fallible-streaming-iterator@0.1.9
+167. fallible-streaming-iterator@0.1.9
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/fallible-streaming-iterator
 License: Apache-2.0 OR MIT
 
-178. fastrand@2.5.0
+168. fastrand@2.5.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>
 Repository: https://github.com/smol-rs/fastrand
 License: Apache-2.0 OR MIT
 
-179. fax@0.2.7
-
-Authors: Sebastian K <s3bk@protonmail.com>
-Repository: https://github.com/pdf-rs/fax
-License: MIT
-
-180. fdeflate@0.3.7
+169. fdeflate@0.3.7
 
 Authors: The image-rs Developers
 Repository: https://github.com/image-rs/fdeflate
 License: Apache-2.0 OR MIT
 
-181. fiat-crypto@0.3.0
+170. fiat-crypto@0.3.0
 
 Authors: Fiat Crypto library authors <jgross@mit.edu>
 Repository: https://github.com/mit-plv/fiat-crypto
 License: Apache-2.0 OR BSD-1-Clause OR MIT
 
-182. field-offset@0.3.6
+171. field-offset@0.3.6
 
 Authors: Diggory Blake <diggsey@googlemail.com>
 Repository: https://github.com/Diggsey/rust-field-offset
 License: Apache-2.0 OR MIT
 
-183. filetime@0.2.29
+172. filetime@0.2.29
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/alexcrichton/filetime
 License: Apache-2.0 OR MIT
 
-184. find-msvc-tools@0.1.15
+173. find-msvc-tools@0.1.11
 
 Repository: https://github.com/rust-lang/cc-rs
 License: Apache-2.0 OR MIT
 
-185. flate2@1.1.10
+174. flate2@1.1.9
 
 Authors: Alex Crichton <alex@alexcrichton.com>|Josh Triplett <josh@joshtriplett.org>
 Repository: https://github.com/rust-lang/flate2-rs
 License: Apache-2.0 OR MIT
 
-186. float-ord@0.3.2
-
-Authors: Michael Howell <michael@notriddle.com>
-Repository: https://github.com/notriddle/rust-float-ord
-License: Apache-2.0 OR MIT
-
-187. fnv@1.0.7
+175. fnv@1.0.7
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/servo/rust-fnv
 License: Apache-2.0 OR MIT
 
-188. foldhash@0.2.0
+176. foldhash@0.2.0
 
 Authors: Orson Peters <orsonpeters@gmail.com>
 Repository: https://github.com/orlp/foldhash
 License: Zlib
 
-189. font-kit@0.14.3
-
-Authors: Patrick Walton <pcwalton@mimiga.net>
-Repository: https://github.com/servo/font-kit
-License: Apache-2.0 OR MIT
-
-190. foreign-types-macros@0.2.4
+177. foreign-types-macros@0.2.4
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/foreign-types
 License: Apache-2.0 OR MIT
 
-191. foreign-types-shared@0.1.1
+178. foreign-types-shared@0.1.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/foreign-types
 License: Apache-2.0 OR MIT
 
-192. foreign-types-shared@0.3.1
+179. foreign-types-shared@0.3.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/foreign-types
 License: Apache-2.0 OR MIT
 
-193. foreign-types@0.3.2
+180. foreign-types@0.3.2
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/foreign-types
 License: Apache-2.0 OR MIT
 
-194. foreign-types@0.5.0
+181. foreign-types@0.5.0
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/sfackler/foreign-types
 License: Apache-2.0 OR MIT
 
-195. form_urlencoded@1.2.2
+182. form_urlencoded@1.2.2
 
 Authors: The rust-url developers
 Repository: https://github.com/servo/rust-url
 License: Apache-2.0 OR MIT
 
-196. freetype-sys@0.20.1
-
-Authors: Coeuvre <coeuvre@gmail.com>
-Repository: https://github.com/PistonDevelopers/freetype-sys.git
-License: MIT
-
-197. fs-set-times@0.20.3
+183. fs-set-times@0.20.3
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/bytecodealliance/fs-set-times
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-198. futures-buffered@0.2.13
+184. futures-buffered@0.2.13
 
 Authors: Conrad Ludgate <conradludgate@gmail.com
 Repository: https://github.com/conradludgate/futures-buffered
 License: MIT
 
-199. futures-channel@0.3.34
+185. futures-channel@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-200. futures-core@0.3.34
+186. futures-core@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-201. futures-executor@0.3.34
+187. futures-executor@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-202. futures-io@0.3.34
+188. futures-io@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-203. futures-lite@2.6.1
+189. futures-lite@2.6.1
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|Contributors to futures-rs
 Repository: https://github.com/smol-rs/futures-lite
 License: Apache-2.0 OR MIT
 
-204. futures-macro@0.3.34
+190. futures-macro@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-205. futures-sink@0.3.34
+191. futures-sink@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-206. futures-task@0.3.34
+192. futures-task@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-207. futures-util@0.3.34
+193. futures-util@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-208. futures@0.3.34
+194. futures@0.3.34
 
 Repository: https://github.com/rust-lang/futures-rs
 License: Apache-2.0 OR MIT
 
-209. gdk-pixbuf-sys@0.18.0
+195. gdk-pixbuf-sys@0.18.0
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-210. gdk-pixbuf@0.18.5
+196. gdk-pixbuf@0.18.5
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-211. gdk-sys@0.18.2
+197. gdk-sys@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-212. gdk@0.18.2
+198. gdk@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-213. gdkwayland-sys@0.18.2
+199. gdkwayland-sys@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-214. gdkx11-sys@0.18.2
+200. gdkx11-sys@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-215. gdkx11@0.18.2
+201. gdkx11@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-216. generator@0.8.11
+202. generator@0.8.9
 
 Authors: Xudong Huang <huangxu008@hotmail.com>
 Repository: https://github.com/Xudong-Huang/generator-rs.git
 License: Apache-2.0 OR MIT
 
-217. generic-array@0.14.7
+203. generic-array@0.14.7
 
 Authors: Bartłomiej Kamiński <fizyk20@gmail.com>|Aaron Trent <novacrazy@gmail.com>
 Repository: https://github.com/fizyk20/generic-array.git
 License: MIT
 
-218. gethostname@1.1.0
-
-Authors: Sebastian Wiesner <sebastian@swsnr.de>
-Repository: https://codeberg.org/swsnr/gethostname.rs.git
-License: Apache-2.0
-
-219. getrandom@0.2.17
+204. getrandom@0.2.17
 
 Authors: The Rand Project Developers
 Repository: https://github.com/rust-random/getrandom
 License: Apache-2.0 OR MIT
 
-220. getrandom@0.3.4
+205. getrandom@0.3.4
 
 Authors: The Rand Project Developers
 Repository: https://github.com/rust-random/getrandom
 License: Apache-2.0 OR MIT
 
-221. getrandom@0.4.3
+206. getrandom@0.4.3
 
 Authors: The Rand Project Developers
 Repository: https://github.com/rust-random/getrandom
 License: Apache-2.0 OR MIT
 
-222. ghash@0.5.1
+207. ghash@0.5.1
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/universal-hashes
 License: Apache-2.0 OR MIT
 
-223. gio-sys@0.18.1
+208. gio-sys@0.18.1
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-224. gio@0.18.4
+209. gio@0.18.4
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-225. glib-macros@0.18.5
+210. glib-macros@0.18.5
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-226. glib-sys@0.18.1
+211. glib-sys@0.18.1
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-227. glib@0.18.5
+212. glib@0.18.5
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-228. glob@0.3.4
+213. glob@0.3.4
 
 Authors: The Rust Project Developers
 Repository: https://github.com/rust-lang/glob
 License: Apache-2.0 OR MIT
 
-229. gloo-timers@0.3.0
+214. gloo-timers@0.3.0
 
 Authors: Rust and WebAssembly Working Group
 Repository: https://github.com/rustwasm/gloo/tree/master/crates/timers
 License: Apache-2.0 OR MIT
 
-230. gobject-sys@0.18.0
+215. gobject-sys@0.18.0
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-231. gtk-sys@0.18.2
+216. gtk-sys@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-232. gtk@0.18.2
+217. gtk@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-233. gtk3-macros@0.18.2
+218. gtk3-macros@0.18.2
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk3-rs
 License: MIT
 
-234. h2@0.4.20
+219. h2@0.4.15
 
 Authors: Carl Lerche <me@carllerche.com>|Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/h2
 License: MIT
 
-235. half@2.7.1
-
-Authors: Kathryn Long <squeeself@gmail.com>
-Repository: https://github.com/VoidStarKat/half-rs
-License: Apache-2.0 OR MIT
-
-236. hashbrown@0.12.3
+220. hashbrown@0.12.3
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/rust-lang/hashbrown
 License: Apache-2.0 OR MIT
 
-237. hashbrown@0.14.5
+221. hashbrown@0.14.5
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/rust-lang/hashbrown
 License: Apache-2.0 OR MIT
 
-238. hashbrown@0.17.1
+222. hashbrown@0.17.1
 
 Repository: https://github.com/rust-lang/hashbrown
 License: Apache-2.0 OR MIT
 
-239. hashlink@0.9.1
+223. hashlink@0.9.1
 
 Authors: kyren <kerriganw@gmail.com>
 Repository: https://github.com/kyren/hashlink
 License: Apache-2.0 OR MIT
 
-240. heck@0.4.1
+224. heck@0.4.1
 
 Authors: Without Boats <woboats@gmail.com>
 Repository: https://github.com/withoutboats/heck
 License: Apache-2.0 OR MIT
 
-241. heck@0.5.0
+225. heck@0.5.0
 
 Repository: https://github.com/withoutboats/heck
 License: Apache-2.0 OR MIT
 
-242. hermit-abi@0.5.3
+226. hermit-abi@0.5.2
 
+Authors: Stefan Lankes
 Repository: https://github.com/hermit-os/hermit-rs
 License: Apache-2.0 OR MIT
 
-243. hex@0.4.3
+227. hex@0.4.3
 
 Authors: KokaKiwi <kokakiwi@kokakiwi.net>
 Repository: https://github.com/KokaKiwi/rust-hex
 License: Apache-2.0 OR MIT
 
-244. html5ever@0.38.0
+228. hickory-net@0.26.1
+
+Authors: The contributors to Hickory DNS
+Repository: https://github.com/hickory-dns/hickory-dns
+License: Apache-2.0 OR MIT
+
+229. hickory-proto@0.26.1
+
+Authors: The contributors to Hickory DNS
+Repository: https://github.com/hickory-dns/hickory-dns
+License: Apache-2.0 OR MIT
+
+230. hickory-resolver@0.26.1
+
+Authors: The contributors to Hickory DNS
+Repository: https://github.com/hickory-dns/hickory-dns
+License: Apache-2.0 OR MIT
+
+231. html5ever@0.38.0
 
 Authors: The html5ever Project Developers
 Repository: https://github.com/servo/html5ever
 License: Apache-2.0 OR MIT
 
-245. html5ever@0.39.0
-
-Authors: The html5ever Project Developers
-Repository: https://github.com/servo/html5ever
-License: Apache-2.0 OR MIT
-
-246. http-body-util@0.1.5
+232. http-body-util@0.1.5
 
 Authors: Carl Lerche <me@carllerche.com>|Lucio Franco <luciofranco14@gmail.com>|Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/http-body
 License: MIT
 
-247. http-body@1.1.0
+233. http-body@1.1.0
 
 Authors: Carl Lerche <me@carllerche.com>|Lucio Franco <luciofranco14@gmail.com>|Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/http-body
 License: MIT
 
-248. http-range@0.1.6
+234. http-range@0.1.5
 
 Authors: Luka Zakrajšek <luka@bancek.net>
 Repository: https://github.com/bancek/rust-http-range.git
 License: MIT
 
-249. http@1.5.0
+235. http@1.5.0
 
 Authors: Alex Crichton <alex@alexcrichton.com>|Carl Lerche <me@carllerche.com>|Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/http
 License: Apache-2.0 OR MIT
 
-250. httparse@1.10.1
+236. httparse@1.10.1
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/seanmonstar/httparse
 License: Apache-2.0 OR MIT
 
-251. httpdate@1.0.3
+237. httpdate@1.0.3
 
 Authors: Pyfisch <pyfisch@posteo.org>
 Repository: https://github.com/pyfisch/httpdate
 License: Apache-2.0 OR MIT
 
-252. hybrid-array@0.4.15
+238. hybrid-array@0.4.14
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/hybrid-array
 License: Apache-2.0 OR MIT
 
-253. hyper-rustls@0.27.10
+239. hyper-rustls@0.27.9
 
 Repository: https://github.com/rustls/hyper-rustls
 License: Apache-2.0 OR ISC OR MIT
 
-254. hyper-tls@0.6.0
+240. hyper-tls@0.6.0
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/hyper-tls
 License: Apache-2.0 OR MIT
 
-255. hyper-util@0.1.21
+241. hyper-util@0.1.20
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/hyper-util
 License: MIT
 
-256. hyper@1.12.0
+242. hyper@1.11.0
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/hyper
 License: MIT
 
-257. iana-time-zone-haiku@0.1.2
+243. iana-time-zone-haiku@0.1.2
 
 Authors: René Kijewski <crates.io@k6i.de>
 Repository: https://github.com/strawlab/iana-time-zone
 License: Apache-2.0 OR MIT
 
-258. iana-time-zone@0.1.65
+244. iana-time-zone@0.1.65
 
 Authors: Andrew Straw <strawman@astraw.com>|René Kijewski <rene.kijewski@fu-berlin.de>|Ryan Lopopolo <rjl@hyperbo.la>
 Repository: https://github.com/strawlab/iana-time-zone
 License: Apache-2.0 OR MIT
 
-259. ico@0.6.0
+245. ico@0.5.0
 
 Authors: Matthew D. Steele <mdsteele@alum.mit.edu>
 Repository: https://github.com/mdsteele/rust-ico
 License: MIT
 
-260. icu_collections@2.4.0
+246. icu_collections@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-261. icu_locale_core@2.4.0
+247. icu_locale_core@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-262. icu_normalizer_data@2.4.0
+248. icu_normalizer_data@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-263. icu_normalizer@2.4.0
+249. icu_normalizer@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-264. icu_properties_data@2.4.0
+250. icu_properties_data@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-265. icu_properties@2.4.0
+251. icu_properties@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-266. icu_provider@2.4.0
+252. icu_provider@2.3.0
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-267. ident_case@1.0.1
+253. ident_case@1.0.1
 
 Authors: Ted Driggs <ted.driggs@outlook.com>
 Repository: https://github.com/TedDriggs/ident_case
 License: Apache-2.0 OR MIT
 
-268. identity-hash@0.1.0
+254. identity-hash@0.1.0
 
 Repository: https://github.com/offsetting/identity-hash
 License: Apache-2.0 OR MIT
 
-269. idna_adapter@1.2.2
+255. idna_adapter@1.2.2
 
 Authors: The rust-url developers
 Repository: https://github.com/hsivonen/idna_adapter
 License: Apache-2.0 OR MIT
 
-270. idna@1.1.0
+256. idna@1.1.0
 
 Authors: The rust-url developers
 Repository: https://github.com/servo/rust-url/
 License: Apache-2.0 OR MIT
 
-271. igd-next@0.17.1
+257. igd-next@0.17.1
 
 Authors: Darius C|Simon Bernier St-Pierre <sbernierstpierre@gmail.com>
 Repository: https://github.com/dariusc93/rust-igd
 License: MIT
 
-272. image@0.25.10
-
-Authors: The image-rs Developers
-Repository: https://github.com/image-rs/image
-License: Apache-2.0 OR MIT
-
-273. indexmap@1.9.3
+258. indexmap@1.9.3
 
 Repository: https://github.com/bluss/indexmap
 License: Apache-2.0 OR MIT
 
-274. indexmap@2.14.2
+259. indexmap@2.14.0
 
 Repository: https://github.com/indexmap-rs/indexmap
 License: Apache-2.0 OR MIT
 
-275. infer@0.22.0
+260. infer@0.19.0
 
 Authors: Bojan <dbojan@gmail.com>
 Repository: https://github.com/bojand/infer
 License: MIT
 
-276. inout@0.1.4
+261. inout@0.1.4
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-277. io-extras@0.19.0
+262. io-extras@0.19.0
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/io-extras
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-278. io-lifetimes@2.0.4
+263. io-lifetimes@2.0.4
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/io-lifetimes
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-279. io-lifetimes@3.0.1
+264. io-lifetimes@3.0.1
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/io-lifetimes
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-280. ipconfig@0.3.4
+265. ipconfig@0.3.4
 
 Authors: Liran Ringel <liranringel@gmail.com>
 Repository: https://github.com/liranringel/ipconfig
 License: Apache-2.0 OR MIT
 
-281. ipnet@2.12.2
+266. ipnet@2.12.1
 
 Authors: Kris Price <kris@krisprice.nz>
 Repository: https://github.com/krisprice/ipnet
 License: Apache-2.0 OR MIT
 
-282. iroh-base@1.4.1
+267. iroh-base@1.0.3
 
 Authors: n0 team
 Repository: https://github.com/n0-computer/iroh
 License: Apache-2.0 OR MIT
 
-283. iroh-dns@1.4.1
+268. iroh-dns@1.0.3
 
 Authors: n0 team
 Repository: https://github.com/n0-computer/iroh
 License: Apache-2.0 OR MIT
 
-284. iroh-metrics-derive@1.0.1
+269. iroh-metrics-derive@1.0.1
 
 Authors: Frando <franz@n0.computer>|n0 team
 Repository: https://github.com/n0-computer/iroh-metrics
 License: Apache-2.0 OR MIT
 
-285. iroh-metrics@1.0.2
+270. iroh-metrics@1.0.1
 
 Authors: arqu <asmir@n0.computer>|n0 team
 Repository: https://github.com/n0-computer/iroh-metrics
 License: Apache-2.0 OR MIT
 
-286. iroh-relay@1.4.1
+271. iroh-relay@1.0.3
 
 Authors: n0 team
 Repository: https://github.com/n0-computer/iroh
 License: Apache-2.0 OR MIT
 
-287. iroh@1.4.1
+272. iroh@1.0.3
 
 Authors: dignifiedquire <me@dignifiedquire.com>|n0 team
 Repository: https://github.com/n0-computer/iroh
 License: Apache-2.0 OR MIT
 
-288. is_executable@1.0.6
+273. is_executable@1.0.6
 
 Authors: Nick Fitzgerald <fitzgen@gmail.com>
 Repository: https://github.com/fitzgen/is_executable
 License: Apache-2.0 OR MIT
 
-289. is-docker@0.2.0
+274. is-docker@0.2.0
 
 Authors: Sean Larkin <TheLarkInn@users.noreply.github.com>
 Repository: https://github.com/TheLarkInn/is-docker
 License: MIT
 
-290. is-wsl@0.4.0
+275. is-wsl@0.4.0
 
 Authors: Sean Larkin <TheLarkInn@users.noreply.github.com>
 Repository: https://github.com/TheLarkInn/is-wsl
 License: MIT
 
-291. itoa@1.0.18
+276. itoa@1.0.18
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/itoa
 License: Apache-2.0 OR MIT
 
-292. java-manager@0.3.0
+277. java-manager@0.3.0
 
 Authors: TaimWay <taimway@gmail.com>
 Repository: https://github.com/TaimWay/java-manager
 License: Apache-2.0 OR MIT
 
-293. javascriptcore-rs-sys@1.1.1
+278. javascriptcore-rs-sys@1.1.1
 
 Authors: The Gtk-rs Project Developers
 Repository: https://github.com/tauri-apps/javascriptcore-rs
 License: MIT
 
-294. javascriptcore-rs@1.1.2
+279. javascriptcore-rs@1.1.2
 
 Repository: https://github.com/tauri-apps/javascriptcore-rs
 License: MIT
 
-295. jiff-core@0.1.1
+280. jiff-core@0.1.0
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/jiff
 License: MIT OR Unlicense
 
-296. jiff-static@0.2.38
+281. jiff-static@0.2.35
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/jiff
 License: MIT OR Unlicense
 
-297. jiff-tzdb-platform@0.1.3
+282. jiff-tzdb-platform@0.1.3
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/jiff
 License: MIT OR Unlicense
 
-298. jiff-tzdb@0.1.9
+283. jiff-tzdb@0.1.8
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/jiff
 License: MIT OR Unlicense
 
-299. jiff@0.2.38
+284. jiff@0.2.35
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/jiff
 License: MIT OR Unlicense
 
-300. jni-macros@0.22.4
+285. jni-macros@0.22.4
 
 Repository: https://github.com/jni-rs/jni-rs
 License: Apache-2.0 OR MIT
 
-301. jni-sys-macros@0.4.1
+286. jni-sys-macros@0.4.1
 
 Authors: Robert Bragg <robert@sixbynine.org>
 Repository: https://github.com/jni-rs/jni-sys
 License: Apache-2.0 OR MIT
 
-302. jni-sys@0.3.1
+287. jni-sys@0.3.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/jni-rs/jni-sys
 License: Apache-2.0 OR MIT
 
-303. jni-sys@0.4.1
+288. jni-sys@0.4.1
 
 Authors: Steven Fackler <sfackler@gmail.com>|Robert Bragg <robert@sixbynine.org>
 Repository: https://github.com/jni-rs/jni-sys
 License: Apache-2.0 OR MIT
 
-304. jni@0.21.1
+289. jni@0.21.1
 
 Authors: Josh Chase <josh@prevoty.com>
 Repository: https://github.com/jni-rs/jni-rs
 License: Apache-2.0 OR MIT
 
-305. jni@0.22.4
+290. jni@0.22.4
 
 Authors: jni team
 Repository: https://github.com/jni-rs/jni-rs
 License: Apache-2.0 OR MIT
 
-306. js-sys@0.3.106
+291. js-sys@0.3.104
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/js-sys
 License: Apache-2.0 OR MIT
 
-307. json-patch@4.2.0
+292. json-patch@3.0.1
 
 Authors: Ivan Dubrov <dubrov.ivan@gmail.com>
 Repository: https://github.com/idubrov/json-patch
 License: Apache-2.0 OR MIT
 
-308. jsonptr@0.7.1
+293. jsonptr@0.6.3
 
-Authors: chance dinkins|André Sá de Mello <codasm@pm.me>|Oliver Wangler <oliver@wngr.de>
+Authors: chance dinkins|André Sá de Mello <codasm@pm.me>
 Repository: https://github.com/chanced/jsonptr
 License: Apache-2.0 OR MIT
 
-309. keyboard-types@0.8.3
+294. keyboard-types@0.7.0
 
 Authors: Pyfisch <pyfisch@posteo.org>
-Repository: https://github.com/rust-windowing/keyboard-types
+Repository: https://github.com/pyfisch/keyboard-types
 License: Apache-2.0 OR MIT
 
-310. lazy_static@1.5.1
+295. lazy_static@1.5.0
 
 Authors: Marvin Löbel <loebel.marvin@gmail.com>
 Repository: https://github.com/rust-lang-nursery/lazy-static.rs
 License: Apache-2.0 OR MIT
 
-311. libappindicator-sys@0.9.0
+296. libappindicator-sys@0.9.0
 
 License: Apache-2.0 OR MIT
 
-312. libappindicator@0.9.0
+297. libappindicator@0.9.0
 
 License: Apache-2.0 OR MIT
 
-313. libc@0.2.191
+298. libc@0.2.189
 
 Repository: https://github.com/rust-lang/libc
 License: Apache-2.0 OR MIT
 
-314. libdbus-sys@0.2.7
+299. libdbus-sys@0.2.7
 
 Authors: David Henningsson <diwic@ubuntu.com>
 Repository: https://github.com/diwic/dbus-rs
 License: Apache-2.0 OR MIT
 
-315. libloading@0.7.4
+300. libloading@0.7.4
 
 Authors: Simonas Kazlauskas <libloading@kazlauskas.me>
 Repository: https://github.com/nagisa/rust_libloading/
 License: ISC
 
-316. libloading@0.8.9
-
-Authors: Simonas Kazlauskas <libloading@kazlauskas.me>
-Repository: https://github.com/nagisa/rust_libloading/
-License: ISC
-
-317. libredox@0.1.25
+301. libredox@0.1.20
 
 Authors: 4lDO2 <4lDO2@protonmail.com>
 Repository: https://gitlab.redox-os.org/redox-os/libredox.git
 License: MIT
 
-318. libsqlite3-sys@0.30.1
+302. libsqlite3-sys@0.30.1
 
 Authors: The rusqlite developers
 Repository: https://github.com/rusqlite/rusqlite
 License: MIT
 
-319. linux-raw-sys@0.12.1
+303. linux-raw-sys@0.12.1
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/linux-raw-sys
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-320. linux-raw-sys@0.4.15
+304. linux-raw-sys@0.4.15
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/linux-raw-sys
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-321. litemap@0.8.3
+305. litemap@0.8.3
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-322. litrs@1.0.1
+306. litrs@1.0.0
 
 Authors: Lukas Kalbertodt <lukas.kalbertodt@gmail.com>
 Repository: https://github.com/LukasKalbertodt/litrs
 License: Apache-2.0 OR MIT
 
-323. lock_api@0.4.14
+307. lock_api@0.4.14
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/Amanieu/parking_lot
 License: Apache-2.0 OR MIT
 
-324. log@0.4.34
+308. log@0.4.33
 
 Authors: The Rust Project Developers
 Repository: https://github.com/rust-lang/log
 License: Apache-2.0 OR MIT
 
-325. loom@0.7.2
+309. loom@0.7.2
 
 Authors: Carl Lerche <me@carllerche.com>
 Repository: https://github.com/tokio-rs/loom
 License: MIT
 
-326. lru-slab@0.1.3
+310. lru-slab@0.1.2
 
 Authors: Benjamin Saunders <ben.e.saunders@gmail.com>
 Repository: https://github.com/Ralith/lru-slab
 License: Apache-2.0 OR MIT OR Zlib
 
-327. lru@0.18.5
+311. lru@0.18.2
 
 Authors: Jerome Froelich <jeromefroelic@hotmail.com>
 Repository: https://github.com/jeromefroe/lru-rs.git
 License: MIT
 
-328. lua-src@547.0.0
+312. lua-src@547.0.0
 
 Authors: Aleksandr Orlenko <zxteam@protonmail.com>
 Repository: https://github.com/khvzak/lua-src-rs
 License: MIT
 
-329. luajit-src@210.5.12+a4f56a4
+313. luajit-src@210.5.12+a4f56a4
 
 Authors: Aleksandr Orlenko <zxteam@protonmail.com>
 Repository: https://github.com/khvzak/luajit-src-rs
 License: MIT
 
-330. mac-addr@0.3.0
+314. mac-addr@0.3.0
 
 Authors: shellrow <shellrow@foctal.com>
 Repository: https://github.com/shellrow/mac-addr
 License: MIT
 
-331. markup5ever@0.38.0
+315. markup5ever@0.38.0
 
 Authors: The html5ever Project Developers
 Repository: https://github.com/servo/html5ever
 License: Apache-2.0 OR MIT
 
-332. markup5ever@0.39.0
-
-Authors: The html5ever Project Developers
-Repository: https://github.com/servo/html5ever
-License: Apache-2.0 OR MIT
-
-333. matchers@0.2.0
+316. matchers@0.2.0
 
 Authors: Eliza Weisman <eliza@buoyant.io>
 Repository: https://github.com/hawkw/matchers
 License: MIT
 
-334. maybe-owned@0.3.4
+317. maybe-owned@0.3.4
 
 Authors: Philipp korber <philippkorber@gmail.com>|darkstalker <slayerbeast@gmail.com>|daboross <daboross@daboross.net>|Zac Burns (That3Percent) <that3percent@gmail.com>
 Repository: https://github.com/rustonaut/maybe-owned
 License: Apache-2.0 OR MIT
 
-335. memchr@2.8.3
+318. memchr@2.8.3
 
 Authors: Andrew Gallant <jamslam@gmail.com>|bluss
 Repository: https://github.com/BurntSushi/memchr
 License: MIT OR Unlicense
 
-336. memoffset@0.9.1
+319. memoffset@0.9.1
 
 Authors: Gilad Naaman <gilad.naaman@gmail.com>
 Repository: https://github.com/Gilnaa/memoffset
 License: MIT
 
-337. mime@0.3.17
+320. mime@0.3.17
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/hyperium/mime
 License: Apache-2.0 OR MIT
 
-338. minimal-lexical@0.2.1
+321. minimal-lexical@0.2.1
 
 Authors: Alex Huszagh <ahuszagh@gmail.com>
 Repository: https://github.com/Alexhuszagh/minimal-lexical
 License: Apache-2.0 OR MIT
 
-339. miniz_oxide@0.8.9
+322. miniz_oxide@0.8.9
 
 Authors: Frommi <daniil.liferenko@gmail.com>|oyvindln <oyvindln@users.noreply.github.com>|Rich Geldreich richgel99@gmail.com
 Repository: https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide
 License: Apache-2.0 OR MIT OR Zlib
 
-340. miniz_oxide@0.9.1
-
-Authors: Frommi <daniil.liferenko@gmail.com>|oyvindln <oyvindln@users.noreply.github.com>|Rich Geldreich richgel99@gmail.com
-Repository: https://github.com/Frommi/miniz_oxide/tree/master/miniz_oxide
-License: Apache-2.0 OR MIT OR Zlib
-
-341. mio@1.2.4
+323. mio@1.2.2
 
 Authors: Carl Lerche <me@carllerche.com>|Thomas de Zeeuw <thomasdezeeuw@gmail.com>|Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/mio
 License: MIT
 
-342. mlua-sys@0.6.8
+324. mlua-sys@0.6.8
 
 Authors: Aleksandr Orlenko <zxteam@pm.me>
 Repository: https://github.com/mlua-rs/mlua
 License: MIT
 
-343. mlua@0.10.5
+325. mlua@0.10.5
 
 Authors: Aleksandr Orlenko <zxteam@pm.me>|kyren <catherine@kyju.org>
 Repository: https://github.com/mlua-rs/mlua
 License: MIT
 
-344. moxcms@0.8.1
+326. moka@0.12.16
 
-Authors: Radzivon Bartoshyk
-Repository: https://github.com/awxkee/moxcms.git
-License: Apache-2.0 OR BSD-3-Clause
+Repository: https://github.com/moka-rs/moka
+License: (Apache-2.0 OR MIT) AND Apache-2.0
 
-345. muda@0.20.0
+327. muda@0.19.3
 
 Repository: https://github.com/tauri-apps/muda
 License: Apache-2.0 OR MIT
 
-346. multiversion_no_op@1.0.0
-
-Authors: Henri Sivonen <hsivonen@hsivonen.fi>
-Repository: https://github.com/hsivonen/multiversion_no_op
-License: Apache-2.0 OR MIT
-
-347. n0-dns-resolver@0.1.0
-
-Authors: n0 team
-Repository: https://github.com/n0-computer/iroh
-License: Apache-2.0 OR MIT
-
-348. n0-error-macros@1.0.1
+328. n0-error-macros@1.0.0
 
 Authors: Frando <franz@n0.computer>|n0 team
 Repository: https://github.com/n0-computer/n0-error
 License: Apache-2.0 OR MIT
 
-349. n0-error@1.0.1
+329. n0-error@1.0.0
 
 Authors: Frando <franz@n0.computer>|n0 team
 Repository: https://github.com/n0-computer/n0-error
 License: Apache-2.0 OR MIT
 
-350. n0-future@0.3.2
+330. n0-future@0.3.2
 
 Authors: Philipp Krüger <philipp@n0.computer>|n0 team
 Repository: https://github.com/n0-computer/n0-future
 License: Apache-2.0 OR MIT
 
-351. n0-watcher@1.0.1
+331. n0-watcher@1.0.0
 
 Authors: dignifiedquire <me@dignifiedquire.com>|n0 team
 Repository: https://github.com/n0-computer/n0-watcher
 License: Apache-2.0 OR MIT
 
-352. native-tls@0.2.18
+332. native-tls@0.2.18
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-native-tls/rust-native-tls
 License: Apache-2.0 OR MIT
 
-353. ndk-context@0.1.1
+333. ndk-context@0.1.1
 
 Authors: The Rust Windowing contributors
 Repository: https://github.com/rust-windowing/android-ndk-rs
 License: Apache-2.0 OR MIT
 
-354. ndk-sys@0.6.0+11769913
+334. ndk-sys@0.6.0+11769913
 
 Authors: The Rust Windowing contributors
 Repository: https://github.com/rust-mobile/ndk
 License: Apache-2.0 OR MIT
 
-355. ndk@0.9.0
+335. ndk@0.9.0
 
 Authors: The Rust Mobile contributors
 Repository: https://github.com/rust-mobile/ndk
 License: Apache-2.0 OR MIT
 
-356. netdev@0.45.1
+336. netdev@0.45.0
 
 Authors: shellrow <shellrow@foctal.com>
 Repository: https://github.com/shellrow/netdev
 License: MIT
 
-357. netdev@0.46.3
-
-Authors: shellrow <shellrow@foctal.com>
-Repository: https://github.com/shellrow/netdev
-License: MIT
-
-358. netlink-packet-core@0.8.2
+337. netlink-packet-core@0.8.2
 
 Authors: Corentin Henry <corentinhenry@gmail.com>
 Repository: https://github.com/rust-netlink/netlink-packet-core
 License: MIT
 
-359. netlink-packet-core@0.9.0
-
-Authors: Corentin Henry <corentinhenry@gmail.com>
-Repository: https://github.com/rust-netlink/netlink-packet-core
-License: MIT
-
-360. netlink-packet-route@0.31.0
+338. netlink-packet-route@0.31.0
 
 Authors: Corentin Henry <corentinhenry@gmail.com>
 Repository: https://github.com/rust-netlink/netlink-packet-route
 License: MIT
 
-361. netlink-packet-route@0.33.0
-
-Authors: Corentin Henry <corentinhenry@gmail.com>
-Repository: https://github.com/rust-netlink/netlink-packet-route
-License: MIT
-
-362. netlink-proto@0.12.2
+339. netlink-proto@0.12.2
 
 Authors: Corentin Henry <corentinhenry@gmail.com>
 Repository: https://github.com/rust-netlink/netlink-proto
 License: MIT
 
-363. netlink-sys@0.8.8
+340. netlink-sys@0.8.8
 
 Authors: Corentin Henry <corentinhenry@gmail.com>
 Repository: https://github.com/rust-netlink/netlink-sys
 License: MIT
 
-364. netlink-sys@0.9.0
-
-Authors: Corentin Henry <corentinhenry@gmail.com>
-Repository: https://github.com/rust-netlink/netlink-sys
-License: MIT
-
-365. netwatch@0.19.3
+341. netwatch@0.19.1
 
 Authors: n0 team
 Repository: https://github.com/n0-computer/net-tools
 License: Apache-2.0 OR MIT
 
-366. new_debug_unreachable@1.0.6
+342. new_debug_unreachable@1.0.6
 
 Authors: Matt Brubeck <mbrubeck@limpet.net>|Jonathan Reem <jonathan.reem@gmail.com>
 Repository: https://github.com/mbrubeck/rust-debug-unreachable
 License: MIT
 
-367. nom@7.1.3
+343. nom@7.1.3
 
 Authors: contact@geoffroycouprie.com
 Repository: https://github.com/Geal/nom
 License: MIT
 
-368. noq-proto@1.4.0
+344. noq-proto@1.1.1
 
 Repository: https://github.com/n0-computer/noq
 License: Apache-2.0 OR MIT
 
-369. noq-udp@1.4.0
+345. noq-udp@1.1.1
 
 Repository: https://github.com/n0-computer/noq
 License: Apache-2.0 OR MIT
 
-370. noq@1.4.0
+346. noq@1.1.1
 
 Repository: https://github.com/n0-computer/noq
 License: Apache-2.0 OR MIT
 
-371. ntapi@0.4.3
+347. ntapi@0.4.3
 
 Authors: MSxDOS <melcodos@gmail.com>
 Repository: https://github.com/MSxDOS/ntapi
 License: Apache-2.0 OR MIT
 
-372. nu-ansi-term@0.50.3
+348. nu-ansi-term@0.50.3
 
 Authors: ogham@bsago.me|Ryan Scheel (Havvy) <ryan.havvy@gmail.com>|Josh Triplett <josh@joshtriplett.org>|The Nushell Project Developers
 Repository: https://github.com/nushell/nu-ansi-term
 License: MIT
 
-373. num_enum_derive@0.7.6
+349. num_enum_derive@0.7.6
 
 Authors: Daniel Wagner-Hall <dawagner@gmail.com>|Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>|Vincent Esche <regexident@gmail.com>
 Repository: https://github.com/illicitonion/num_enum
 License: Apache-2.0 OR BSD-3-Clause OR MIT
 
-374. num_enum@0.7.6
+350. num_enum@0.7.6
 
 Authors: Daniel Wagner-Hall <dawagner@gmail.com>|Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>|Vincent Esche <regexident@gmail.com>
 Repository: https://github.com/illicitonion/num_enum
 License: Apache-2.0 OR BSD-3-Clause OR MIT
 
-375. num-conv@0.2.2
+351. num-conv@0.2.2
 
 Authors: Jacob Pratt <jacob@jhpratt.dev>
 Repository: https://github.com/jhpratt/num-conv
 License: Apache-2.0 OR MIT
 
-376. num-traits@0.2.19
+352. num-traits@0.2.19
 
 Authors: The Rust Project Developers
 Repository: https://github.com/rust-num/num-traits
 License: Apache-2.0 OR MIT
 
-377. objc2-app-kit@0.3.2
+353. objc2-app-kit@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-378. objc2-cloud-kit@0.3.2
+354. objc2-cloud-kit@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-379. objc2-core-data@0.3.2
+355. objc2-core-data@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-380. objc2-core-foundation@0.3.2
+356. objc2-core-foundation@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-381. objc2-core-graphics@0.3.2
+357. objc2-core-graphics@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-382. objc2-core-image@0.3.2
+358. objc2-core-image@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-383. objc2-core-location@0.3.2
+359. objc2-core-location@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-384. objc2-core-text@0.3.2
+360. objc2-core-text@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-385. objc2-core-wlan@0.3.2
+361. objc2-core-wlan@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-386. objc2-encode@4.1.0
+362. objc2-encode@4.1.0
 
 Authors: Mads Marquart <mads@marquart.dk>
 Repository: https://github.com/madsmtm/objc2
 License: MIT
 
-387. objc2-exception-helper@0.1.1
+363. objc2-exception-helper@0.1.1
 
 Authors: Mads Marquart <mads@marquart.dk>
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-388. objc2-foundation@0.3.2
+364. objc2-foundation@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: MIT
 
-389. objc2-io-surface@0.3.2
+365. objc2-io-surface@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-390. objc2-quartz-core@0.3.2
+366. objc2-quartz-core@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-391. objc2-security-foundation@0.3.2
+367. objc2-security-foundation@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-392. objc2-security@0.3.2
+368. objc2-security@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-393. objc2-system-configuration@0.3.2
+369. objc2-system-configuration@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-394. objc2-ui-kit@0.3.2
+370. objc2-ui-kit@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-395. objc2-user-notifications@0.3.2
+371. objc2-user-notifications@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-396. objc2-web-kit@0.3.2
+372. objc2-web-kit@0.3.2
 
 Repository: https://github.com/madsmtm/objc2
 License: Apache-2.0 OR MIT OR Zlib
 
-397. objc2@0.6.5
+373. objc2@0.6.4
 
 Authors: Mads Marquart <mads@marquart.dk>
 Repository: https://github.com/madsmtm/objc2
 License: MIT
 
-398. once_cell@1.21.4
+374. once_cell@1.21.4
 
 Authors: Aleksey Kladov <aleksey.kladov@gmail.com>
 Repository: https://github.com/matklad/once_cell
 License: Apache-2.0 OR MIT
 
-399. opaque-debug@0.3.1
+375. opaque-debug@0.3.1
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-400. open@5.4.5
+376. open@5.4.1
 
 Authors: Sebastian Thiel <byronimo@gmail.com>
 Repository: https://github.com/Byron/open-rs
 License: MIT
 
-401. openssl-macros@0.1.1
+377. openssl-macros@0.1.1
 
 License: Apache-2.0 OR MIT
 
-402. openssl-probe@0.2.1
+378. openssl-probe@0.2.1
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/rustls/openssl-probe
 License: Apache-2.0 OR MIT
 
-403. openssl-sys@0.9.117
+379. openssl-sys@0.9.117
 
 Authors: Alex Crichton <alex@alexcrichton.com>|Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-openssl/rust-openssl
 License: MIT
 
-404. openssl@0.10.81
+380. openssl@0.10.81
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-openssl/rust-openssl
 License: Apache-2.0
 
-405. option-ext@0.2.0
+381. option-ext@0.2.0
 
 Authors: Simon Ochsenreither <simon@ochsenreither.de>
 Repository: https://github.com/soc/option-ext.git
 License: MPL-2.0
 
-406. ordered-float@2.10.1
+382. ordered-float@2.10.1
 
 Authors: Jonathan Reem <jonathan.reem@gmail.com>|Matt Brubeck <mbrubeck@limpet.net>
 Repository: https://github.com/reem/rust-ordered-float
 License: MIT
 
-407. ordered-stream@0.2.0
+383. ordered-stream@0.2.0
 
 Authors: Daniel De Graaf <code@danieldg.net>|Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/danieldg/ordered-stream
 License: Apache-2.0 OR MIT
 
-408. pango-sys@0.18.0
+384. pango-sys@0.18.0
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-409. pango@0.18.3
+385. pango@0.18.3
 
 Authors: The gtk-rs Project Developers
 Repository: https://github.com/gtk-rs/gtk-rs-core
 License: MIT
 
-410. papaya@0.2.5
+386. papaya@0.2.4
 
 Authors: Ibraheem Ahmed <ibraheem@ibraheem.ca>
 Repository: https://github.com/ibraheemdev/papaya
 License: MIT
 
-411. parking_lot_core@0.9.12
+387. parking_lot_core@0.9.12
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/Amanieu/parking_lot
 License: Apache-2.0 OR MIT
 
-412. parking_lot@0.12.5
+388. parking_lot@0.12.5
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/Amanieu/parking_lot
 License: Apache-2.0 OR MIT
 
-413. parking@2.2.1
+389. parking@2.2.1
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|The Rust Project Developers
 Repository: https://github.com/smol-rs/parking
 License: Apache-2.0 OR MIT
 
-414. paste@1.0.15
+390. paste@1.0.15
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/paste
 License: Apache-2.0 OR MIT
 
-415. pathfinder_geometry@0.5.1
-
-Authors: Patrick Walton <pcwalton@mimiga.net>
-Repository: https://github.com/servo/pathfinder
-License: Apache-2.0 OR MIT
-
-416. pathfinder_simd@0.5.6
-
-Authors: Patrick Walton <pcwalton@mimiga.net>
-Repository: https://github.com/servo/pathfinder
-License: Apache-2.0 OR MIT
-
-417. pem-rfc7468@1.0.0
+391. pem-rfc7468@1.0.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-418. percent-encoding@2.3.2
+392. percent-encoding@2.3.2
 
 Authors: The rust-url developers
 Repository: https://github.com/servo/rust-url/
 License: Apache-2.0 OR MIT
 
-419. pharos@0.5.3
+393. pharos@0.5.3
 
 Authors: Naja Melan <najamelan@autistici.org>
 Repository: https://github.com/najamelan/pharos
 License: Unlicense
 
-420. phf_codegen@0.13.1
+394. phf_codegen@0.13.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-phf/rust-phf
 License: MIT
 
-421. phf_generator@0.13.1
+395. phf_generator@0.13.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-phf/rust-phf
 License: MIT
 
-422. phf_macros@0.13.1
+396. phf_macros@0.13.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-phf/rust-phf
 License: MIT
 
-423. phf_shared@0.13.1
+397. phf_shared@0.13.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-phf/rust-phf
 License: MIT
 
-424. phf@0.13.1
+398. phf@0.13.1
 
 Authors: Steven Fackler <sfackler@gmail.com>
 Repository: https://github.com/rust-phf/rust-phf
 License: MIT
 
-425. pin-project-internal@1.1.13
+399. pin-project-internal@1.1.13
 
 Repository: https://github.com/taiki-e/pin-project
 License: Apache-2.0 OR MIT
 
-426. pin-project-lite@0.2.17
+400. pin-project-lite@0.2.17
 
 Repository: https://github.com/taiki-e/pin-project-lite
 License: Apache-2.0 OR MIT
 
-427. pin-project@1.1.13
+401. pin-project@1.1.13
 
 Repository: https://github.com/taiki-e/pin-project
 License: Apache-2.0 OR MIT
 
-428. piper@0.2.5
+402. piper@0.2.5
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/piper
 License: Apache-2.0 OR MIT
 
-429. pkcs8@0.11.0
+403. pkcs8@0.11.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-430. pkg-config@0.3.34
+404. pkg-config@0.3.34
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/rust-lang/pkg-config-rs
 License: Apache-2.0 OR MIT
 
-431. plist@1.10.3
+405. plist@1.10.0
 
 Authors: Ed Barnard <eabarnard@gmail.com>
 Repository: https://github.com/ebarnard/rust-plist/
 License: MIT
 
-432. png@0.18.1
+406. png@0.17.16
 
 Authors: The image-rs Developers
 Repository: https://github.com/image-rs/image-png
 License: Apache-2.0 OR MIT
 
-433. polling@3.11.0
+407. png@0.18.1
+
+Authors: The image-rs Developers
+Repository: https://github.com/image-rs/image-png
+License: Apache-2.0 OR MIT
+
+408. polling@3.11.0
 
 Authors: Stjepan Glavina <stjepang@gmail.com>|John Nunley <dev@notgull.net>
 Repository: https://github.com/smol-rs/polling
 License: Apache-2.0 OR MIT
 
-434. polyval@0.6.2
+409. polyval@0.6.2
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/universal-hashes
 License: Apache-2.0 OR MIT
 
-435. portable-atomic-util@0.2.8
+410. portable-atomic-util@0.2.7
 
 Repository: https://github.com/taiki-e/portable-atomic-util
 License: Apache-2.0 OR MIT
 
-436. portable-atomic@1.15.0
+411. portable-atomic@1.15.0
 
 Repository: https://github.com/taiki-e/portable-atomic
 License: Apache-2.0 OR MIT
 
-437. portmapper@0.19.3
+412. portmapper@0.19.1
 
 Authors: n0 team
 Repository: https://github.com/n0-computer/net-tools
 License: Apache-2.0 OR MIT
 
-438. postcard-derive@0.2.2
+413. postcard-derive@0.2.2
 
 Authors: Lachlan Sneff <lachlan.sneff@gmail.com>|James Munns <james@onevariable.com>
 Repository: https://github.com/jamesmunns/postcard
 License: Apache-2.0 OR MIT
 
-439. postcard@1.1.3
+414. postcard@1.1.3
 
 Authors: James Munns <james@onevariable.com>
 Repository: https://github.com/jamesmunns/postcard
 License: Apache-2.0 OR MIT
 
-440. potential_utf@0.1.6
+415. potential_utf@0.1.6
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-441. powerfmt@0.2.1
+416. powerfmt@0.2.0
 
 Authors: Jacob Pratt <jacob@jhpratt.dev>
 Repository: https://github.com/jhpratt/powerfmt
 License: Apache-2.0 OR MIT
 
-442. precomputed-hash@0.1.1
+417. precomputed-hash@0.1.1
 
 Authors: Emilio Cobos Álvarez <emilio@crisal.io>
 Repository: https://github.com/emilio/precomputed-hash
 License: MIT
 
-443. proc-macro-crate@1.3.1
+418. prefix-trie@0.8.4
+
+Repository: https://github.com/tiborschneider/prefix-trie
+License: Apache-2.0 OR MIT
+
+419. proc-macro-crate@1.3.1
 
 Authors: Bastian Köcher <git@kchr.de>
 Repository: https://github.com/bkchr/proc-macro-crate
 License: Apache-2.0 OR MIT
 
-444. proc-macro-crate@2.0.2
+420. proc-macro-crate@2.0.2
 
 Authors: Bastian Köcher <git@kchr.de>
 Repository: https://github.com/bkchr/proc-macro-crate
 License: Apache-2.0 OR MIT
 
-445. proc-macro-crate@3.5.0
+421. proc-macro-crate@3.5.0
 
 Authors: Bastian Köcher <git@kchr.de>
 Repository: https://github.com/bkchr/proc-macro-crate
 License: Apache-2.0 OR MIT
 
-446. proc-macro-error-attr@1.0.4
+422. proc-macro-error-attr@1.0.4
 
 Authors: CreepySkeleton <creepy-skeleton@yandex.ru>
 Repository: https://gitlab.com/CreepySkeleton/proc-macro-error
 License: Apache-2.0 OR MIT
 
-447. proc-macro-error@1.0.4
+423. proc-macro-error@1.0.4
 
 Authors: CreepySkeleton <creepy-skeleton@yandex.ru>
 Repository: https://gitlab.com/CreepySkeleton/proc-macro-error
 License: Apache-2.0 OR MIT
 
-448. proc-macro2@1.0.107
+424. proc-macro2@1.0.107
 
 Authors: David Tolnay <dtolnay@gmail.com>|Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/dtolnay/proc-macro2
 License: Apache-2.0 OR MIT
 
-449. psl-types@2.0.11
+425. psl-types@2.0.11
 
 Authors: rushmorem <rushmore@webenchanter.com>
 Repository: https://github.com/addr-rs/psl-types
 License: Apache-2.0 OR MIT
 
-450. publicsuffix@2.3.0
+426. publicsuffix@2.3.0
 
 Authors: rushmorem <rushmore@webenchanter.com>
 Repository: https://github.com/rushmorem/publicsuffix
 License: Apache-2.0 OR MIT
 
-451. pxfm@0.1.30
-
-Authors: Radzivon Bartoshyk
-Repository: https://github.com/awxkee/pxfm
-License: Apache-2.0 OR BSD-3-Clause
-
-452. quick-error@2.0.1
-
-Authors: Paul Colomiets <paul@colomiets.name>|Colin Kiegel <kiegel@gmx.de>
-Repository: http://github.com/tailhook/quick-error
-License: Apache-2.0 OR MIT
-
-453. quick-xml@0.42.0
+427. quick-xml@0.41.0
 
 Repository: https://github.com/tafia/quick-xml
 License: MIT
 
-454. quinn-proto@0.11.19
+428. quinn-proto@0.11.16
 
 Repository: https://github.com/quinn-rs/quinn
 License: Apache-2.0 OR MIT
 
-455. quinn-udp@0.5.16
+429. quinn-udp@0.5.15
 
 Repository: https://github.com/quinn-rs/quinn
 License: Apache-2.0 OR MIT
 
-456. quinn@0.11.12
+430. quinn@0.11.11
 
 Repository: https://github.com/quinn-rs/quinn
 License: Apache-2.0 OR MIT
 
-457. quote@1.0.47
+431. quote@1.0.47
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/quote
 License: Apache-2.0 OR MIT
 
-458. r-efi@5.3.0
+432. r-efi@5.3.0
 
 Repository: https://github.com/r-efi/r-efi
 License: Apache-2.0 OR LGPL-2.1-or-later OR MIT
 
-459. r-efi@6.0.0
+433. r-efi@6.0.0
 
 Repository: https://github.com/r-efi/r-efi
 License: Apache-2.0 OR LGPL-2.1-or-later OR MIT
 
-460. rand_core@0.10.1
+434. rand_core@0.10.1
 
 Authors: The Rand Project Developers
 Repository: https://github.com/rust-random/rand_core
 License: Apache-2.0 OR MIT
 
-461. rand_pcg@0.10.2
+435. rand_pcg@0.10.2
 
 Authors: The Rand Project Developers
 Repository: https://github.com/rust-random/rngs
 License: Apache-2.0 OR MIT
 
-462. rand@0.10.3
+436. rand@0.10.2
 
 Authors: The Rand Project Developers|The Rust Project Developers
 Repository: https://github.com/rust-random/rand
 License: Apache-2.0 OR MIT
 
-463. raw-window-handle@0.6.2
+437. raw-window-handle@0.6.2
 
 Authors: Osspial <osspial@gmail.com>
 Repository: https://github.com/rust-windowing/raw-window-handle
 License: Apache-2.0 OR MIT OR Zlib
 
-464. rayon-core@1.13.0
+438. rayon-core@1.13.0
 
 Repository: https://github.com/rayon-rs/rayon
 License: Apache-2.0 OR MIT
 
-465. rayon@1.12.0
+439. rayon@1.12.0
 
 Repository: https://github.com/rayon-rs/rayon
 License: Apache-2.0 OR MIT
 
-466. redox_syscall@0.5.18
+440. redox_syscall@0.5.18
 
 Authors: Jeremy Soller <jackpot51@gmail.com>
 Repository: https://gitlab.redox-os.org/redox-os/syscall
 License: MIT
 
-467. redox_users@0.4.6
+441. redox_users@0.4.6
 
 Authors: Jose Narvaez <goyox86@gmail.com>|Wesley Hershberger <mggmugginsmc@gmail.com>
 Repository: https://gitlab.redox-os.org/redox-os/users
 License: MIT
 
-468. redox_users@0.5.3
+442. redox_users@0.5.2
 
 Authors: Jose Narvaez <goyox86@gmail.com>|Wesley Hershberger <mggmugginsmc@gmail.com>
 Repository: https://gitlab.redox-os.org/redox-os/users
 License: MIT
 
-469. ref-cast-impl@1.0.27
+443. ref-cast-impl@1.0.26
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/ref-cast
 License: Apache-2.0 OR MIT
 
-470. ref-cast@1.0.27
+444. ref-cast@1.0.26
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/ref-cast
 License: Apache-2.0 OR MIT
 
-471. regex-automata@0.4.18
+445. regex-automata@0.4.18
 
 Authors: The Rust Project Developers|Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/rust-lang/regex
 License: Apache-2.0 OR MIT
 
-472. regex-syntax@0.8.11
+446. regex-syntax@0.8.11
 
 Authors: The Rust Project Developers|Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/rust-lang/regex
 License: Apache-2.0 OR MIT
 
-473. regex@1.13.1
+447. regex@1.13.1
 
 Authors: The Rust Project Developers|Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/rust-lang/regex
 License: Apache-2.0 OR MIT
 
-474. reqwest@0.12.28
+448. reqwest@0.12.28
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/seanmonstar/reqwest
 License: Apache-2.0 OR MIT
 
-475. reqwest@0.13.5
+449. reqwest@0.13.4
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/seanmonstar/reqwest
 License: Apache-2.0 OR MIT
 
-476. rfd@0.16.1
+450. resolv-conf@0.7.6
+
+Repository: https://github.com/hickory-dns/resolv-conf
+License: Apache-2.0 OR MIT
+
+451. rfd@0.16.0
 
 Authors: Poly <marynczak.bartlomiej@gmail.com>
 Repository: https://github.com/PolyMeilex/rfd
 License: MIT
 
-477. ring@0.17.14
+452. ring@0.17.14
 
 Repository: https://github.com/briansmith/ring
 License: Apache-2.0 AND ISC
 
-478. rusqlite@0.32.1
+453. rusqlite@0.32.1
 
 Authors: The rusqlite developers
 Repository: https://github.com/rusqlite/rusqlite
 License: MIT
 
-479. rustc_version@0.4.1
+454. rustc_version@0.4.1
 
 Repository: https://github.com/djc/rustc-version-rs
 License: Apache-2.0 OR MIT
 
-480. rustc-hash@2.1.3
+455. rustc-hash@2.1.3
 
 Authors: The Rust Project Developers
 Repository: https://github.com/rust-lang/rustc-hash
 License: Apache-2.0 OR MIT
 
-481. rustix-linux-procfs@0.1.1
+456. rustix-linux-procfs@0.1.1
 
 Authors: Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/rustix-linux-procfs
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-482. rustix@0.38.44
+457. rustix@0.38.44
 
 Authors: Dan Gohman <dev@sunfishcode.online>|Jakub Konka <kubkon@jakubkonka.com>
 Repository: https://github.com/bytecodealliance/rustix
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-483. rustix@1.1.5
+458. rustix@1.1.4
 
 Authors: Dan Gohman <dev@sunfishcode.online>|Jakub Konka <kubkon@jakubkonka.com>
 Repository: https://github.com/bytecodealliance/rustix
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-484. rustls-native-certs@0.8.5
+459. rustls-native-certs@0.8.4
 
 Repository: https://github.com/rustls/rustls-native-certs
 License: Apache-2.0 OR ISC OR MIT
 
-485. rustls-pki-types@1.15.1
+460. rustls-pki-types@1.15.1
 
 Repository: https://github.com/rustls/pki-types
 License: Apache-2.0 OR MIT
 
-486. rustls-platform-verifier-android@0.2.0
+461. rustls-platform-verifier-android@0.1.1
 
 Repository: https://github.com/rustls/rustls-platform-verifier
 License: Apache-2.0 OR MIT
 
-487. rustls-platform-verifier@0.7.1
+462. rustls-platform-verifier@0.7.0
 
 Repository: https://github.com/rustls/rustls-platform-verifier
 License: Apache-2.0 OR MIT
 
-488. rustls-webpki@0.103.16
+463. rustls-webpki@0.103.14
 
 Repository: https://github.com/rustls/webpki
 License: ISC
 
-489. rustls@0.23.46
+464. rustls@0.23.43
 
 Repository: https://github.com/rustls/rustls
 License: Apache-2.0 OR ISC OR MIT
 
-490. rustversion@1.0.23
+465. rustversion@1.0.23
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/rustversion
 License: Apache-2.0 OR MIT
 
-491. ryu@1.0.23
+466. ryu@1.0.23
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/ryu
 License: Apache-2.0 OR BSL-1.0
 
-492. same-file@1.0.6
+467. same-file@1.0.6
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/same-file
 License: MIT OR Unlicense
 
-493. schannel@0.1.30
+468. schannel@0.1.29
 
 Authors: Steven Fackler <sfackler@gmail.com>|Steffen Butzer <steffen.butzer@outlook.com>
 Repository: https://github.com/steffengy/schannel-rs
 License: MIT
 
-494. schemars_derive@0.8.22
+469. schemars_derive@0.8.22
 
 Authors: Graham Esau <gesau@hotmail.co.uk>
 Repository: https://github.com/GREsau/schemars
 License: MIT
 
-495. schemars@0.8.22
+470. schemars@0.8.22
 
 Authors: Graham Esau <gesau@hotmail.co.uk>
 Repository: https://github.com/GREsau/schemars
 License: MIT
 
-496. schemars@0.9.0
+471. schemars@0.9.0
 
 Authors: Graham Esau <gesau@hotmail.co.uk>
 Repository: https://github.com/GREsau/schemars
 License: MIT
 
-497. schemars@1.2.3
+472. schemars@1.2.2
 
 Authors: Graham Esau <gesau@hotmail.co.uk>
 Repository: https://github.com/GREsau/schemars
 License: MIT
 
-498. scoped-tls@1.0.1
+473. scoped-tls@1.0.1
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/alexcrichton/scoped-tls
 License: Apache-2.0 OR MIT
 
-499. scopeguard@1.2.0
+474. scopeguard@1.2.0
 
 Authors: bluss
 Repository: https://github.com/bluss/scopeguard
 License: Apache-2.0 OR MIT
 
-500. sculk@0.6.1
+475. sculk@0.3.1
 
 Authors: KercyDing
 Repository: https://github.com/KercyDing/sculk
-License: Apache-2.0 OR MIT
+License: GPL-3.0
 
-501. sealantern-application@1.3.1
+476. sealantern-application@1.3.1
 
 License: GPL-3.0
 
-502. sealantern-contract@1.3.1
+477. sealantern-contract@1.3.1
 
 License: GPL-3.0
 
-503. sealantern-core@1.3.1
+478. sealantern-core@1.3.1
 
 License: GPL-3.0
 
-504. sealantern-feature@1.3.1
+479. sealantern-feature@1.3.1
 
 License: GPL-3.0
 
-505. sealantern-infra@1.3.1
+480. sealantern-infra@1.3.1
 
 License: GPL-3.0
 
-506. security-framework-sys@2.17.0
+481. security-framework-sys@2.17.0
 
 Authors: Steven Fackler <sfackler@gmail.com>|Kornel <kornel@geekhood.net>
 Repository: https://github.com/kornelski/rust-security-framework
 License: Apache-2.0 OR MIT
 
-507. security-framework@3.7.0
+482. security-framework@3.7.0
 
 Authors: Steven Fackler <sfackler@gmail.com>|Kornel <kornel@geekhood.net>
 Repository: https://github.com/kornelski/rust-security-framework
 License: Apache-2.0 OR MIT
 
-508. seize@0.5.1
+483. seize@0.5.1
 
 Authors: Ibraheem Ahmed <ibraheem@ibraheem.ca>
 Repository: https://github.com/ibraheemdev/seize
 License: MIT
 
-509. selectors@0.36.1
+484. selectors@0.36.1
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/stylo
 License: MPL-2.0
 
-510. selectors@0.38.0
-
-Authors: The Servo Project Developers
-Repository: https://github.com/servo/stylo
-License: MPL-2.0
-
-511. semver@1.0.28
+485. semver@1.0.28
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/semver
 License: Apache-2.0 OR MIT
 
-512. send_wrapper@0.6.0
+486. send_wrapper@0.6.0
 
 Authors: Thomas Keh
 Repository: https://github.com/thk1/send_wrapper
 License: Apache-2.0 OR MIT
 
-513. serde_bytes@0.11.19
+487. serde_bytes@0.11.19
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/bytes
 License: Apache-2.0 OR MIT
 
-514. serde_core@1.0.229
+488. serde_core@1.0.229
 
 Authors: Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/serde
 License: Apache-2.0 OR MIT
 
-515. serde_derive_internals@0.29.1
+489. serde_derive_internals@0.29.1
 
 Authors: Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/serde
 License: Apache-2.0 OR MIT
 
-516. serde_derive@1.0.229
+490. serde_derive@1.0.229
 
 Authors: Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/serde
 License: Apache-2.0 OR MIT
 
-517. serde_json@1.0.154
+491. serde_json@1.0.151
 
+Authors: Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/json
 License: Apache-2.0 OR MIT
 
-518. serde_repr@0.1.21
+492. serde_repr@0.1.21
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/serde-repr
 License: Apache-2.0 OR MIT
 
-519. serde_spanned@0.6.9
+493. serde_spanned@0.6.9
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-520. serde_spanned@1.1.2
+494. serde_spanned@1.1.1
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-521. serde_urlencoded@0.7.1
+495. serde_urlencoded@0.7.1
 
 Authors: Anthony Ramine <n.oxyde@gmail.com>
 Repository: https://github.com/nox/serde_urlencoded
 License: Apache-2.0 OR MIT
 
-522. serde_with_macros@3.24.0
+496. serde_with_macros@3.22.0
 
 Authors: Jonas Bushart
 Repository: https://github.com/jonasbb/serde_with/
 License: Apache-2.0 OR MIT
 
-523. serde_with@3.24.0
+497. serde_with@3.22.0
 
 Authors: Jonas Bushart|Marcin Kaźmierczak
 Repository: https://github.com/jonasbb/serde_with/
 License: Apache-2.0 OR MIT
 
-524. serde_yaml@0.9.34+deprecated
+498. serde_yaml@0.9.34+deprecated
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/serde-yaml
 License: Apache-2.0 OR MIT
 
-525. serde-untagged@0.1.9
+499. serde-untagged@0.1.9
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/serde-untagged
 License: Apache-2.0 OR MIT
 
-526. serde-value@0.7.0
+500. serde-value@0.7.0
 
 Authors: arcnmx
 Repository: https://github.com/arcnmx/serde-value
 License: MIT
 
-527. serde@1.0.229
+501. serde@1.0.229
 
 Authors: Erick Tryzelaar <erick.tryzelaar@gmail.com>|David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/serde-rs/serde
 License: Apache-2.0 OR MIT
 
-528. serdect@0.4.3
+502. serdect@0.4.3
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-529. serialize-to-javascript-impl@0.1.2
+503. serialize-to-javascript-impl@0.1.2
 
 Authors: Chip Reed <chip@chip.sh>
 Repository: https://github.com/chippers/serialize-to-javascript
 License: Apache-2.0 OR MIT
 
-530. serialize-to-javascript@0.1.2
+504. serialize-to-javascript@0.1.2
 
 Authors: Chip Reed <chip@chip.sh>
 Repository: https://github.com/chippers/serialize-to-javascript
 License: Apache-2.0 OR MIT
 
-531. servo_arc@0.4.3
+505. servo_arc@0.4.3
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/stylo
 License: Apache-2.0 OR MIT
 
-532. sha1_smol@1.0.1
+506. sha1_smol@1.0.1
 
 Authors: Armin Ronacher <armin.ronacher@active-4.com>
 Repository: https://github.com/mitsuhiko/sha1-smol
 License: BSD-3-Clause
 
-533. sha2@0.10.9
+507. sha2@0.10.9
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/hashes
 License: Apache-2.0 OR MIT
 
-534. sha2@0.11.1
+508. sha2@0.11.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/hashes
 License: Apache-2.0 OR MIT
 
-535. sharded-slab@0.1.7
+509. sharded-slab@0.1.7
 
 Authors: Eliza Weisman <eliza@buoyant.io>
 Repository: https://github.com/hawkw/sharded-slab
 License: MIT
 
-536. shlex@2.0.1
+510. shlex@2.0.1
 
 Authors: comex <comexk@gmail.com>|Fenhl <fenhl@fenhl.net>|Adrian Taylor <adetaylor@chromium.org>|Alex Touchet <alextouchet@outlook.com>|Daniel Parks <dp+git@oxidized.org>|Garrett Berg <googberg@gmail.com>
 Repository: https://github.com/comex/rust-shlex
 License: Apache-2.0 OR MIT
 
-537. signal-hook-registry@1.4.8
+511. signal-hook-registry@1.4.8
 
 Authors: Michal 'vorner' Vaner <vorner@vorner.cz>|Masaki Hara <ackie.h.gmai@gmail.com>
 Repository: https://github.com/vorner/signal-hook
 License: Apache-2.0 OR MIT
 
-538. signature@3.0.0
+512. signature@3.0.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-539. simd_cesu8@1.2.0
+513. simd_cesu8@1.2.0
 
 Authors: Sean C. Roach <me@seancroach.dev>
 Repository: https://github.com/seancroach/simd_cesu8
 License: Apache-2.0 OR MIT
 
-540. simd-adler32@0.3.10
+514. simd-adler32@0.3.10
 
 Authors: Marvin Countryman <me@maar.vin>
 Repository: https://github.com/mcountryman/simd-adler32
 License: MIT
 
-541. simdutf8@0.1.5
+515. simdutf8@0.1.5
 
 Authors: Hans Kratz <hans@appfour.com>
 Repository: https://github.com/rusticstuff/simdutf8
 License: Apache-2.0 OR MIT
 
-542. simple-dns@0.12.0
+516. simple-dns@0.11.3
 
 Authors: Ilson Roberto Balliego Junior <ilson.balliego@gmail.com>
 Repository: https://github.com/balliegojr/simple-dns
 License: MIT
 
-543. siphasher@1.0.4
+517. siphasher@1.0.3
 
 Authors: Frank Denis <github@pureftpd.org>
 Repository: https://github.com/jedisct1/rust-siphash
 License: Apache-2.0 OR MIT
 
-544. slab@0.4.12
+518. slab@0.4.12
 
 Authors: Carl Lerche <me@carllerche.com>
 Repository: https://github.com/tokio-rs/slab
 License: MIT
 
-545. slotmap@1.1.1
-
-Authors: Orson Peters <orsonpeters@gmail.com>
-Repository: https://github.com/orlp/slotmap
-License: Zlib
-
-546. smallvec@1.16.4
+519. smallvec@1.15.2
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/rust-smallvec
 License: Apache-2.0 OR MIT
 
-547. socket2@0.6.5
+520. socket2@0.6.5
 
 Authors: Alex Crichton <alex@alexcrichton.com>|Thomas de Zeeuw <thomasdezeeuw@gmail.com>
 Repository: https://github.com/rust-lang/socket2
 License: Apache-2.0 OR MIT
 
-548. softbuffer@0.4.8
+521. softbuffer@0.4.8
 
 Repository: https://github.com/rust-windowing/softbuffer
 License: Apache-2.0 OR MIT
 
-549. sorted-index-buffer@0.2.1
+522. sorted-index-buffer@0.2.1
 
 Authors: rklaehn <rklaehn@protonmail.com>|n0 team
 Repository: https://github.com/n0-computer/iroh
 License: Apache-2.0 OR MIT
 
-550. soup3-sys@0.5.0
+523. soup3-sys@0.5.0
 
 Authors: The Gtk-rs Project Developers
 Repository: https://gitlab.gnome.org/World/Rust/soup3-rs
 License: MIT
 
-551. soup3@0.5.0
+524. soup3@0.5.0
 
 Repository: https://gitlab.gnome.org/World/Rust/soup3-rs
 License: MIT
 
-552. spez@0.1.2
+525. spez@0.1.2
 
 Authors: Mara Bos <m-ou.se@m-ou.se>
 Repository: https://github.com/m-ou-se/spez
 License: BSD-2-Clause
 
-553. spin@0.10.1
+526. spin@0.10.1
 
 Authors: Mathijs van de Nes <git@mathijs.vd-nes.nl>|John Ericson <git@JohnEricson.me>|Joshua Barretto <joshua.s.barretto@gmail.com>
 Repository: https://github.com/mvdnes/spin-rs.git
 License: MIT
 
-554. spki@0.8.1
+527. spki@0.8.0
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/formats
 License: Apache-2.0 OR MIT
 
-555. stable_deref_trait@1.2.1
+528. stable_deref_trait@1.2.1
 
 Authors: Robert Grosse <n210241048576@gmail.com>
 Repository: https://github.com/storyyeller/stable_deref_trait
 License: Apache-2.0 OR MIT
 
-556. static_vcruntime@3.0.0
-
-Repository: https://github.com/ChrisDenton/static_vcruntime
-License: Apache-2.0 OR MIT OR Zlib
-
-557. string_cache_codegen@0.6.1
+529. string_cache_codegen@0.6.1
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/string-cache
 License: Apache-2.0 OR MIT
 
-558. string_cache@0.9.0
+530. string_cache@0.9.0
 
 Authors: The Servo Project Developers
 Repository: https://github.com/servo/string-cache
 License: Apache-2.0 OR MIT
 
-559. strsim@0.11.1
+531. strsim@0.11.1
 
 Authors: Danny Guo <danny@dannyguo.com>|maxbachmann <oss@maxbachmann.de>
 Repository: https://github.com/rapidfuzz/strsim-rs
 License: MIT
 
-560. strum_macros@0.28.0
+532. strum_macros@0.28.0
 
 Authors: Peter Glotfelty <peter.glotfelty@microsoft.com>
 Repository: https://github.com/Peternator7/strum
 License: MIT
 
-561. strum@0.28.0
+533. strum@0.28.0
 
 Authors: Peter Glotfelty <peter.glotfelty@microsoft.com>
 Repository: https://github.com/Peternator7/strum
 License: MIT
 
-562. subtle@2.6.1
+534. subtle@2.6.1
 
 Authors: Isis Lovecruft <isis@patternsinthevoid.net>|Henry de Valence <hdevalence@hdevalence.ca>
 Repository: https://github.com/dalek-cryptography/subtle
 License: BSD-3-Clause
 
-563. swift-rs@1.0.9
+535. swift-rs@1.0.7
 
 Authors: The swift-rs contributors
 Repository: https://github.com/Brendonovich/swift-rs
 License: Apache-2.0 OR MIT
 
-564. syn@1.0.109
+536. syn@1.0.109
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/syn
 License: Apache-2.0 OR MIT
 
-565. syn@2.0.119
+537. syn@2.0.119
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/syn
 License: Apache-2.0 OR MIT
 
-566. syn@3.0.9
+538. syn@3.0.3
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/syn
 License: Apache-2.0 OR MIT
 
-567. sync_wrapper@1.0.2
+539. sync_wrapper@1.0.2
 
 Authors: Actyx AG <developer@actyx.io>
 Repository: https://github.com/Actyx/sync_wrapper
 License: Apache-2.0
 
-568. synstructure@0.14.0
+540. synstructure@0.13.2
 
 Authors: Nika Layzell <nika@thelayzells.com>
 Repository: https://github.com/mystor/synstructure
 License: MIT
 
-569. sysinfo@0.32.1
+541. sysinfo@0.32.1
 
 Authors: Guillaume Gomez <guillaume1.gomez@gmail.com>
 Repository: https://github.com/GuillaumeGomez/sysinfo
 License: MIT
 
-570. sysproxy@0.5.1
+542. sysproxy@0.5.1
 
 Authors: zzzgydi
 Repository: https://github.com/mihomo-party-org/sysproxy-rs-opti.git
 License: MIT
 
-571. system-configuration-sys@0.6.0
+543. system-configuration-sys@0.6.0
 
 Authors: Mullvad VPN
 Repository: https://github.com/mullvad/system-configuration-rs
 License: Apache-2.0 OR MIT
 
-572. system-configuration@0.7.0
+544. system-configuration@0.7.0
 
 Authors: Mullvad VPN
 Repository: https://github.com/mullvad/system-configuration-rs
 License: Apache-2.0 OR MIT
 
-573. system-configuration@0.8.0
-
-Authors: Mullvad VPN
-Repository: https://github.com/mullvad/system-configuration-rs
-License: Apache-2.0 OR MIT
-
-574. system-deps@6.2.2
+545. system-deps@6.2.2
 
 Authors: Guillaume Desmottes <guillaume.desmottes@collabora.com>|Josh Triplett <josh@joshtriplett.org>
 Repository: https://github.com/gdesmott/system-deps
 License: Apache-2.0 OR MIT
 
-575. tao-macros@0.1.4
+546. tagptr@0.2.0
+
+Authors: Oliver Giersch
+Repository: https://github.com/oliver-giersch/tagptr.git
+License: Apache-2.0 OR MIT
+
+547. tao-macros@0.1.4
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tao
 License: Apache-2.0 OR MIT
 
-576. tao@0.37.2
+548. tao@0.35.3
 
 Authors: Tauri Programme within The Commons Conservancy|The winit contributors
 Repository: https://github.com/tauri-apps/tao
 License: Apache-2.0
 
-577. tar@0.4.46
+549. tar@0.4.46
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/composefs/tar-rs
 License: Apache-2.0 OR MIT
 
-578. target-lexicon@0.12.16
+550. target-lexicon@0.12.16
 
 Authors: Dan Gohman <sunfish@mozilla.com>
 Repository: https://github.com/bytecodealliance/target-lexicon
 License: Apache-2.0 WITH LLVM-exception
 
-579. tauri-build@2.7.4
+551. tauri-build@2.6.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-580. tauri-codegen@2.7.4
+552. tauri-codegen@2.6.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-581. tauri-macros@2.7.4
+553. tauri-macros@2.6.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-582. tauri-plugin-dialog@2.8.3
+554. tauri-plugin-dialog@2.7.2
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-583. tauri-plugin-fs@2.7.1
+555. tauri-plugin-fs@2.5.1
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-584. tauri-plugin-http@2.8.3
+556. tauri-plugin-http@2.5.9
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-585. tauri-plugin-opener@2.7.2
+557. tauri-plugin-opener@2.5.4
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-586. tauri-plugin-process@2.4.0
+558. tauri-plugin-process@2.3.1
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-587. tauri-plugin-window-state@2.5.0
+559. tauri-plugin-window-state@2.4.1
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/plugins-workspace
 License: Apache-2.0 OR MIT
 
-588. tauri-plugin@2.7.2
+560. tauri-plugin@2.6.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-589. tauri-runtime-wry@2.12.3
+561. tauri-runtime-wry@2.11.4
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-590. tauri-runtime@2.12.2
+562. tauri-runtime@2.11.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-591. tauri-utils@2.10.2
+563. tauri-utils@2.9.3
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-592. tauri-winres@0.3.7
+564. tauri-winres@0.3.6
 
 Authors: Tauri Programme within The Commons Conservancy|Max Resch <resch.max@gmail.com>
 Repository: https://github.com/tauri-apps/winres
 License: MIT
 
-593. tauri@2.12.5
+565. tauri@2.11.5
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri
 License: Apache-2.0 OR MIT
 
-594. tempfile@3.27.0
+566. tempfile@3.27.0
 
 Authors: Steven Allen <steven@stebalien.com>|The Rust Project Developers|Ashley Mannix <ashleymannix@live.com.au>|Jason White <me@jasonwhite.io>
 Repository: https://github.com/Stebalien/tempfile
 License: Apache-2.0 OR MIT
 
-595. tendril@0.5.1
+567. tendril@0.5.1
 
 Authors: Keegan McAllister <mcallister.keegan@gmail.com>|Simon Sapin <simon.sapin@exyr.org>|Chris Morgan <me@chrismorgan.info>
 Repository: https://github.com/servo/html5ever
 License: Apache-2.0 OR MIT
 
-596. thiserror-impl@1.0.69
+568. thiserror-impl@1.0.69
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/thiserror
 License: Apache-2.0 OR MIT
 
-597. thiserror-impl@2.0.21
+569. thiserror-impl@2.0.20
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/thiserror
 License: Apache-2.0 OR MIT
 
-598. thiserror@1.0.69
+570. thiserror@1.0.69
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/thiserror
 License: Apache-2.0 OR MIT
 
-599. thiserror@2.0.21
+571. thiserror@2.0.20
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/thiserror
 License: Apache-2.0 OR MIT
 
-600. thread_local@1.1.10
+572. thread_local@1.1.10
 
 Authors: Amanieu d'Antras <amanieu@gmail.com>
 Repository: https://github.com/Amanieu/thread_local-rs
 License: Apache-2.0 OR MIT
 
-601. tiff@0.11.3
-
-Authors: The image-rs Developers
-Repository: https://github.com/image-rs/image-tiff
-License: MIT
-
-602. time-core@0.1.9
+573. time-core@0.1.9
 
 Authors: Jacob Pratt <open-source@jhpratt.dev>|Time contributors
 Repository: https://github.com/time-rs/time
 License: Apache-2.0 OR MIT
 
-603. time-macros@0.2.32
+574. time-macros@0.2.32
 
 Authors: Jacob Pratt <open-source@jhpratt.dev>|Time contributors
 Repository: https://github.com/time-rs/time
 License: Apache-2.0 OR MIT
 
-604. time@0.3.55
+575. time@0.3.55
 
 Authors: Jacob Pratt <open-source@jhpratt.dev>|Time contributors
 Repository: https://github.com/time-rs/time
 License: Apache-2.0 OR MIT
 
-605. tinystr@0.8.5
+576. tinystr@0.8.4
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-606. tinyvec@1.13.3
+577. tinyvec_macros@0.1.1
+
+Authors: Soveu <marx.tomasz@gmail.com>
+Repository: https://github.com/Soveu/tinyvec_macros
+License: Apache-2.0 OR MIT OR Zlib
+
+578. tinyvec@1.12.0
 
 Authors: Lokathor <zefria@gmail.com>
 Repository: https://github.com/Lokathor/tinyvec
 License: Apache-2.0 OR MIT OR Zlib
 
-607. tokio-macros@2.7.2
+579. tokio-macros@2.7.2
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tokio
 License: MIT
 
-608. tokio-native-tls@0.3.1
+580. tokio-native-tls@0.3.1
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tls
 License: MIT
 
-609. tokio-rustls@0.26.6
+581. tokio-rustls@0.26.4
 
 Repository: https://github.com/rustls/tokio-rustls
 License: Apache-2.0 OR MIT
 
-610. tokio-stream@0.1.19
+582. tokio-stream@0.1.19
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tokio
 License: MIT
 
-611. tokio-util@0.7.20
+583. tokio-util@0.7.19
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tokio
 License: MIT
 
-612. tokio-websockets@0.13.3
+584. tokio-websockets@0.13.3
 
 Repository: https://github.com/Gelbpunkt/tokio-websockets/
 License: MIT
 
-613. tokio@1.54.1
+585. tokio@1.53.1
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tokio
 License: MIT
 
-614. toml_datetime@0.6.3
+586. toml_datetime@0.6.3
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-615. toml_datetime@1.1.2+spec-1.1.0
+587. toml_datetime@0.7.5+spec-1.1.0
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-616. toml_edit@0.19.15
+588. toml_datetime@1.1.1+spec-1.1.0
+
+Repository: https://github.com/toml-rs/toml
+License: Apache-2.0 OR MIT
+
+589. toml_edit@0.19.15
 
 Authors: Andronik Ordian <write@reusable.software>|Ed Page <eopage@gmail.com>
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-617. toml_edit@0.20.2
+590. toml_edit@0.20.2
 
 Authors: Andronik Ordian <write@reusable.software>|Ed Page <eopage@gmail.com>
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-618. toml_edit@0.25.17+spec-1.1.0
+591. toml_edit@0.25.13+spec-1.1.0
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-619. toml_parser@1.1.5+spec-1.1.0
+592. toml_parser@1.1.3+spec-1.1.0
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-620. toml_writer@1.1.3+spec-1.1.0
+593. toml_writer@1.1.2+spec-1.1.0
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-621. toml@0.8.2
+594. toml@0.8.2
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-622. toml@1.1.8+spec-1.1.0
+595. toml@0.9.12+spec-1.1.0
 
 Repository: https://github.com/toml-rs/toml
 License: Apache-2.0 OR MIT
 
-623. tower-http@0.6.11
+596. toml@1.1.4+spec-1.1.0
+
+Repository: https://github.com/toml-rs/toml
+License: Apache-2.0 OR MIT
+
+597. tower-http@0.6.11
 
 Authors: Tower Maintainers <team@tower-rs.com>
 Repository: https://github.com/tower-rs/tower-http
 License: MIT
 
-624. tower-layer@0.3.3
+598. tower-layer@0.3.3
 
 Authors: Tower Maintainers <team@tower-rs.com>
 Repository: https://github.com/tower-rs/tower
 License: MIT
 
-625. tower-service@0.3.3
+599. tower-service@0.3.3
 
 Authors: Tower Maintainers <team@tower-rs.com>
 Repository: https://github.com/tower-rs/tower
 License: MIT
 
-626. tower@0.5.3
+600. tower@0.5.3
 
 Authors: Tower Maintainers <team@tower-rs.com>
 Repository: https://github.com/tower-rs/tower
 License: MIT
 
-627. tracing-attributes@0.1.31
+601. tracing-attributes@0.1.31
 
 Authors: Tokio Contributors <team@tokio.rs>|Eliza Weisman <eliza@buoyant.io>|David Barsky <dbarsky@amazon.com>
 Repository: https://github.com/tokio-rs/tracing
 License: MIT
 
-628. tracing-core@0.1.36
+602. tracing-core@0.1.36
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tracing
 License: MIT
 
-629. tracing-log@0.2.0
+603. tracing-log@0.2.0
 
 Authors: Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tracing
 License: MIT
 
-630. tracing-subscriber@0.3.23
+604. tracing-subscriber@0.3.23
 
 Authors: Eliza Weisman <eliza@buoyant.io>|David Barsky <me@davidbarsky.com>|Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tracing
 License: MIT
 
-631. tracing@0.1.44
+605. tracing@0.1.44
 
 Authors: Eliza Weisman <eliza@buoyant.io>|Tokio Contributors <team@tokio.rs>
 Repository: https://github.com/tokio-rs/tracing
 License: MIT
 
-632. tray-icon@0.25.1
+606. tray-icon@0.24.2
 
 Repository: https://github.com/tauri-apps/tray-icon
 License: Apache-2.0 OR MIT
 
-633. try-lock@0.2.5
+607. try-lock@0.2.5
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/seanmonstar/try-lock
 License: MIT
 
-634. typeid@1.0.3
+608. typeid@1.0.3
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/typeid
 License: Apache-2.0 OR MIT
 
-635. typenum@1.20.1
+609. typenum@1.20.1
 
 Repository: https://github.com/paholg/typenum
 License: Apache-2.0 OR MIT
 
-636. uds_windows@1.2.1
+610. uds_windows@1.2.1
 
 Authors: Azure IoT Edge Devs|Harald Hoyer <harald@redhat.com>
 Repository: https://github.com/haraldh/rust_uds_windows
 License: MIT
 
-637. unicode-ident@1.0.27
+611. unic-char-property@0.9.0
+
+Authors: The UNIC Project Developers
+Repository: https://github.com/open-i18n/rust-unic/
+License: Apache-2.0 OR MIT
+
+612. unic-char-range@0.9.0
+
+Authors: The UNIC Project Developers
+Repository: https://github.com/open-i18n/rust-unic/
+License: Apache-2.0 OR MIT
+
+613. unic-common@0.9.0
+
+Authors: The UNIC Project Developers
+Repository: https://github.com/open-i18n/rust-unic/
+License: Apache-2.0 OR MIT
+
+614. unic-ucd-ident@0.9.0
+
+Authors: The UNIC Project Developers
+Repository: https://github.com/open-i18n/rust-unic/
+License: Apache-2.0 OR MIT
+
+615. unic-ucd-version@0.9.0
+
+Authors: The UNIC Project Developers
+Repository: https://github.com/open-i18n/rust-unic/
+License: Apache-2.0 OR MIT
+
+616. unicode-ident@1.0.24
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/unicode-ident
 License: (Apache-2.0 OR MIT) AND Unicode-3.0
 
-638. unicode-segmentation@1.13.3
+617. unicode-segmentation@1.13.3
 
 Authors: kwantam <kwantam@gmail.com>|Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-rs/unicode-segmentation
 License: Apache-2.0 OR MIT
 
-639. unicode-xid@0.2.6
+618. unicode-xid@0.2.6
 
 Authors: erick.tryzelaar <erick.tryzelaar@gmail.com>|kwantam <kwantam@gmail.com>|Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-rs/unicode-xid
 License: Apache-2.0 OR MIT
 
-640. universal-hash@0.5.1
+619. universal-hash@0.5.1
 
 Authors: RustCrypto Developers
 Repository: https://github.com/RustCrypto/traits
 License: Apache-2.0 OR MIT
 
-641. unsafe-libyaml@0.2.11
+620. unsafe-libyaml@0.2.11
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/unsafe-libyaml
 License: MIT
 
-642. untrusted@0.9.0
+621. untrusted@0.9.0
 
 Authors: Brian Smith <brian@briansmith.org>
 Repository: https://github.com/briansmith/untrusted
 License: ISC
 
-643. url@2.5.8
+622. url@2.5.8
 
 Authors: The rust-url developers
 Repository: https://github.com/servo/rust-url
 License: Apache-2.0 OR MIT
 
-644. urlencoding@2.1.3
+623. urlencoding@2.1.3
 
 Authors: Kornel <kornel@geekhood.net>|Bertram Truong <b@bertramtruong.com>
 Repository: https://github.com/kornelski/rust_urlencoding
 License: MIT
 
-645. urlpattern@0.6.0
+624. urlpattern@0.3.0
 
 Authors: the Deno authors|crowlKats <crowlkats@toaxl.com>
 Repository: https://github.com/denoland/rust-urlpattern
 License: MIT
 
-646. utf8_iter@1.0.4
+625. utf8_iter@1.0.4
 
 Authors: Henri Sivonen <hsivonen@hsivonen.fi>
 Repository: https://github.com/hsivonen/utf8_iter
 License: Apache-2.0 OR MIT
 
-647. uuid@1.29.0
+626. uuid@1.24.1
 
 Authors: Ashley Mannix<ashleymannix@live.com.au>|Dylan DPC<dylan.dpc@gmail.com>|Hunar Roop Kahlon<hunar.roop@gmail.com>
 Repository: https://github.com/uuid-rs/uuid
 License: Apache-2.0 OR MIT
 
-648. valuable@0.1.1
+627. valuable@0.1.1
 
 Repository: https://github.com/tokio-rs/valuable
 License: MIT
 
-649. vcpkg@0.2.15
+628. vcpkg@0.2.15
 
 Authors: Jim McGrath <jimmc2@gmail.com>
 Repository: https://github.com/mcgoo/vcpkg-rs
 License: Apache-2.0 OR MIT
 
-650. version_check@0.9.5
+629. version_check@0.9.5
 
 Authors: Sergio Benitez <sb@sergio.bz>
 Repository: https://github.com/SergioBenitez/version_check
 License: Apache-2.0 OR MIT
 
-651. version-compare@0.2.1
+630. version-compare@0.2.1
 
 Authors: Tim Visee <3a4fb3964f@sinenomine.email>
 Repository: https://gitlab.com/timvisee/version-compare
 License: MIT
 
-652. vswhom-sys@0.1.3
+631. vswhom-sys@0.1.3
 
 Authors: наб <nabijaczleweli@nabijaczleweli.xyz>|forrestsmithfb <forrest.smith@fb.com>
 Repository: https://github.com/nabijaczleweli/vswhom-sys.rs
 License: MIT
 
-653. vswhom@0.1.0
+632. vswhom@0.1.0
 
 Authors: nabijaczleweli <nabijaczleweli@gmail.com>
 Repository: https://github.com/nabijaczleweli/vswhom.rs
 License: MIT
 
-654. walkdir@2.5.0
+633. walkdir@2.5.0
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/walkdir
 License: MIT OR Unlicense
 
-655. want@0.3.2
+634. want@0.3.1
 
 Authors: Sean McArthur <sean@seanmonstar.com>
 Repository: https://github.com/seanmonstar/want
 License: MIT
 
-656. wasi@0.11.1+wasi-snapshot-preview1
+635. wasi@0.11.1+wasi-snapshot-preview1
 
 Authors: The Cranelift Project Developers
 Repository: https://github.com/bytecodealliance/wasi
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-657. wasip2@1.0.4+wasi-0.2.12
+636. wasip2@1.0.4+wasi-0.2.12
 
 Repository: https://github.com/bytecodealliance/wasi-rs
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-658. wasm-bindgen-futures@0.4.79
+637. wasm-bindgen-futures@0.4.77
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/futures
 License: Apache-2.0 OR MIT
 
-659. wasm-bindgen-macro-support@0.2.129
+638. wasm-bindgen-macro-support@0.2.127
 
 Authors: The wasm-bindgen Developers
-Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/main/crates/macro-support
+Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro-support
 License: Apache-2.0 OR MIT
 
-660. wasm-bindgen-macro@0.2.129
+639. wasm-bindgen-macro@0.2.127
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/macro
 License: Apache-2.0 OR MIT
 
-661. wasm-bindgen-shared@0.2.129
+640. wasm-bindgen-shared@0.2.127
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/shared
 License: Apache-2.0 OR MIT
 
-662. wasm-bindgen@0.2.129
+641. wasm-bindgen@0.2.127
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen
 License: Apache-2.0 OR MIT
 
-663. wasm-streams@0.4.2
+642. wasm-streams@0.4.2
 
 Authors: Mattias Buelens <mattias@buelens.com>
 Repository: https://github.com/MattiasBuelens/wasm-streams/
 License: Apache-2.0 OR MIT
 
-664. wasm-streams@0.5.0
+643. wasm-streams@0.5.0
 
 Authors: Mattias Buelens <mattias@buelens.com>
 Repository: https://github.com/MattiasBuelens/wasm-streams/
 License: Apache-2.0 OR MIT
 
-665. web_atoms@0.2.6
+644. web_atoms@0.2.6
 
 Authors: The html5ever Project Developers
 Repository: https://github.com/servo/html5ever
 License: Apache-2.0 OR MIT
 
-666. web-sys@0.3.106
+645. web-sys@0.3.104
 
 Authors: The wasm-bindgen Developers
 Repository: https://github.com/wasm-bindgen/wasm-bindgen/tree/master/crates/web-sys
 License: Apache-2.0 OR MIT
 
-667. web-time@1.1.0
+646. web-time@1.1.0
 
 Repository: https://github.com/daxpedda/web-time
 License: Apache-2.0 OR MIT
 
-668. webkit2gtk-sys@2.0.2
+647. webkit2gtk-sys@2.0.2
 
 Repository: https://github.com/tauri-apps/webkit2gtk-rs
 License: MIT
 
-669. webkit2gtk@2.0.2
+648. webkit2gtk@2.0.2
 
 Repository: https://github.com/tauri-apps/webkit2gtk-rs
 License: MIT
 
-670. webpki-root-certs@1.0.11
+649. webpki-root-certs@1.0.9
 
 Repository: https://github.com/rustls/webpki-roots
 License: CDLA-Permissive-2.0
 
-671. webpki-roots@1.0.11
+650. webpki-roots@1.0.9
 
 Repository: https://github.com/rustls/webpki-roots
 License: CDLA-Permissive-2.0
 
-672. webview2-com-macros@0.8.1
+651. webview2-com-macros@0.8.1
 
 Repository: https://github.com/wravery/webview2-rs
 License: MIT
 
-673. webview2-com-sys@0.39.1
+652. webview2-com-sys@0.38.2
 
 Repository: https://github.com/wravery/webview2-rs
 License: MIT
 
-674. webview2-com@0.39.1
+653. webview2-com@0.38.2
 
 Repository: https://github.com/wravery/webview2-rs
 License: MIT
 
-675. weezl@0.1.12
-
-Authors: The image-rs Developers
-Repository: https://github.com/image-rs/weezl
-License: Apache-2.0 OR MIT
-
-676. which@7.0.3
+654. which@7.0.3
 
 Authors: Harry Fei <tiziyuanfang@gmail.com>, Jacob Kiesel <jake@bitcrafters.co>
 Repository: https://github.com/harryfei/which-rs.git
 License: MIT
 
-677. widestring@1.2.1
+655. widestring@1.2.1
 
 Repository: https://github.com/VoidStarKat/widestring-rs
 License: Apache-2.0 OR MIT
 
-678. winapi-i686-pc-windows-gnu@0.4.0
+656. winapi-i686-pc-windows-gnu@0.4.0
 
 Authors: Peter Atashian <retep998@gmail.com>
 Repository: https://github.com/retep998/winapi-rs
 License: Apache-2.0 OR MIT
 
-679. winapi-util@0.1.11
+657. winapi-util@0.1.11
 
 Authors: Andrew Gallant <jamslam@gmail.com>
 Repository: https://github.com/BurntSushi/winapi-util
 License: MIT OR Unlicense
 
-680. winapi-x86_64-pc-windows-gnu@0.4.0
+658. winapi-x86_64-pc-windows-gnu@0.4.0
 
 Authors: Peter Atashian <retep998@gmail.com>
 Repository: https://github.com/retep998/winapi-rs
 License: Apache-2.0 OR MIT
 
-681. winapi@0.3.9
+659. winapi@0.3.9
 
 Authors: Peter Atashian <retep998@gmail.com>
 Repository: https://github.com/retep998/winapi-rs
 License: Apache-2.0 OR MIT
 
-682. window-vibrancy@0.8.1
+660. window-vibrancy@0.6.0
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/tauri-plugin-vibrancy
 License: Apache-2.0 OR MIT
 
-683. windows_aarch64_gnullvm@0.42.2
+661. windows_aarch64_gnullvm@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-684. windows_aarch64_gnullvm@0.48.5
+662. windows_aarch64_gnullvm@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-685. windows_aarch64_gnullvm@0.52.6
+663. windows_aarch64_gnullvm@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-686. windows_aarch64_gnullvm@0.53.1
+664. windows_aarch64_gnullvm@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-687. windows_aarch64_msvc@0.42.2
+665. windows_aarch64_msvc@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-688. windows_aarch64_msvc@0.48.5
+666. windows_aarch64_msvc@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-689. windows_aarch64_msvc@0.52.6
+667. windows_aarch64_msvc@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-690. windows_aarch64_msvc@0.53.1
+668. windows_aarch64_msvc@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-691. windows_i686_gnu@0.42.2
+669. windows_i686_gnu@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-692. windows_i686_gnu@0.48.5
+670. windows_i686_gnu@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-693. windows_i686_gnu@0.52.6
+671. windows_i686_gnu@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-694. windows_i686_gnu@0.53.1
+672. windows_i686_gnu@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-695. windows_i686_gnullvm@0.52.6
+673. windows_i686_gnullvm@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-696. windows_i686_gnullvm@0.53.1
+674. windows_i686_gnullvm@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-697. windows_i686_msvc@0.42.2
+675. windows_i686_msvc@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-698. windows_i686_msvc@0.48.5
+676. windows_i686_msvc@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-699. windows_i686_msvc@0.52.6
+677. windows_i686_msvc@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-700. windows_i686_msvc@0.53.1
+678. windows_i686_msvc@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-701. windows_x86_64_gnu@0.42.2
+679. windows_x86_64_gnu@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-702. windows_x86_64_gnu@0.48.5
+680. windows_x86_64_gnu@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-703. windows_x86_64_gnu@0.52.6
+681. windows_x86_64_gnu@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-704. windows_x86_64_gnu@0.53.1
+682. windows_x86_64_gnu@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-705. windows_x86_64_gnullvm@0.42.2
+683. windows_x86_64_gnullvm@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-706. windows_x86_64_gnullvm@0.48.5
+684. windows_x86_64_gnullvm@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-707. windows_x86_64_gnullvm@0.52.6
+685. windows_x86_64_gnullvm@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-708. windows_x86_64_gnullvm@0.53.1
+686. windows_x86_64_gnullvm@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-709. windows_x86_64_msvc@0.42.2
+687. windows_x86_64_msvc@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-710. windows_x86_64_msvc@0.48.5
+688. windows_x86_64_msvc@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-711. windows_x86_64_msvc@0.52.6
+689. windows_x86_64_msvc@0.52.6
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-712. windows_x86_64_msvc@0.53.1
+690. windows_x86_64_msvc@0.53.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-713. windows-collections@0.3.2
+691. windows-collections@0.2.0
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-714. windows-core@0.52.0
+692. windows-collections@0.3.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+693. windows-core@0.52.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-715. windows-core@0.57.0
+694. windows-core@0.57.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-716. windows-core@0.58.0
+695. windows-core@0.58.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-717. windows-core@0.62.2
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-718. windows-future@0.3.2
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-719. windows-implement@0.57.0
+696. windows-core@0.61.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-720. windows-implement@0.58.0
+697. windows-core@0.62.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+698. windows-future@0.2.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+699. windows-future@0.3.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+700. windows-implement@0.57.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-721. windows-implement@0.60.2
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-722. windows-interface@0.57.0
+701. windows-implement@0.58.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-723. windows-interface@0.58.0
+702. windows-implement@0.60.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+703. windows-interface@0.57.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-724. windows-interface@0.59.3
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-725. windows-link@0.2.1
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-726. windows-numerics@0.3.1
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-727. windows-registry@0.6.1
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-728. windows-result@0.1.2
+704. windows-interface@0.58.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-729. windows-result@0.2.0
+705. windows-interface@0.59.3
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+706. windows-link@0.1.3
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-730. windows-result@0.4.1
+707. windows-link@0.2.1
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-731. windows-strings@0.1.0
+708. windows-numerics@0.2.0
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+709. windows-numerics@0.3.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+710. windows-registry@0.6.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+711. windows-result@0.1.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-732. windows-strings@0.5.1
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-733. windows-sys@0.45.0
+712. windows-result@0.2.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-734. windows-sys@0.48.0
+713. windows-result@0.3.4
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-735. windows-sys@0.52.0
+714. windows-result@0.4.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+715. windows-strings@0.1.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-736. windows-sys@0.59.0
+716. windows-strings@0.4.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-737. windows-sys@0.60.2
+717. windows-strings@0.5.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+718. windows-sys@0.45.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-738. windows-sys@0.61.2
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-739. windows-targets@0.42.2
+719. windows-sys@0.48.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-740. windows-targets@0.48.5
+720. windows-sys@0.52.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-741. windows-targets@0.52.6
+721. windows-sys@0.59.0
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-742. windows-targets@0.53.5
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-743. windows-threading@0.2.1
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-744. windows-version@0.1.7
-
-Repository: https://github.com/microsoft/windows-rs
-License: Apache-2.0 OR MIT
-
-745. windows@0.52.0
+722. windows-sys@0.60.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-746. windows@0.57.0
+723. windows-sys@0.61.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+724. windows-targets@0.42.2
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-747. windows@0.58.0
+725. windows-targets@0.48.5
 
 Authors: Microsoft
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-748. windows@0.62.2
+726. windows-targets@0.52.6
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+727. windows-targets@0.53.5
 
 Repository: https://github.com/microsoft/windows-rs
 License: Apache-2.0 OR MIT
 
-749. winnow@0.5.40
+728. windows-threading@0.1.0
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+729. windows-threading@0.2.1
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+730. windows-version@0.1.7
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+731. windows@0.52.0
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+732. windows@0.57.0
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+733. windows@0.58.0
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+734. windows@0.61.3
+
+Authors: Microsoft
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+735. windows@0.62.2
+
+Repository: https://github.com/microsoft/windows-rs
+License: Apache-2.0 OR MIT
+
+736. winnow@0.5.40
 
 Repository: https://github.com/winnow-rs/winnow
 License: MIT
 
-750. winnow@1.0.4
+737. winnow@0.7.15
 
 Repository: https://github.com/winnow-rs/winnow
 License: MIT
 
-751. winreg@0.55.0
+738. winnow@1.0.4
+
+Repository: https://github.com/winnow-rs/winnow
+License: MIT
+
+739. winreg@0.55.0
 
 Authors: Igor Shaula <gentoo90@gmail.com>
 Repository: https://github.com/gentoo90/winreg-rs
 License: MIT
 
-752. winreg@0.56.0
-
-Authors: Igor Shaula <gentoo90@gmail.com>
-Repository: https://github.com/gentoo90/winreg-rs
-License: MIT
-
-753. winsafe@0.0.19
+740. winsafe@0.0.19
 
 Authors: Rodrigo Cesar de Freitas Dias <rcesar@gmail.com>
 Repository: https://github.com/rodrigocfd/winsafe
 License: MIT
 
-754. winx@0.36.4
+741. winx@0.36.4
 
 Authors: Jakub Konka <kubkon@jakubkonka.com>|Dan Gohman <dev@sunfishcode.online>
 Repository: https://github.com/sunfishcode/winx
 License: Apache-2.0 WITH LLVM-exception
 
-755. wio@0.2.2
-
-Authors: Peter Atashian <retep998@gmail.com>
-Repository: https://github.com/retep998/wio-rs
-License: Apache-2.0 OR MIT
-
-756. wit-bindgen@0.57.1
+742. wit-bindgen@0.57.1
 
 Authors: Alex Crichton <alex@alexcrichton.com>
 Repository: https://github.com/bytecodealliance/wit-bindgen
 License: Apache-2.0 OR Apache-2.0 WITH LLVM-exception OR MIT
 
-757. wmi@0.18.4
+743. wmi@0.18.4
 
 Authors: Ohad Ravid <ohad.rv@gmail.com>
 Repository: https://github.com/ohadravid/wmi-rs
 License: Apache-2.0 OR MIT
 
-758. writeable@0.6.4
+744. writeable@0.6.4
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-759. wry@0.57.1
+745. wry@0.55.1
 
 Authors: Tauri Programme within The Commons Conservancy
 Repository: https://github.com/tauri-apps/wry
 License: Apache-2.0 OR MIT
 
-760. ws_stream_wasm@0.7.5
+746. ws_stream_wasm@0.7.5
 
 Authors: Naja Melan <najamelan@autistici.org>
 Repository: https://github.com/najamelan/ws_stream_wasm
 License: Unlicense
 
-761. x11-dl@2.21.0
+747. x11-dl@2.21.0
 
 Authors: daggerbot <daggerbot@gmail.com>|Erle Pereira <erle@erlepereira.com>|AltF02 <contact@altf2.dev>
 Repository: https://github.com/AltF02/x11-rs.git
 License: MIT
 
-762. x11@2.21.0
+748. x11@2.21.0
 
 Authors: daggerbot <daggerbot@gmail.com>|Erle Pereira <erle@erlepereira.com>|AltF02 <contact@altf2.dev>
 Repository: https://github.com/AltF02/x11-rs.git
 License: MIT
 
-763. x11rb-protocol@0.13.2
-
-Authors: Uli Schlachter <psychon@znc.in>|Eduardo Sánchez Muñoz <eduardosm-dev@e64.io>|notgull <jtnunley01@gmail.com>
-Repository: https://github.com/psychon/x11rb
-License: Apache-2.0 OR MIT
-
-764. x11rb@0.13.2
-
-Authors: Uli Schlachter <psychon@znc.in>|Eduardo Sánchez Muñoz <eduardosm-dev@e64.io>|notgull <jtnunley01@gmail.com>
-Repository: https://github.com/psychon/x11rb
-License: Apache-2.0 OR MIT
-
-765. xdg@3.0.0
+749. xdg@3.0.0
 
 Authors: Ben Longbons <b.r.longbons@gmail.com>|whitequark <whitequark@whitequark.org>
 Repository: https://github.com/whitequark/rust-xdg
 License: Apache-2.0 OR MIT
 
-766. xml-rs@0.8.29
+750. xml-rs@0.8.29
 
 Authors: Vladimir Matveev <vmatveev@citrine.cc>
 Repository: https://github.com/kornelski/xml-rs
 License: MIT
 
-767. xmltree@0.10.3
+751. xmltree@0.10.3
 
 Authors: Andrew Chin <achin@eminence32.net>
 Repository: https://github.com/eminence/xmltree-rs
 License: MIT
 
-768. yeslogic-fontconfig-sys@6.0.1
-
-Authors: Austin Bonander <austin.bonander@gmail.com>|The Servo Project Developers|YesLogic Pty. Ltd. <info@yeslogic.com>
-Repository: https://github.com/yeslogic/fontconfig-rs
-License: MIT
-
-769. yoke-derive@0.8.4
+752. yoke-derive@0.8.2
 
 Authors: Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-770. yoke@0.8.4
+753. yoke@0.8.3
 
 Authors: Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-771. zbus_macros@5.19.0
+754. zbus_macros@5.19.0
 
 Authors: Marc-André Lureau <marcandre.lureau@redhat.com>|Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zbus/
 License: MIT
 
-772. zbus_names@4.3.5
+755. zbus_names@4.3.4
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zbus/
 License: MIT
 
-773. zbus@5.19.0
+756. zbus@5.19.0
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zbus/
 License: MIT
 
-774. zcheapstr@1.1.0
+757. zcheapstr@1.1.0
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zcheapstr/
 License: MIT
 
-775. zerocopy-derive@0.8.63
+758. zerocopy-derive@0.8.56
 
 Repository: https://github.com/google/zerocopy
 License: Apache-2.0 OR BSD-2-Clause OR MIT
 
-776. zerocopy@0.8.63
+759. zerocopy@0.8.56
 
 Repository: https://github.com/google/zerocopy
 License: Apache-2.0 OR BSD-2-Clause OR MIT
 
-777. zerofrom-derive@0.1.8
+760. zerofrom-derive@0.1.7
 
 Authors: Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-778. zerofrom@0.1.8
+761. zerofrom@0.1.8
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-779. zeroize_derive@1.5.0
+762. zeroize_derive@1.5.0
 
 Authors: The RustCrypto Project Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-780. zeroize@1.9.1
+763. zeroize@1.9.0
 
 Authors: The RustCrypto Project Developers
 Repository: https://github.com/RustCrypto/utils
 License: Apache-2.0 OR MIT
 
-781. zerotrie@0.2.5
+764. zerotrie@0.2.5
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-782. zerovec-derive@0.11.7
+765. zerovec-derive@0.11.4
 
 Authors: Manish Goregaokar <manishsmail@gmail.com>
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-783. zerovec@0.11.9
+766. zerovec@0.11.7
 
 Authors: The ICU4X Project Developers
 Repository: https://github.com/unicode-org/icu4x
 License: Unicode-3.0
 
-784. zip@2.6.1
+767. zip@2.4.2
 
 Authors: Mathijs van de Nes <git@mathijs.vd-nes.nl>|Marli Frost <marli@frost.red>|Ryan Levick <ryan.levick@gmail.com>|Chris Hennick <hennickc@amazon.com>
 Repository: https://github.com/zip-rs/zip2.git
 License: MIT
 
-785. zlib-rs@0.6.8
-
-Repository: https://github.com/trifectatechfoundation/zlib-rs
-License: Zlib
-
-786. zmij@1.0.23
+768. zmij@1.0.23
 
 Authors: David Tolnay <dtolnay@gmail.com>
 Repository: https://github.com/dtolnay/zmij
 License: MIT
 
-787. zopfli@0.8.4
+769. zopfli@0.8.3
 
 Repository: https://github.com/zopfli-rs/zopfli
 License: Apache-2.0
 
-788. zune-core@0.5.3
-
-Repository: https://github.com/etemesi254/zune-image
-License: Apache-2.0 OR MIT OR Zlib
-
-789. zune-jpeg@0.5.15
-
-Authors: caleb <etemesicaleb@gmail.com>
-Repository: https://github.com/etemesi254/zune-image/tree/dev/crates/zune-jpeg
-License: Apache-2.0 OR MIT OR Zlib
-
-790. zvariant_derive@5.15.1
+770. zvariant_derive@5.14.0
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zbus/
 License: MIT
 
-791. zvariant_utils@4.2.0
+771. zvariant_utils@4.0.0
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>|turbocooler <turbocooler@cocaine.ninja>
 Repository: https://github.com/z-galaxy/zbus/
 License: MIT
 
-792. zvariant@5.15.1
+772. zvariant@5.14.0
 
 Authors: Zeeshan Ali Khan <zeeshanak@gnome.org>
 Repository: https://github.com/z-galaxy/zbus/
