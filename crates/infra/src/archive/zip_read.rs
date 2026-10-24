@@ -236,8 +236,8 @@ fn validate_archive(
 ///
 /// 中央目录声明的大小不可信，因此写入过程中重新累加单条目字节与总字节，
 /// 任一超限立即中止。
-fn copy_entry_with_limits(
-    entry: &mut zip::read::ZipFile<'_>,
+fn copy_entry_with_limits<R: Read>(
+    entry: &mut zip::read::ZipFile<'_, R>,
     output: &mut cap_std::fs::File,
     output_path: &Path,
     archive_path: &Path,
@@ -294,8 +294,8 @@ fn copy_entry_with_limits(
 /// 读取并校验符号链接载荷，用于在拒绝条目前给出精确原因。
 ///
 /// ZIP 把符号链接目标存放在条目内容中，需要读取后才能判定其是否可移植。
-fn validate_symbolic_link_target(
-    entry: &mut zip::read::ZipFile<'_>,
+fn validate_symbolic_link_target<R: Read>(
+    entry: &mut zip::read::ZipFile<'_, R>,
     archive_path: &Path,
     entry_name: &str,
 ) -> Result<(), ArchiveError> {
