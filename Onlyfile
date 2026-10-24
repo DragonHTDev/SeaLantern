@@ -4,7 +4,7 @@
 # 安装：`cargo install only`
 # VSCode 插件：kercyding.onlyfile
 
-!version 0.4
+!version 0.5
 
 [help] 启动开发模式
 [pass] 开发模式已启动！
