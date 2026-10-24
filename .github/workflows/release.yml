@@ -29,7 +29,7 @@ jobs:
   validate-tag:
     name: 校验 Tag 来源并提取版本
     runs-on: ubuntu-22.04
-    timeout-minutes: 10
+    timeout-minutes: 90
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
       sha: ${{ steps.source.outputs.sha }}
@@ -82,7 +82,7 @@ jobs:
           echo "sha=$SHA" >> "$GITHUB_OUTPUT"
           echo "✅ Tag 来源校验通过"
 
-      - name: 校验主检查已通过
+      - name: 校验主检查已通过（等待检查完成）
         if: ${{ inputs.ci_verified != true }}
         uses: actions/github-script@v7
         with:
@@ -90,29 +90,64 @@ jobs:
             const { owner, repo } = context.repo;
             const headSha = '${{ steps.source.outputs.sha }}';
             const requiredWorkflowName = '代码质量检查';
+            const pollIntervalMs = 30 * 1000;
+            const timeoutMs = 60 * 60 * 1000;
 
-            const response = await github.rest.actions.listWorkflowRunsForRepo({
-              owner,
-              repo,
-              head_sha: headSha,
-              per_page: 20,
-            });
+            const deadline = Date.now() + timeoutMs;
+            let lastState = '';
 
-            const passed = response.data.workflow_runs.some((run) =>
-              run.name === requiredWorkflowName &&
-              run.head_sha === headSha &&
-              run.event === 'push' &&
-              run.head_branch === 'main' &&
-              run.status === 'completed' &&
-              run.conclusion === 'success'
-            );
+            for (;;) {
+              const runs = await github.paginate(github.rest.actions.listWorkflowRunsForRepo, {
+                owner,
+                repo,
+                head_sha: headSha,
+                per_page: 100,
+              });
 
-            if (!passed) {
-              core.setFailed(`❌ 提交 ${headSha} 尚未通过 main 分支上的 ${requiredWorkflowName}`);
-              return;
+              const relevant = runs.filter((run) =>
+                run.name === requiredWorkflowName &&
+                run.head_sha === headSha &&
+                run.event === 'push' &&
+                run.head_branch === 'main'
+              );
+
+              const passed = relevant.find(
+                (run) => run.status === 'completed' && run.conclusion === 'success'
+              );
+              if (passed) {
+                core.info(`✅ 提交 ${headSha} 已通过 main 分支上的 ${requiredWorkflowName}（run ${passed.id}）`);
+                return;
+              }
+
+              const failed = relevant.find(
+                (run) =>
+                  run.status === 'completed' &&
+                  (run.conclusion === 'failure' || run.conclusion === 'startup_failure')
+              );
+              if (failed) {
+                core.setFailed(
+                  `❌ 提交 ${headSha} 在 main 分支上的 ${requiredWorkflowName} 失败（run ${failed.id}）`
+                );
+                return;
+              }
+
+              const state =
+                relevant.map((run) => `${run.id}:${run.status}:${run.conclusion ?? '-'}`).join(', ') ||
+                '尚未创建';
+              if (state !== lastState) {
+                core.info(`⏳ 等待 ${requiredWorkflowName}（${headSha}）：${state}`);
+                lastState = state;
+              }
+
+              if (Date.now() + pollIntervalMs > deadline) {
+                core.setFailed(
+                  `❌ 等待 ${requiredWorkflowName} 超时（${timeoutMs / 60000} 分钟），提交 ${headSha} 仍未通过`
+                );
+                return;
+              }
+
+              await new Promise((resolve) => setTimeout(resolve, pollIntervalMs));
             }
-
-            core.info(`✅ 提交 ${headSha} 已通过 main 分支上的 ${requiredWorkflowName}`);
 
       - name: 提取版本信息
         id: meta
