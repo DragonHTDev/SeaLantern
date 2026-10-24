@@ -95,6 +95,25 @@ function replaceCargoPackageVersion(content, version) {
   return content.replace(section, () => newSection);
 }
 
+/** 将 JSON 文件顶层 `version` 字段替换为新版本。
+ *
+ * 只改该字段的值，其余排版原样保留：整体 `JSON.stringify` 会把 oxfmt 保持
+ * 内联的数组折成多行，导致随后的 `only ci` 卡在 `fmt:check` 阶段。
+ */
+function replaceJsonVersion(raw, version) {
+  const matches = [...raw.matchAll(/^(?<indent>[ \t]*)"version"(?<sep>[ \t]*:[ \t]*)"[^"]*"/gm)];
+  if (matches.length !== 1) {
+    throw new Error(`JSON 中应恰好有一个 version 字段，实际找到 ${matches.length} 个`);
+  }
+
+  const { indent, sep } = matches[0].groups;
+  const next = raw.replace(matches[0][0], () => `${indent}"version"${sep}"${version}"`);
+  if (JSON.parse(next).version !== version) {
+    throw new Error("JSON 版本字段替换后校验失败");
+  }
+  return next;
+}
+
 // ---------------------------------------------------------------------------
 // 文件发现
 // ---------------------------------------------------------------------------
@@ -285,9 +304,7 @@ function buildUpdatedContent(file, raw, version) {
     return replaceWorkspacePackageVersion(raw, version);
   }
   if (file.type === "json") {
-    const parsed = JSON.parse(raw);
-    parsed.version = version;
-    return `${JSON.stringify(parsed, null, 2)}\n`;
+    return replaceJsonVersion(raw, version);
   }
   throw new Error(`未知文件类型：${file.type}`);
 }
